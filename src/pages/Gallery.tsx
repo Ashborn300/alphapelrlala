@@ -3,6 +3,21 @@ import Footer from "@/components/Footer";
 import event1 from "@/assets/event1.jpg";
 import event2 from "@/assets/event2.jpg";
 import event3 from "@/assets/event3.jpg";
+import event7 from "@/assets/event7.jpg";
+import event8 from "@/assets/event8.jpg";
+import event9 from "@/assets/event9.jpg";
+import event10 from "@/assets/event10.jpg";
+import event11 from "@/assets/event11.jpg";
+import event12 from "@/assets/event12.jpg";
+import event13 from "@/assets/event13.jpg";
+import event14 from "@/assets/event14.jpg";
+import event15 from "@/assets/event15.jpg";
+import gallery1 from "@/assets/gallery1.jpg";
+import gallery2 from "@/assets/gallery2.jpg";
+import gallery3 from "@/assets/gallery3.jpg";
+import gallery4 from "@/assets/gallery4.jpg";
+import gallery5 from "@/assets/gallery5.jpg";
+import gallery6 from "@/assets/gallery6.jpg";
 
 const Gallery = () => {
   const images = [
@@ -20,6 +35,81 @@ const Gallery = () => {
       src: event3,
       alt: "Événement de la Fondation Alpha Perla",
       title: "Événement Communautaire",
+    },
+    {
+      src: event7,
+      alt: "Défilé de mode - Événement Fondation Alpha Perla",
+      title: "Défilé de Mode",
+    },
+    {
+      src: event8,
+      alt: "Photo de groupe avec les lauréates - Fondation Alpha Perla",
+      title: "Cérémonie de Reconnaissance",
+    },
+    {
+      src: event9,
+      alt: "Remise de trophée - Fondation Alpha Perla",
+      title: "Remise de Prix",
+    },
+    {
+      src: event10,
+      alt: "Conférence Perla Coaching - Développement Personnel",
+      title: "Conférence Développement Personnel",
+    },
+    {
+      src: event11,
+      alt: "Publication du livre - Les larmes d'une femme meurtrie",
+      title: "Lancement du Livre",
+    },
+    {
+      src: event12,
+      alt: "Trophées Alpha Perla - Reconnaissance de l'excellence",
+      title: "Trophées d'Excellence",
+    },
+    {
+      src: event13,
+      alt: "Remise de prix à une femme militaire - Fondation Alpha Perla",
+      title: "Honneur aux Femmes Militaires",
+    },
+    {
+      src: event14,
+      alt: "Rencontre avec des personnalités - Fondation Alpha Perla",
+      title: "Rencontres et Partenariats",
+    },
+    {
+      src: event15,
+      alt: "Visite dans une école - Action sociale Fondation Alpha Perla",
+      title: "Action Sociale en Milieu Scolaire",
+    },
+    {
+      src: gallery1,
+      alt: "Événement Fondation Alpha Perla - Remise de prix",
+      title: "Cérémonie de Remise de Prix",
+    },
+    {
+      src: gallery2,
+      alt: "Cérémonie de reconnaissance - Fondation Alpha Perla",
+      title: "Reconnaissance d'Excellence",
+    },
+    {
+      src: gallery3,
+      alt: "Photo de groupe lauréates - Fondation Alpha Perla",
+      title: "Lauréates 2024",
+    },
+    {
+      src: gallery4,
+      alt: "Remise de trophée - Fondation Alpha Perla",
+      title: "Trophée d'Excellence",
+    },
+    {
+      src: gallery5,
+      alt: "Séminaire leadership féminin - Fondation Alpha Perla",
+      title: "Séminaire Leadership Féminin",
+    },
+    {
+      src: gallery6,
+      alt: "Formation et accompagnement - Fondation Alpha Perla",
+      title: "Formation et Accompagnement",
     },
   ];
 
