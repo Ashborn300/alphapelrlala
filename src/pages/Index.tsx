@@ -1,12 +1,347 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
+import {
+  GraduationCap,
+  Users,
+  Heart,
+  Award,
+  BookOpen,
+  TrendingUp,
+  Globe,
+  ChevronRight,
+} from "lucide-react";
+import heroImage from "@/assets/hero-bg.jpg";
+import aboutImage from "@/assets/about-bg.jpg";
 
 const Index = () => {
+  const stats = [
+    { label: "Femmes Formées", value: "500+", icon: Users },
+    { label: "Programmes", value: "15+", icon: GraduationCap },
+    { label: "Partenaires", value: "30+", icon: Heart },
+    { label: "Années d'Expérience", value: "5+", icon: Award },
+  ];
+
+  const services = [
+    {
+      icon: GraduationCap,
+      title: "Éducation & Formation",
+      description:
+        "Formations professionnelles, ateliers et séminaires pour jeunes et femmes. Alphabétisation et masterclass.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Entrepreneuriat Féminin",
+      description:
+        "Mentorat, coaching et accompagnement pour le développement de projets entrepreneuriaux.",
+    },
+    {
+      icon: Users,
+      title: "Développement Personnel",
+      description:
+        "Ateliers de confiance en soi, gestion du temps, et coaching pour atteindre vos ambitions.",
+    },
+    {
+      icon: Heart,
+      title: "Action Sociale",
+      description:
+        "Soutien aux communautés défavorisées, déplacés de guerre et projets humanitaires.",
+    },
+    {
+      icon: Award,
+      title: "Événements Culturels",
+      description:
+        "Organisation de trophées et cérémonies célébrant l'excellence africaine.",
+    },
+    {
+      icon: Globe,
+      title: "Gestion de Patrimoine",
+      description:
+        "Conception de projets, vente immobilière et services de tourisme.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Marie Kalala",
+      role: "Entrepreneure",
+      content:
+        "La Fondation Alpha Perla m'a aidée à développer mon entreprise. Les formations sont exceptionnelles et le mentorat m'a permis d'atteindre mes objectifs.",
+    },
+    {
+      name: "Sarah Mukendi",
+      role: "Participante aux formations",
+      content:
+        "J'ai gagné en confiance en moi grâce aux ateliers de développement personnel. Une expérience transformatrice!",
+    },
+    {
+      name: "Joséphine Ngoma",
+      role: "Bénéficiaire",
+      content:
+        "Le soutien de la fondation a changé ma vie. Je suis maintenant capable de subvenir aux besoins de ma famille.",
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "Qui peut bénéficier des programmes de la fondation?",
+      answer:
+        "Nos programmes sont ouverts à toutes les femmes et jeunes désireux de développer leurs compétences, qu'ils soient en début de carrière ou en reconversion professionnelle.",
+    },
+    {
+      question: "Comment puis-je participer aux formations?",
+      answer:
+        "Vous pouvez nous contacter via email ou visiter nos bureaux à Kinshasa ou Lubumbashi. Nous organisons régulièrement des sessions de formation que nous annonçons sur notre chaîne YouTube.",
+    },
+    {
+      question: "La fondation offre-t-elle des services de mentorat?",
+      answer:
+        "Oui, nous offrons des programmes de mentorat personnalisés pour accompagner les femmes dans leurs projets entrepreneuriaux et professionnels.",
+    },
+    {
+      question: "Comment puis-je soutenir la fondation?",
+      answer:
+        "Vous pouvez soutenir nos initiatives en devenant partenaire, en participant à nos événements, ou en nous contactant pour discuter des opportunités de collaboration.",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Header />
+
+      {/* Hero Section */}
+      <section
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${heroImage})`,
+        }}
+      >
+        <div className="container mx-auto px-4 text-center text-white z-10">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
+            Autonomiser les Femmes
+            <br />
+            <span className="text-secondary">Transformer l'Afrique</span>
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up opacity-90">
+            La Fondation Alpha Perla œuvre pour l'autonomisation des femmes, le
+            développement de la jeunesse et la promotion de l'excellence en
+            Afrique.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+            <Button asChild size="lg" variant="default">
+              <Link to="/programs">
+                Découvrir nos Programmes
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">
+              <Link to="/contact">Nous Contacter</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <Card
+                key={index}
+                className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in"
+              >
+                <CardContent className="pt-6">
+                  <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                  <h3 className="text-3xl font-bold text-primary mb-2">
+                    {stat.value}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+                Notre Mission
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                La Fondation Alpha Perla est dédiée à créer des opportunités
+                éducatives, sociales, culturelles et personnelles pour permettre
+                à chacun de réaliser son plein potentiel.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6">
+                Nous croyons en l'autonomisation des femmes et des jeunes comme
+                moteur du développement durable en Afrique. À travers nos
+                programmes, nous cultivons le leadership, l'excellence et
+                l'entrepreneuriat.
+              </p>
+              <Button asChild variant="default">
+                <Link to="/about">
+                  En Savoir Plus
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+            <div className="animate-fade-in">
+              <img
+                src={aboutImage}
+                alt="À propos de la fondation"
+                className="rounded-2xl shadow-2xl w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Nos Domaines d'Activité
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Des programmes variés pour répondre aux besoins de développement
+              de nos communautés
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 animate-scale-in"
+              >
+                <CardContent className="pt-6">
+                  <service.icon className="h-12 w-12 mb-4 text-secondary group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-xl font-bold mb-3 text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Button asChild variant="default" size="lg">
+              <Link to="/programs">
+                Voir Tous les Programmes
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Témoignages
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Ce que disent les femmes que nous accompagnons
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in"
+              >
+                <CardContent className="pt-6">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto bg-secondary/10 rounded-full mb-4">
+                      <Users className="h-8 w-8 text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground italic mb-4">
+                      "{testimonial.content}"
+                    </p>
+                  </div>
+                  <div className="border-t pt-4">
+                    <p className="font-semibold text-primary">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Questions Fréquentes
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Trouvez les réponses à vos questions
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto animate-fade-in">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-card border-0 rounded-lg px-6 shadow-md"
+                >
+                  <AccordionTrigger className="text-left font-semibold hover:text-secondary transition-colors">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up">
+            Rejoignez-Nous dans Notre Mission
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90 animate-fade-in-up">
+            Ensemble, nous pouvons créer un avenir meilleur pour les femmes et
+            les jeunes d'Afrique.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+            <Button asChild size="lg" variant="secondary">
+              <Link to="/contact">Devenir Partenaire</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Link to="/programs">Participer à nos Programmes</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
