@@ -2,36 +2,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Youtube } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message envoyé!",
-      description: "Nous vous répondrons dans les plus brefs délais.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -52,70 +25,29 @@ const Contact = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Contact Button */}
             <div className="animate-fade-in-up">
               <h2 className="text-3xl font-bold mb-6 text-primary">
                 Envoyez-nous un Message
               </h2>
               <Card className="border-0 shadow-xl">
-                <CardContent className="pt-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Nom Complet
-                      </label>
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Votre nom"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Email
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="votre.email@exemple.com"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Sujet
-                      </label>
-                      <Input
-                        type="text"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                        placeholder="Sujet de votre message"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Message
-                      </label>
-                      <Textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={6}
-                        placeholder="Votre message..."
-                      />
-                    </div>
-                    <Button type="submit" size="lg" className="w-full">
-                      Envoyer le Message
-                    </Button>
-                  </form>
+                <CardContent className="pt-6 pb-8 flex flex-col items-center justify-center min-h-[400px] text-center">
+                  <Mail className="h-16 w-16 mb-6 text-secondary" />
+                  <h3 className="text-2xl font-bold mb-4 text-primary">
+                    Contactez-nous par Email
+                  </h3>
+                  <p className="text-muted-foreground mb-8 max-w-md">
+                    Cliquez sur le bouton ci-dessous pour nous envoyer un email. Nous vous répondrons dans les plus brefs délais.
+                  </p>
+                  <Button asChild size="lg" className="text-lg px-8 py-6">
+                    <a href="mailto:foundationalphaperla@gmail.com">
+                      <Mail className="mr-2 h-5 w-5" />
+                      Envoyer un Email
+                    </a>
+                  </Button>
+                  <p className="text-sm text-muted-foreground mt-4">
+                    foundationalphaperla@gmail.com
+                  </p>
                 </CardContent>
               </Card>
             </div>
