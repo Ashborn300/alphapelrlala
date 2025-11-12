@@ -11,6 +11,10 @@ import excellence1 from "@/assets/excellence1.jpg";
 import excellence2 from "@/assets/excellence2.jpg";
 import excellence3 from "@/assets/excellence3.jpg";
 import excellence4 from "@/assets/excellence4.jpg";
+import social1 from "@/assets/social1.jpg";
+import social2 from "@/assets/social2.jpg";
+import social3 from "@/assets/social3.jpg";
+import social4 from "@/assets/social4.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -248,6 +252,80 @@ Transformer l'Afrique<br />
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
               <img src={excellence4} alt="Lauréates Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social & Humanitarian Action Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Action Sociale et Humanitaire
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
+              La Fondation Alpha Perla s'engage activement auprès des communautés vulnérables à travers des initiatives humanitaires concrètes et durables.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in">
+              <CardContent className="pt-6">
+                <Heart className="h-12 w-12 mb-4 text-secondary" />
+                <h3 className="text-xl font-bold mb-3 text-primary">
+                  Soutien aux Communautés Défavorisées
+                </h3>
+                <p className="text-muted-foreground">
+                  Distribution de vivres, vêtements et produits de première nécessité aux familles dans le besoin.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in">
+              <CardContent className="pt-6">
+                <Users className="h-12 w-12 mb-4 text-secondary" />
+                <h3 className="text-xl font-bold mb-3 text-primary">
+                  Aide aux Déplacés de Guerre
+                </h3>
+                <p className="text-muted-foreground">
+                  Assistance humanitaire et accompagnement psychosocial des personnes déplacées par les conflits.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in">
+              <CardContent className="pt-6">
+                <Heart className="h-12 w-12 mb-4 text-secondary" />
+                <h3 className="text-xl font-bold mb-3 text-primary">
+                  Accompagnement des Femmes Victimes de Violences
+                </h3>
+                <p className="text-muted-foreground">
+                  Soutien médical, psychologique et juridique pour les femmes victimes de violences.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in">
+              <CardContent className="pt-6">
+                <BookOpen className="h-12 w-12 mb-4 text-secondary" />
+                <h3 className="text-xl font-bold mb-3 text-primary">
+                  Projets Liés à la Santé
+                </h3>
+                <p className="text-muted-foreground">
+                  Sensibilisation à l'hygiène, campagnes de prévention et accès aux soins de santé.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={social1} alt="Distribution d'aide humanitaire - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={social2} alt="Visite dans les écoles - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={social3} alt="Soutien aux communautés - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={social4} alt="Action sociale - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
