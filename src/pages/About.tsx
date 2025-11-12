@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Heart, BookOpen } from "lucide-react";
 import aboutImage from "@/assets/about-bg.jpg";
+import aboutEvent1 from "@/assets/about-event1.jpg";
+import aboutEvent2 from "@/assets/about-event2.jpg";
 
 const About = () => {
   const values = [
@@ -125,8 +127,38 @@ const About = () => {
         </div>
       </section>
 
-      {/* Author Section */}
+      {/* Events Section */}
       <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Nos Réalisations
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Des moments marquants de nos événements et cérémonies de reconnaissance
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img 
+                src={aboutEvent1} 
+                alt="Cérémonie de reconnaissance - Fondation Alpha Perla" 
+                className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img 
+                src={aboutEvent2} 
+                alt="Photo de groupe lauréates - Fondation Alpha Perla" 
+                className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Author Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card className="border-0 shadow-xl">
