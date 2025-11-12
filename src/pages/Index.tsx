@@ -111,7 +111,7 @@ const Index = () => {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)), url(${heroImage})`
     }} className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-[#7c6318]/70">
         <div className="container mx-auto px-4 pt-24 text-center text-white z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">T
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up"> Transformer l'Afrique
 Transformer l'Afrique<br />
             <span className="text-secondary">Transformer l'Afrique</span>
           </h1>
@@ -377,11 +377,7 @@ Transformer l'Afrique<br />
           </div>
           <div className="max-w-2xl mx-auto animate-fade-in">
             <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-              <img 
-                src={bookImage} 
-                alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" 
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" 
-              />
+              <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
