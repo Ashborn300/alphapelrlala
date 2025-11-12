@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import missionImage from "@/assets/mission.jpg";
+import excellence1 from "@/assets/excellence1.jpg";
+import excellence2 from "@/assets/excellence2.jpg";
+import excellence3 from "@/assets/excellence3.jpg";
+import excellence4 from "@/assets/excellence4.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -187,6 +191,50 @@ Transformer l'Afrique<br />
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Excellence Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Fondation Alpha Perla
+            </h2>
+            <p className="text-2xl font-semibold text-secondary mb-8">
+              Votre partenaire vers l'excellence
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img 
+                src={excellence1} 
+                alt="Cérémonie de remise de prix - Fondation Alpha Perla" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img 
+                src={excellence2} 
+                alt="Reconnaissance d'excellence - Fondation Alpha Perla" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img 
+                src={excellence3} 
+                alt="Événement Fondation Alpha Perla" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img 
+                src={excellence4} 
+                alt="Lauréates Fondation Alpha Perla" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </div>
         </div>
       </section>
