@@ -84,15 +84,15 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={{
+      <section style={{
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${heroImage})`
-    }}>
+    }} className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-[#7c6318]/70">
         <div className="container mx-auto px-4 text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">T
 Transformer l'Afrique<br />
             <span className="text-secondary">Transformer l'Afrique</span>
           </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up opacity-90">
+          <p className="text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up opacity-90 md:text-2xl">
             La Fondation Alpha Perla œuvre pour l'autonomisation des femmes, le
             développement de la jeunesse et la promotion de l'excellence en
             Afrique.
@@ -213,32 +213,16 @@ Transformer l'Afrique<br />
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
-              <img 
-                src={excellence1} 
-                alt="Cérémonie de remise de prix - Fondation Alpha Perla" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
+              <img src={excellence1} alt="Cérémonie de remise de prix - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
-              <img 
-                src={excellence2} 
-                alt="Reconnaissance d'excellence - Fondation Alpha Perla" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
+              <img src={excellence2} alt="Reconnaissance d'excellence - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
-              <img 
-                src={excellence3} 
-                alt="Événement Fondation Alpha Perla" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
+              <img src={excellence3} alt="Événement Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
-              <img 
-                src={excellence4} 
-                alt="Lauréates Fondation Alpha Perla" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
+              <img src={excellence4} alt="Lauréates Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
