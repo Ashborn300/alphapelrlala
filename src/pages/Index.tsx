@@ -84,7 +84,7 @@ const Index = () => {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${heroImage})`
     }}>
         <div className="container mx-auto px-4 text-center text-white z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">T
 Transformer l'Afrique<br />
             <span className="text-secondary">Transformer l'Afrique</span>
           </h1>
