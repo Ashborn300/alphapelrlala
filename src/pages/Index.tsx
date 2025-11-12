@@ -111,6 +111,31 @@ Transformer l'Afrique<br />
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary animate-fade-in-up">
+              À Propos de la Fondation Alpha Perla
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in leading-relaxed">
+              La Fondation Alpha Perla est une organisation dédiée à l'autonomisation des femmes et au développement de la jeunesse en Afrique. Fondée avec la vision de créer un impact durable, nous œuvrons pour offrir des opportunités éducatives, professionnelles et entrepreneuriales à celles et ceux qui aspirent à transformer leur avenir.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in leading-relaxed">
+              À travers nos programmes de formation, de mentorat et d'accompagnement, nous cultivons l'excellence, le leadership et l'esprit d'entreprise. Notre engagement se manifeste dans chaque initiative que nous menons, chaque vie que nous touchons, et chaque communauté que nous servons.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up">
+              <Button asChild size="lg" variant="default">
+                <Link to="/about">
+                  En Savoir Plus
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
