@@ -70,6 +70,18 @@ const Index = () => {
     name: "Joséphine Ngoma",
     role: "Bénéficiaire",
     content: "Le soutien de la fondation a changé ma vie. Je suis maintenant capable de subvenir aux besoins de ma famille."
+  }, {
+    name: "Grace Tshiala",
+    role: "Diplômée en leadership",
+    content: "Les programmes de leadership m'ont permis de prendre des responsabilités dans ma communauté. Je suis reconnaissante pour cette opportunité."
+  }, {
+    name: "Élisabeth Mwamba",
+    role: "Formatrice certifiée",
+    content: "Grâce à l'alphabétisation et aux masterclass, j'ai acquis des compétences que je transmets maintenant à d'autres femmes."
+  }, {
+    name: "Rachelle Kabongo",
+    role: "Jeune entrepreneure",
+    content: "L'accompagnement personnalisé et les ressources mises à disposition m'ont aidée à concrétiser mon projet d'entreprise."
   }];
   const faqs = [{
     question: "Qui peut bénéficier des programmes de la fondation?",
