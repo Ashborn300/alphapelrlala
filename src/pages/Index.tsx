@@ -2,132 +2,90 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import {
-  GraduationCap,
-  Users,
-  Heart,
-  Award,
-  BookOpen,
-  TrendingUp,
-  Globe,
-  ChevronRight,
-} from "lucide-react";
+import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import aboutImage from "@/assets/about-bg.jpg";
-
 const Index = () => {
-  const stats = [
-    { label: "Femmes Formées", value: "500+", icon: Users },
-    { label: "Programmes", value: "15+", icon: GraduationCap },
-    { label: "Partenaires", value: "30+", icon: Heart },
-    { label: "Années d'Expérience", value: "5+", icon: Award },
-  ];
-
-  const services = [
-    {
-      icon: GraduationCap,
-      title: "Éducation & Formation",
-      description:
-        "Formations professionnelles, ateliers et séminaires pour jeunes et femmes. Alphabétisation et masterclass.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Entrepreneuriat Féminin",
-      description:
-        "Mentorat, coaching et accompagnement pour le développement de projets entrepreneuriaux.",
-    },
-    {
-      icon: Users,
-      title: "Développement Personnel",
-      description:
-        "Ateliers de confiance en soi, gestion du temps, et coaching pour atteindre vos ambitions.",
-    },
-    {
-      icon: Heart,
-      title: "Action Sociale",
-      description:
-        "Soutien aux communautés défavorisées, déplacés de guerre et projets humanitaires.",
-    },
-    {
-      icon: Award,
-      title: "Événements Culturels",
-      description:
-        "Organisation de trophées et cérémonies célébrant l'excellence africaine.",
-    },
-    {
-      icon: Globe,
-      title: "Gestion de Patrimoine",
-      description:
-        "Conception de projets, vente immobilière et services de tourisme.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Marie Kalala",
-      role: "Entrepreneure",
-      content:
-        "La Fondation Alpha Perla m'a aidée à développer mon entreprise. Les formations sont exceptionnelles et le mentorat m'a permis d'atteindre mes objectifs.",
-    },
-    {
-      name: "Sarah Mukendi",
-      role: "Participante aux formations",
-      content:
-        "J'ai gagné en confiance en moi grâce aux ateliers de développement personnel. Une expérience transformatrice!",
-    },
-    {
-      name: "Joséphine Ngoma",
-      role: "Bénéficiaire",
-      content:
-        "Le soutien de la fondation a changé ma vie. Je suis maintenant capable de subvenir aux besoins de ma famille.",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Qui peut bénéficier des programmes de la fondation?",
-      answer:
-        "Nos programmes sont ouverts à toutes les femmes et jeunes désireux de développer leurs compétences, qu'ils soient en début de carrière ou en reconversion professionnelle.",
-    },
-    {
-      question: "Comment puis-je participer aux formations?",
-      answer:
-        "Vous pouvez nous contacter via email ou visiter nos bureaux à Kinshasa ou Lubumbashi. Nous organisons régulièrement des sessions de formation que nous annonçons sur notre chaîne YouTube.",
-    },
-    {
-      question: "La fondation offre-t-elle des services de mentorat?",
-      answer:
-        "Oui, nous offrons des programmes de mentorat personnalisés pour accompagner les femmes dans leurs projets entrepreneuriaux et professionnels.",
-    },
-    {
-      question: "Comment puis-je soutenir la fondation?",
-      answer:
-        "Vous pouvez soutenir nos initiatives en devenant partenaire, en participant à nos événements, ou en nous contactant pour discuter des opportunités de collaboration.",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const stats = [{
+    label: "Femmes Formées",
+    value: "500+",
+    icon: Users
+  }, {
+    label: "Programmes",
+    value: "15+",
+    icon: GraduationCap
+  }, {
+    label: "Partenaires",
+    value: "30+",
+    icon: Heart
+  }, {
+    label: "Années d'Expérience",
+    value: "5+",
+    icon: Award
+  }];
+  const services = [{
+    icon: GraduationCap,
+    title: "Éducation & Formation",
+    description: "Formations professionnelles, ateliers et séminaires pour jeunes et femmes. Alphabétisation et masterclass."
+  }, {
+    icon: TrendingUp,
+    title: "Entrepreneuriat Féminin",
+    description: "Mentorat, coaching et accompagnement pour le développement de projets entrepreneuriaux."
+  }, {
+    icon: Users,
+    title: "Développement Personnel",
+    description: "Ateliers de confiance en soi, gestion du temps, et coaching pour atteindre vos ambitions."
+  }, {
+    icon: Heart,
+    title: "Action Sociale",
+    description: "Soutien aux communautés défavorisées, déplacés de guerre et projets humanitaires."
+  }, {
+    icon: Award,
+    title: "Événements Culturels",
+    description: "Organisation de trophées et cérémonies célébrant l'excellence africaine."
+  }, {
+    icon: Globe,
+    title: "Gestion de Patrimoine",
+    description: "Conception de projets, vente immobilière et services de tourisme."
+  }];
+  const testimonials = [{
+    name: "Marie Kalala",
+    role: "Entrepreneure",
+    content: "La Fondation Alpha Perla m'a aidée à développer mon entreprise. Les formations sont exceptionnelles et le mentorat m'a permis d'atteindre mes objectifs."
+  }, {
+    name: "Sarah Mukendi",
+    role: "Participante aux formations",
+    content: "J'ai gagné en confiance en moi grâce aux ateliers de développement personnel. Une expérience transformatrice!"
+  }, {
+    name: "Joséphine Ngoma",
+    role: "Bénéficiaire",
+    content: "Le soutien de la fondation a changé ma vie. Je suis maintenant capable de subvenir aux besoins de ma famille."
+  }];
+  const faqs = [{
+    question: "Qui peut bénéficier des programmes de la fondation?",
+    answer: "Nos programmes sont ouverts à toutes les femmes et jeunes désireux de développer leurs compétences, qu'ils soient en début de carrière ou en reconversion professionnelle."
+  }, {
+    question: "Comment puis-je participer aux formations?",
+    answer: "Vous pouvez nous contacter via email ou visiter nos bureaux à Kinshasa ou Lubumbashi. Nous organisons régulièrement des sessions de formation que nous annonçons sur notre chaîne YouTube."
+  }, {
+    question: "La fondation offre-t-elle des services de mentorat?",
+    answer: "Oui, nous offrons des programmes de mentorat personnalisés pour accompagner les femmes dans leurs projets entrepreneuriaux et professionnels."
+  }, {
+    question: "Comment puis-je soutenir la fondation?",
+    answer: "Vous pouvez soutenir nos initiatives en devenant partenaire, en participant à nos événements, ou en nous contactant pour discuter des opportunités de collaboration."
+  }];
+  return <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${heroImage})`,
-        }}
-      >
+      <section className="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${heroImage})`
+    }}>
         <div className="container mx-auto px-4 text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-            Autonomiser les Femmes
-            <br />
+Transformer l'Afrique<br />
             <span className="text-secondary">Transformer l'Afrique</span>
           </h1>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up opacity-90">
@@ -153,11 +111,7 @@ const Index = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <Card
-                key={index}
-                className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in"
-              >
+            {stats.map((stat, index) => <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in">
                 <CardContent className="pt-6">
                   <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
                   <h3 className="text-3xl font-bold text-primary mb-2">
@@ -165,8 +119,7 @@ const Index = () => {
                   </h3>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -198,11 +151,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="animate-fade-in">
-              <img
-                src={aboutImage}
-                alt="À propos de la fondation"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
+              <img src={aboutImage} alt="À propos de la fondation" className="rounded-2xl shadow-2xl w-full h-auto" />
             </div>
           </div>
         </div>
@@ -221,11 +170,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 animate-scale-in"
-              >
+            {services.map((service, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 animate-scale-in">
                 <CardContent className="pt-6">
                   <service.icon className="h-12 w-12 mb-4 text-secondary group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="text-xl font-bold mb-3 text-primary">
@@ -233,8 +178,7 @@ const Index = () => {
                   </h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           <div className="text-center mt-12">
             <Button asChild variant="default" size="lg">
@@ -259,11 +203,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in"
-              >
+            {testimonials.map((testimonial, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
                 <CardContent className="pt-6">
                   <div className="mb-4">
                     <div className="flex items-center justify-center w-16 h-16 mx-auto bg-secondary/10 rounded-full mb-4">
@@ -282,8 +222,7 @@ const Index = () => {
                     </p>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -301,20 +240,14 @@ const Index = () => {
           </div>
           <div className="max-w-3xl mx-auto animate-fade-in">
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-card border-0 rounded-lg px-6 shadow-md"
-                >
+              {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-card border-0 rounded-lg px-6 shadow-md">
                   <AccordionTrigger className="text-left font-semibold hover:text-secondary transition-colors">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     {faq.answer}
                   </AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </div>
         </div>
@@ -342,8 +275,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
