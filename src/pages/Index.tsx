@@ -16,6 +16,12 @@ import social2 from "@/assets/social2.jpg";
 import social3 from "@/assets/social3.jpg";
 import social4 from "@/assets/social4.jpg";
 import bookImage from "@/assets/book.jpg";
+import gallery1 from "@/assets/gallery1.jpg";
+import gallery2 from "@/assets/gallery2.jpg";
+import gallery3 from "@/assets/gallery3.jpg";
+import gallery4 from "@/assets/gallery4.jpg";
+import gallery5 from "@/assets/gallery5.jpg";
+import gallery6 from "@/assets/gallery6.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -467,6 +473,48 @@ Transformer l'Afrique<br />
                   </AccordionContent>
                 </AccordionItem>)}
             </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Galerie
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez en images nos événements, formations et actions sur le terrain
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={gallery1} alt="Événement Fondation Alpha Perla - Remise de prix" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={gallery2} alt="Cérémonie de reconnaissance - Fondation Alpha Perla" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={gallery3} alt="Photo de groupe lauréates - Fondation Alpha Perla" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={gallery4} alt="Remise de trophée - Fondation Alpha Perla" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={gallery5} alt="Séminaire leadership féminin - Fondation Alpha Perla" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+              <img src={gallery6} alt="Formation et accompagnement - Fondation Alpha Perla" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+          </div>
+          <div className="text-center mt-12 animate-fade-in-up">
+            <Button asChild variant="default" size="lg">
+              <Link to="/gallery">
+                Voir Plus
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
