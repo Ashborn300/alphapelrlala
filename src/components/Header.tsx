@@ -29,17 +29,17 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-beige/95 backdrop-blur-md shadow-lg"
+          : "bg-beige"
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-3 group">
+        <div className="flex items-center justify-between md:justify-start">
+          <Link to="/" className="flex items-center space-x-3 group md:flex-none mx-auto md:mx-0">
             <img
               src={logo}
               alt="Fondation Alpha Perla"
-              className="h-12 w-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+              className="h-20 w-20 md:h-12 md:w-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="hidden md:block">
               <h1 className="text-lg font-bold text-primary">
