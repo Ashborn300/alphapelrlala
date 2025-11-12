@@ -15,6 +15,7 @@ import social1 from "@/assets/social1.jpg";
 import social2 from "@/assets/social2.jpg";
 import social3 from "@/assets/social3.jpg";
 import social4 from "@/assets/social4.jpg";
+import bookImage from "@/assets/book.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -353,6 +354,29 @@ Transformer l'Afrique<br />
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in">
               Être un acteur clé du développement humain, social et personnel en Afrique, en valorisant les talents, la culture, le leadership et l'excellence des femmes et des jeunes du continent.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Writing & Publication Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Écriture et Publication
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Passionnée de la littérature madame Perla est autrice de l'ouvrage : <span className="font-semibold text-primary">Les larmes d'une femme meurtrie sècheront-elles</span>, inspirée par les atrocités se déroulant à l'est de la RDC.
+            </p>
+          </div>
+          <div className="max-w-2xl mx-auto animate-fade-in">
+            <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+              <img 
+                src={bookImage} 
+                alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" 
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
           </div>
         </div>
       </section>
