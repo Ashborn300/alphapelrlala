@@ -30,7 +30,7 @@ const Header = () => {
     name: "Contact",
     path: "/contact"
   }];
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-beige/95 backdrop-blur-md shadow-lg" : "bg-beige"}`}>
+  return <header className={`md:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-beige/95 backdrop-blur-md shadow-lg" : "bg-beige"}`}>
       <nav className="container mx-auto px-4 py-4 bg-slate-200">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
