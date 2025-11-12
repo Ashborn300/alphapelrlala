@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight } from "lucide-react";
+import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import missionImage from "@/assets/mission.jpg";
 import excellence1 from "@/assets/excellence1.jpg";
@@ -413,6 +413,34 @@ Transformer l'Afrique<br />
                   </div>
                 </CardContent>
               </Card>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Subscribe & Follow Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary animate-fade-in-up">
+              S'abonner et Nous Suivre
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 animate-fade-in">
+              Rejoignez notre communauté en ligne et restez informés de toutes nos activités, événements et programmes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up">
+              <Button asChild size="lg" variant="default" className="w-full sm:w-auto">
+                <a href="https://youtube.com/@fondationalphaperla?si=4PRNSY_c6-LxqA4O" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Youtube className="h-5 w-5" />
+                  S'abonner sur YouTube
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
+                <a href="https://www.facebook.com/profile.php?id=100066871133653" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Facebook className="h-5 w-5" />
+                  Suivre sur Facebook
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
