@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
-import aboutImage from "@/assets/about-bg.jpg";
+import missionImage from "@/assets/mission.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -151,7 +151,7 @@ Transformer l'Afrique<br />
               </Button>
             </div>
             <div className="animate-fade-in">
-              <img src={aboutImage} alt="À propos de la fondation" className="rounded-2xl shadow-2xl w-full h-auto" />
+              <img src={missionImage} alt="Fondation Alpha Perla - Perla Coaching" className="rounded-2xl shadow-2xl w-full h-auto" />
             </div>
           </div>
         </div>
