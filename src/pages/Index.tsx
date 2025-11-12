@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import heroImage from "@/assets/hero-bg.jpg";
 import missionImage from "@/assets/mission.jpg";
 import excellence1 from "@/assets/excellence1.jpg";
@@ -26,19 +28,23 @@ import excellentiaImage from "@/assets/excellentia-2025.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
-    value: "500+",
+    value: 500,
+    suffix: "+",
     icon: Users
   }, {
     label: "Programmes",
-    value: "15+",
+    value: 15,
+    suffix: "+",
     icon: GraduationCap
   }, {
     label: "Partenaires",
-    value: "30+",
+    value: 30,
+    suffix: "+",
     icon: Heart
   }, {
     label: "Années d'Expérience",
-    value: "5+",
+    value: 5,
+    suffix: "+",
     icon: Award
   }];
   const services = [{
@@ -137,17 +143,17 @@ const Index = () => {
       {/* About Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary animate-fade-in-up">
+          <FadeInOnScroll className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
               À Propos de la Fondation Alpha Perla
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               La Fondation Alpha Perla est une organisation dédiée à l'autonomisation des femmes et au développement de la jeunesse en Afrique. Fondée avec la vision de créer un impact durable, nous œuvrons pour offrir des opportunités éducatives, professionnelles et entrepreneuriales à celles et ceux qui aspirent à transformer leur avenir.
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               À travers nos programmes de formation, de mentorat et d'accompagnement, nous cultivons l'excellence, le leadership et l'esprit d'entreprise. Notre engagement se manifeste dans chaque initiative que nous menons, chaque vie que nous touchons, et chaque communauté que nous servons.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Button asChild size="lg" variant="default">
                 <Link to="/about">
                   En Savoir Plus
@@ -155,7 +161,7 @@ const Index = () => {
                 </Link>
               </Button>
             </div>
-          </div>
+          </FadeInOnScroll>
         </div>
       </section>
 
@@ -163,15 +169,19 @@ const Index = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in">
-                <CardContent className="pt-6">
-                  <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
-                  <h3 className="text-3xl font-bold text-primary mb-2">
-                    {stat.value}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </CardContent>
-              </Card>)}
+            {stats.map((stat, index) => (
+              <FadeInOnScroll key={index} delay={index * 100}>
+                <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="pt-6">
+                    <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                    <h3 className="text-3xl font-bold text-primary mb-2">
+                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                    </h3>
+                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  </CardContent>
+                </Card>
+              </FadeInOnScroll>
+            ))}
           </div>
         </div>
       </section>
@@ -180,7 +190,7 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
+            <FadeInOnScroll direction="right">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
                 Notre Mission
               </h2>
@@ -201,10 +211,10 @@ const Index = () => {
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-            </div>
-            <div className="animate-fade-in">
+            </FadeInOnScroll>
+            <FadeInOnScroll direction="left">
               <img src={missionImage} alt="Fondation Alpha Perla - Perla Coaching" className="rounded-2xl shadow-2xl w-full h-auto" />
-            </div>
+            </FadeInOnScroll>
           </div>
         </div>
       </section>
@@ -212,16 +222,16 @@ const Index = () => {
       {/* Excellentia Event Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 animate-fade-in-up">
+          <FadeInOnScroll className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary flex items-center justify-center gap-3">
               <span className="text-4xl">🌟</span>
               COMMUNIQUÉ OFFICIEL
               <span className="text-4xl">🌟</span>
             </h2>
-          </div>
+          </FadeInOnScroll>
           
-          <div className="max-w-5xl mx-auto">
-            <Card className="border-0 shadow-2xl overflow-hidden animate-scale-in">
+          <FadeInOnScroll className="max-w-5xl mx-auto">
+            <Card className="border-0 shadow-2xl overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 gap-0">
                   {/* Image */}
@@ -244,7 +254,7 @@ const Index = () => {
                         <span className="text-2xl">📅</span>
                         <div>
                           <p className="font-bold text-lg text-primary">Date :</p>
-                          <p className="text-muted-foreground">07 décembre 2025</p>
+                          <p className="text-muted-foreground"><AnimatedCounter end={7} /> décembre <AnimatedCounter end={2025} /></p>
                         </div>
                       </div>
                       
@@ -286,14 +296,14 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </FadeInOnScroll>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <FadeInOnScroll className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
               Nos Domaines d'Activité
             </h2>
@@ -301,17 +311,21 @@ const Index = () => {
               Des programmes variés pour répondre aux besoins de développement
               de nos communautés
             </p>
-          </div>
+          </FadeInOnScroll>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 animate-scale-in">
-                <CardContent className="pt-6">
-                  <service.icon className="h-12 w-12 mb-4 text-secondary group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-xl font-bold mb-3 text-primary">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>)}
+            {services.map((service, index) => (
+              <FadeInOnScroll key={index} delay={index * 100}>
+                <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 h-full">
+                  <CardContent className="pt-6">
+                    <service.icon className="h-12 w-12 mb-4 text-secondary group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-xl font-bold mb-3 text-primary">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </FadeInOnScroll>
+            ))}
           </div>
           <div className="text-center mt-12">
             <Button asChild variant="default" size="lg">
