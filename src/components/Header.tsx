@@ -32,21 +32,21 @@ const Header = () => {
   }];
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-beige/95 backdrop-blur-md shadow-lg" : "bg-beige"}`}>
       <nav className="container mx-auto px-4 py-4 bg-slate-200">
-        <div className="flex items-center justify-between md:justify-start">
-          <Link to="/" className="flex items-center space-x-3 group md:flex-none mx-auto md:mx-0">
-            <img src={logo} alt="Fondation Alpha Perla" className="h-20 w-20 md:h-12 md:w-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110" />
-            <div className="hidden md:block">
-              <h1 className="text-lg font-bold text-primary">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
+            <img src={logo} alt="Fondation Alpha Perla" className="h-12 w-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            <div>
+              <h1 className="text-sm md:text-lg font-bold text-primary">
                 Fondation Alpha Perla
               </h1>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted-foreground hidden md:block">
                 Autonomisation & Excellence
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 ml-auto">
             {navLinks.map(link => <Link key={link.path} to={link.path} className={`text-sm font-medium transition-colors hover:text-secondary relative group ${location.pathname === link.path ? "text-secondary" : "text-foreground"}`}>
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
@@ -60,7 +60,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-foreground hover:text-secondary transition-colors" aria-label="Toggle menu">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-foreground hover:text-secondary transition-colors flex-shrink-0" aria-label="Toggle menu">
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
