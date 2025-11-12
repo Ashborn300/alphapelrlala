@@ -85,7 +85,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section style={{
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${heroImage})`
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)), url(${heroImage})`
     }} className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-[#7c6318]/70">
         <div className="container mx-auto px-4 text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">T
