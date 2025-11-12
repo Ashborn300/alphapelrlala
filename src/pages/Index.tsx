@@ -202,8 +202,13 @@ Transformer l'Afrique<br />
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
               Fondation Alpha Perla
             </h2>
-            <p className="text-2xl font-semibold text-secondary mb-8">
+            <p className="text-2xl font-semibold text-secondary mb-4">
               Votre partenaire vers l'excellence
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Nous célébrons et récompensons l'excellence à travers nos programmes de reconnaissance. 
+              Chaque année, nous honorons les femmes et jeunes qui se distinguent par leur détermination, 
+              leur leadership et leur contribution au développement de nos communautés.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
