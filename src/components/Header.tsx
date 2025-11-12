@@ -55,7 +55,7 @@ const Header = () => {
               <Youtube className="h-5 w-5" />
             </a>
             <Button asChild variant="default" size="sm">
-              <Link to="/contact">Nous Contacter</Link>
+              <a href="mailto:foundationalphaperla@gmail.com">Nous Contacter</a>
             </Button>
           </div>
 
@@ -76,7 +76,7 @@ const Header = () => {
                 <span>Notre Chaîne YouTube</span>
               </a>
               <Button asChild variant="default" size="sm" className="w-full">
-                <Link to="/contact">Nous Contacter</Link>
+                <a href="mailto:foundationalphaperla@gmail.com">Nous Contacter</a>
               </Button>
             </div>
           </div>}
