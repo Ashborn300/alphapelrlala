@@ -343,6 +343,20 @@ Transformer l'Afrique<br />
         </div>
       </section>
 
+      {/* Vision Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary animate-fade-in-up">
+              Notre Vision
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in">
+              Être un acteur clé du développement humain, social et personnel en Afrique, en valorisant les talents, la culture, le leadership et l'excellence des femmes et des jeunes du continent.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
