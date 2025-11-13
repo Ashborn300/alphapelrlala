@@ -28,7 +28,7 @@ const Contact = () => {
             {/* WhatsApp Contact */}
             <div className="animate-fade-in-up">
               <h2 className="text-3xl font-bold mb-6 text-primary">
-                Contactez Alpha Perla sur WhatsApp
+                Contactez Fondation Alpha Perla sur WhatsApp
               </h2>
               <Card className="border-0 shadow-xl bg-gradient-to-br from-[#25D366]/10 to-background">
                 <CardContent className="pt-6 pb-8 flex flex-col items-center justify-center min-h-[400px] text-center">
