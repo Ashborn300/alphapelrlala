@@ -59,7 +59,7 @@ const Contact = () => {
             {/* Email Contact */}
             <div className="animate-fade-in-up">
               <h2 className="text-3xl font-bold mb-6 text-primary">
-                Envoyez un Message à Alpha Perla
+                Envoyez un Message à Fondation Alpha Perla
               </h2>
               <Card className="border-0 shadow-xl">
                 <CardContent className="pt-6 pb-8 flex flex-col items-center justify-center min-h-[400px] text-center">
