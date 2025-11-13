@@ -542,6 +542,165 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Flight Tickets Section */}
+      <section className="py-20 bg-gradient-to-br from-[#1a2f5a] to-[#0d1a33] text-white">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Vos <span className="text-secondary">billets d'avion</span> au meilleur prix
+            </h2>
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+              La Fondation Alpha Perla vous accompagne dans vos voyages avec un service de billetterie aérienne
+            </p>
+          </FadeInOnScroll>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-12">
+            {/* Destinations Nationales */}
+            <FadeInOnScroll direction="right">
+              <Card className="h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">
+                    Destinations nationales
+                  </h3>
+                  <p className="text-muted-foreground mb-6 font-semibold">
+                    CAA (RDC) Depuis Kinshasa (N'djili) vers :
+                  </p>
+                  <ul className="space-y-3 text-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">1.</span>
+                      <span>Lubumbashi - capitale du Haut-Katanga</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">2.</span>
+                      <span>Goma - Nord-Kivu</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">3.</span>
+                      <span>Kisangani - Tshopo</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">4.</span>
+                      <span>Mbuji-Mayi - Kasai-Oriental</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">5.</span>
+                      <span>Kananga - Kasai-Central</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">6.</span>
+                      <span>Bunia - Ituri</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">7.</span>
+                      <span>Gemena - Sud-Ubangi</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">8.</span>
+                      <span>Gbadolite - Nord-Ubangi</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">9.</span>
+                      <span>Mbandaka - Équateur</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">10.</span>
+                      <span>Kindu - Maniema</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">11.</span>
+                      <span>Tshikapa - Kasai</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold text-primary">12.</span>
+                      <span>Kalemie - Tanganyika</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </FadeInOnScroll>
+
+            {/* Destinations Internationales */}
+            <FadeInOnScroll direction="left">
+              <Card className="h-full shadow-xl hover:shadow-2xl transition-all duration-300 bg-secondary/95 text-secondary-foreground">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-4">
+                    Destinations internationales
+                  </h3>
+                  <p className="mb-6 font-semibold opacity-90">
+                    CAA (RDC) Au départ de Kinshasa (N'Djili) vers le monde :
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">1.</span>
+                      <span>Addis-Abeba – Éthiopie</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">2.</span>
+                      <span>Cairo – Égypte</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">3.</span>
+                      <span>Casablanca – Maroc</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">4.</span>
+                      <span>Istanbul – Turquie</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">5.</span>
+                      <span>Johannesburg – Afrique du Sud</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">6.</span>
+                      <span>Nairobi – Kenya</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">7.</span>
+                      <span>Paris – France</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">8.</span>
+                      <span>Bruxelles – Belgique</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">9.</span>
+                      <span>Doha – Qatar</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">10.</span>
+                      <span>Luanda – Angola</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">11.</span>
+                      <span>Abidjan – Côte d'Ivoire</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-bold">12.</span>
+                      <span>Lomé – Togo</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </FadeInOnScroll>
+          </div>
+
+          {/* Contact Info */}
+          <FadeInOnScroll className="text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">CONTACT</h3>
+              <p className="text-xl mb-2">
+                <a href="tel:+243973795067" className="hover:text-secondary transition-colors">
+                  +243 973 795 067
+                </a>
+              </p>
+              <p className="text-white/90">
+                <span className="font-semibold">Adresse :</span> 44, Boulvard Sendwe, Immeuble ADI CONSTRUCT (4ᵉ Niveau)
+              </p>
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
