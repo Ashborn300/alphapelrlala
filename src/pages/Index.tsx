@@ -119,10 +119,10 @@ const Index = () => {
     }} className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-[#7c6318]/70">
         <div className="container mx-auto px-4 pt-24 text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-            <span className="text-secondary">Transformer l'Afrique</span>
+            <span className="text-secondary">Fondation Alpha Perla - Transformer l'Afrique</span>
           </h1>
           <p className="text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up opacity-90 md:text-2xl">
-            La Fondation Alpha Perla œuvre pour l'autonomisation des femmes, le
+            Alpha Perla œuvre pour l'autonomisation des femmes, le
             développement de la jeunesse et la promotion de l'excellence en
             Afrique.
           </p>
@@ -148,10 +148,10 @@ const Index = () => {
               À Propos de la Fondation Alpha Perla
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              La Fondation Alpha Perla est une organisation dédiée à l'autonomisation des femmes et au développement de la jeunesse en Afrique. Fondée avec la vision de créer un impact durable, nous œuvrons pour offrir des opportunités éducatives, professionnelles et entrepreneuriales à celles et ceux qui aspirent à transformer leur avenir.
+              La <strong>Fondation Alpha Perla</strong> est une organisation dédiée à l'autonomisation des femmes et au développement de la jeunesse en Afrique. Fondée avec la vision de créer un impact durable, <strong>Alpha Perla</strong> œuvre pour offrir des opportunités éducatives, professionnelles et entrepreneuriales à celles et ceux qui aspirent à transformer leur avenir.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              À travers nos programmes de formation, de mentorat et d'accompagnement, nous cultivons l'excellence, le leadership et l'esprit d'entreprise. Notre engagement se manifeste dans chaque initiative que nous menons, chaque vie que nous touchons, et chaque communauté que nous servons.
+              À travers nos <Link to="/programs" className="text-secondary hover:underline">programmes de formation</Link>, de mentorat et d'accompagnement, nous cultivons l'excellence, le leadership et l'esprit d'entreprise. Notre engagement se manifeste dans chaque initiative que nous menons, chaque vie que nous touchons, et chaque communauté que nous servons.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Button asChild size="lg" variant="default">
@@ -192,17 +192,17 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeInOnScroll direction="right">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-                Notre Mission
+                Mission de la Fondation Alpha Perla
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                La Fondation Alpha Perla est dédiée à créer des opportunités
+                La <strong>Fondation Alpha Perla</strong> est dédiée à créer des opportunités
                 éducatives, sociales, culturelles et personnelles pour permettre
                 à chacun de réaliser son plein potentiel.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
                 Nous croyons en l'autonomisation des femmes et des jeunes comme
                 moteur du développement durable en Afrique. À travers nos
-                programmes, nous cultivons le leadership, l'excellence et
+                <Link to="/programs" className="text-secondary hover:underline ml-1">programmes</Link>, <strong>Alpha Perla</strong> cultive le leadership, l'excellence et
                 l'entrepreneuriat.
               </p>
               <Button asChild variant="default">
@@ -343,7 +343,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-              Fondation Alpha Perla
+              Alpha Perla - Trophées d'Excellence
             </h2>
             <p className="text-2xl font-semibold text-secondary mb-4">
               Votre partenaire vers l'excellence

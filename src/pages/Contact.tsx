@@ -13,10 +13,10 @@ const Contact = () => {
       <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary to-primary/80">
         <div className="container mx-auto px-4 text-center text-primary-foreground z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
-            Contactez-Nous
+            Contactez la Fondation Alpha Perla
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up">
-            Nous sommes à votre écoute pour répondre à vos questions
+            Alpha Perla est à votre écoute pour répondre à vos questions
           </p>
         </div>
       </section>
@@ -27,9 +27,9 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Button */}
             <div className="animate-fade-in-up">
-              <h2 className="text-3xl font-bold mb-6 text-primary">
-                Envoyez-nous un Message
-              </h2>
+                <h2 className="text-3xl font-bold mb-6 text-primary">
+                  Envoyez un Message à Alpha Perla
+                </h2>
               <Card className="border-0 shadow-xl">
                 <CardContent className="pt-6 pb-8 flex flex-col items-center justify-center min-h-[400px] text-center">
                   <Mail className="h-16 w-16 mb-6 text-secondary" />
@@ -56,11 +56,11 @@ const Contact = () => {
             <div className="space-y-8 animate-fade-in">
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-primary">
-                  Nos Coordonnées
+                  Coordonnées de la Fondation Alpha Perla
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  N'hésitez pas à nous contacter par email ou à visiter nos
-                  bureaux à Kinshasa ou Lubumbashi.
+                  N'hésitez pas à contacter <strong>Alpha Perla</strong> par email ou à visiter nos
+                  bureaux à Kinshasa ou Lubumbashi, RDC.
                 </p>
               </div>
 

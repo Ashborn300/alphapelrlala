@@ -47,10 +47,10 @@ const About = () => {
       >
         <div className="container mx-auto px-4 text-center text-white z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
-            À Propos de Nous
+            À Propos de la Fondation Alpha Perla
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up">
-            Découvrez notre histoire, notre mission et nos valeurs
+            Découvrez l'histoire, la mission et les valeurs d'Alpha Perla
           </p>
         </div>
       </section>
@@ -62,12 +62,12 @@ const About = () => {
             <div className="text-center mb-12">
               <Target className="h-16 w-16 mx-auto mb-6 text-secondary" />
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-                Notre Mission
+                Mission de la Fondation Alpha Perla
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                La Fondation Alpha Perla œuvre pour l'autonomisation des femmes,
+                La <strong>Fondation Alpha Perla</strong> œuvre pour l'autonomisation des femmes,
                 le développement de la jeunesse et la promotion de l'excellence
-                en Afrique. Nous créons des opportunités éducatives, sociales,
+                en Afrique. <strong>Alpha Perla</strong> crée des opportunités éducatives, sociales,
                 culturelles et personnelles pour permettre à chacun de réaliser
                 son plein potentiel.
               </p>
@@ -83,13 +83,13 @@ const About = () => {
             <div className="text-center mb-12">
               <Eye className="h-16 w-16 mx-auto mb-6 text-secondary" />
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-                Notre Vision
+                Vision de la Fondation Alpha Perla
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Être un acteur clé du développement humain, social et personnel
                 en Afrique, en valorisant les talents, la culture, le leadership
-                et l'excellence des femmes et des jeunes du continent. Nous
-                aspirons à une Afrique où chaque femme et chaque jeune a accès
+                et l'excellence des femmes et des jeunes du continent. <strong>Alpha Perla</strong>
+                aspire à une Afrique où chaque femme et chaque jeune a accès
                 aux ressources nécessaires pour s'épanouir pleinement.
               </p>
             </div>
@@ -102,10 +102,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-              Nos Valeurs
+              Valeurs d'Alpha Perla
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Les principes qui guident nos actions au quotidien
+              Les principes qui guident les actions de la Fondation Alpha Perla au quotidien
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -132,10 +132,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-              Nos Réalisations
+              Réalisations de la Fondation Alpha Perla
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des moments marquants de nos événements et cérémonies de reconnaissance
+              Des moments marquants des événements et cérémonies de reconnaissance organisés par Alpha Perla
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">

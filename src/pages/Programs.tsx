@@ -118,11 +118,11 @@ const Programs = () => {
       <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary to-primary/80">
         <div className="container mx-auto px-4 text-center text-primary-foreground z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
-            Nos Programmes
+            Programmes de la Fondation Alpha Perla
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up">
-            Des initiatives diversifiées pour l'autonomisation et le
-            développement
+            Des initiatives diversifiées d'Alpha Perla pour l'autonomisation et le
+            développement des femmes et jeunes en Afrique
           </p>
         </div>
       </section>
@@ -166,11 +166,11 @@ const Programs = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-            Rejoignez nos Programmes
+            Rejoignez les Programmes de la Fondation Alpha Perla
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Intéressé par l'un de nos programmes? Contactez-nous pour en savoir
-            plus et vous inscrire.
+            Intéressé par l'un des programmes d'<strong>Alpha Perla</strong>? <a href="/contact" className="text-secondary hover:underline">Contactez-nous</a> pour en savoir
+            plus et vous inscrire à nos formations et ateliers.
           </p>
           <a
             href="/contact"
