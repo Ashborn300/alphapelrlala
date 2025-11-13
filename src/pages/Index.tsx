@@ -18,6 +18,7 @@ import social2 from "@/assets/social2.jpg";
 import social3 from "@/assets/social3.jpg";
 import social4 from "@/assets/social4.jpg";
 import bookImage from "@/assets/book.jpg";
+import masterFormationImage from "@/assets/master-formation.jpg";
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
@@ -456,6 +457,63 @@ const Index = () => {
               Être un acteur clé du développement humain, social et personnel en Afrique, en valorisant les talents, la culture, le leadership et l'excellence des femmes et des jeunes du continent.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Master et Formations Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+                Master et Formations
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+                Alpha Perla propose des programmes de master et formations spécialisées pour développer vos compétences en leadership, développement personnel et excellence professionnelle. Rejoignez nos formations certifiantes et donnez un nouvel élan à votre carrière.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+              <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                <img 
+                  src={masterFormationImage} 
+                  alt="Master et Formations - Fondation Alpha Perla" 
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" 
+                />
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold mb-3 text-primary">Programmes Disponibles</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start">
+                      <BookOpen className="h-5 w-5 text-secondary mr-3 mt-1 flex-shrink-0" />
+                      <span>Formation en Leadership Féminin</span>
+                    </li>
+                    <li className="flex items-start">
+                      <BookOpen className="h-5 w-5 text-secondary mr-3 mt-1 flex-shrink-0" />
+                      <span>Master en Développement Personnel</span>
+                    </li>
+                    <li className="flex items-start">
+                      <BookOpen className="h-5 w-5 text-secondary mr-3 mt-1 flex-shrink-0" />
+                      <span>Excellence Professionnelle et Entrepreneuriat</span>
+                    </li>
+                  </ul>
+                </div>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="w-full md:w-auto bg-secondary hover:bg-secondary/90 text-white"
+                >
+                  <a 
+                    href="https://wa.me/243977074034" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    S'inscrire
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </FadeInOnScroll>
         </div>
       </section>
 
