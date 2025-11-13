@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Youtube } from "lucide-react";
+import { Mail, MapPin, Youtube, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -25,11 +25,42 @@ const Contact = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Button */}
+            {/* WhatsApp Contact */}
             <div className="animate-fade-in-up">
-                <h2 className="text-3xl font-bold mb-6 text-primary">
-                  Envoyez un Message à Alpha Perla
-                </h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary">
+                Contactez Alpha Perla sur WhatsApp
+              </h2>
+              <Card className="border-0 shadow-xl bg-gradient-to-br from-[#25D366]/10 to-background">
+                <CardContent className="pt-6 pb-8 flex flex-col items-center justify-center min-h-[400px] text-center">
+                  <MessageCircle className="h-16 w-16 mb-6 text-[#25D366]" />
+                  <h3 className="text-2xl font-bold mb-4 text-primary">
+                    Discutez avec nous sur WhatsApp
+                  </h3>
+                  <p className="text-muted-foreground mb-8 max-w-md">
+                    Contactez-nous directement via WhatsApp pour une réponse rapide et instantanée.
+                  </p>
+                  <Button 
+                    asChild 
+                    size="lg" 
+                    className="text-lg px-8 py-6 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                  >
+                    <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Ouvrir WhatsApp
+                    </a>
+                  </Button>
+                  <p className="text-sm text-muted-foreground mt-4">
+                    +243 977 074 034
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Email Contact */}
+            <div className="animate-fade-in-up">
+              <h2 className="text-3xl font-bold mb-6 text-primary">
+                Envoyez un Message à Alpha Perla
+              </h2>
               <Card className="border-0 shadow-xl">
                 <CardContent className="pt-6 pb-8 flex flex-col items-center justify-center min-h-[400px] text-center">
                   <Mail className="h-16 w-16 mb-6 text-secondary" />
