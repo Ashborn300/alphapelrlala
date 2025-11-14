@@ -63,7 +63,7 @@ const Gallery = () => {
     },
     {
       src: event12,
-      alt: "Trophées Alpha Perla - Reconnaissance de l'excellence",
+      alt: "Trophées Fondation Alpha Perla - Reconnaissance de l'excellence",
       title: "Trophées d'Excellence",
     },
     {
@@ -124,7 +124,7 @@ const Gallery = () => {
             Galerie Fondation Alpha Perla
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up">
-            Découvrez les événements et activités d'Alpha Perla en images
+            Découvrez les événements et activités de la Fondation Alpha Perla en images
           </p>
         </div>
       </section>
@@ -160,7 +160,7 @@ const Gallery = () => {
               Suivez la Fondation Alpha Perla sur les Réseaux Sociaux
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Rejoignez la communauté d'<strong>Alpha Perla</strong> en ligne pour découvrir plus de contenus de nos
+              Rejoignez la communauté de la <strong>Fondation Alpha Perla</strong> en ligne pour découvrir plus de contenus de nos
               événements et formations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
