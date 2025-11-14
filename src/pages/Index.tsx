@@ -71,7 +71,7 @@ const Index = () => {
   }, {
     icon: Globe,
     title: "Gestion de Patrimoine",
-    description: "Conception de projets, vente immobilière et services de tourisme."
+    description: "Conception de projets et services de tourisme."
   }];
   const testimonials = [{
     name: "Marie Kalala",
