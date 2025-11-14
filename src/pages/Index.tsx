@@ -19,6 +19,10 @@ import social3 from "@/assets/social3.jpg";
 import social4 from "@/assets/social4.jpg";
 import bookImage from "@/assets/book.jpg";
 import masterFormationImage from "@/assets/master-formation.jpg";
+import laureats1 from "@/assets/laureats1.jpg";
+import laureats2 from "@/assets/laureats2.jpg";
+import laureats3 from "@/assets/laureats3.jpg";
+import laureats4 from "@/assets/laureats4.jpg";
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
@@ -498,6 +502,42 @@ const Index = () => {
                     </li>
                   </ul>
                 </div>
+                
+                {/* Photos des Lauréats */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold mb-4 text-primary">Nos Lauréats</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <img 
+                        src={laureats1} 
+                        alt="Lauréats de la formation Alpha Perla" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <img 
+                        src={laureats2} 
+                        alt="Remise de certificat de formation" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <img 
+                        src={laureats3} 
+                        alt="Cérémonie de remise de prix" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <img 
+                        src={laureats4} 
+                        alt="Lauréate avec certificat d'excellence" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
                 <Button 
                   asChild
                   size="lg" 
