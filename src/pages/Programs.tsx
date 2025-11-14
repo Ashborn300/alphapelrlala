@@ -73,7 +73,6 @@ const Programs = () => {
       category: "Gestion de Patrimoine et Projets",
       programs: [
         "Conception et gestion de projets pour partenaires",
-        "Vente de terrains, appartements et immeubles",
         "Services au pays et à l'étranger",
         "Accompagnement jusqu'à la réalisation complète",
       ],
