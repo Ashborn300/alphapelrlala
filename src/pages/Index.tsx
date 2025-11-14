@@ -123,7 +123,7 @@ const Index = () => {
             <span className="text-secondary">Fondation Alpha Perla - Transformer l'Afrique</span>
           </h1>
           <p className="text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up opacity-90 md:text-2xl">
-            Alpha Perla œuvre pour l'autonomisation des femmes, le
+            La Fondation Alpha Perla œuvre pour l'autonomisation des femmes, le
             développement de la jeunesse et la promotion de l'excellence en
             Afrique.
           </p>
@@ -149,7 +149,7 @@ const Index = () => {
               À Propos de la Fondation Alpha Perla
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              La <strong>Fondation Alpha Perla</strong> est une organisation dédiée à l'autonomisation des femmes et au développement de la jeunesse en Afrique. Fondée avec la vision de créer un impact durable, <strong>Alpha Perla</strong> œuvre pour offrir des opportunités éducatives, professionnelles et entrepreneuriales à celles et ceux qui aspirent à transformer leur avenir.
+              La <strong>Fondation Alpha Perla</strong> est une organisation dédiée à l'autonomisation des femmes et au développement de la jeunesse en Afrique. Fondée avec la vision de créer un impact durable, la <strong>Fondation Alpha Perla</strong> œuvre pour offrir des opportunités éducatives, professionnelles et entrepreneuriales à celles et ceux qui aspirent à transformer leur avenir.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               À travers nos <Link to="/programs" className="text-secondary hover:underline">programmes de formation</Link>, de mentorat et d'accompagnement, nous cultivons l'excellence, le leadership et l'esprit d'entreprise. Notre engagement se manifeste dans chaque initiative que nous menons, chaque vie que nous touchons, et chaque communauté que nous servons.
@@ -203,7 +203,7 @@ const Index = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 Nous croyons en l'autonomisation des femmes et des jeunes comme
                 moteur du développement durable en Afrique. À travers nos
-                <Link to="/programs" className="text-secondary hover:underline ml-1">programmes</Link>, <strong>Alpha Perla</strong> cultive le leadership, l'excellence et
+                <Link to="/programs" className="text-secondary hover:underline ml-1">programmes</Link>, la <strong>Fondation Alpha Perla</strong> cultive le leadership, l'excellence et
                 l'entrepreneuriat.
               </p>
               <Button asChild variant="default">

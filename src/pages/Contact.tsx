@@ -16,7 +16,7 @@ const Contact = () => {
             Contactez la Fondation Alpha Perla
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up">
-            Alpha Perla est à votre écoute pour répondre à vos questions
+            La Fondation Alpha Perla est à votre écoute pour répondre à vos questions
           </p>
         </div>
       </section>
@@ -90,7 +90,7 @@ const Contact = () => {
                   Coordonnées de la Fondation Alpha Perla
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  N'hésitez pas à contacter <strong>Alpha Perla</strong> par email ou à visiter nos
+                  N'hésitez pas à contacter la <strong>Fondation Alpha Perla</strong> par email ou à visiter nos
                   bureaux à Kinshasa ou Lubumbashi, RDC.
                 </p>
               </div>
