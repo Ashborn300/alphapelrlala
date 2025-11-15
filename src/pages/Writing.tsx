@@ -17,6 +17,9 @@ import author7 from "@/assets/author-7.jpg";
 import author8 from "@/assets/author-8.jpg";
 import author9 from "@/assets/author-9.jpg";
 import author10 from "@/assets/author-10.jpg";
+import poem1Image from "@/assets/poem-1.jpg";
+import poem2Image from "@/assets/poem-2.jpg";
+import poem4Image from "@/assets/poem-4.jpg";
 const Writing = () => {
   const [quantity, setQuantity] = useState(1);
   const handleOrder = () => {
@@ -165,6 +168,174 @@ const Writing = () => {
                   </p>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Poems Section */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+                Poèmes
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Découvrez les œuvres poétiques d'Alpha Perla Mboyo
+              </p>
+            </div>
+
+            {/* Poem 1 */}
+            <div className="max-w-6xl mx-auto mb-20">
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="overflow-hidden">
+                    <img 
+                      src={poem1Image} 
+                      alt="Femme Debout" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
+                      Femme Debout, Bâtit Aujourd'hui Pour Demain
+                    </h3>
+                    <div className="font-garamond text-base md:text-lg leading-relaxed text-muted-foreground space-y-4 max-h-[500px] overflow-y-auto">
+                      <p className="italic">
+                        Hier négligée, réduit à donner du plaisir et à procréer, chosifiée et considérée comme peu inférieur, exclue et ne pouvant pas prendre part à la prise des décisions importantes ni occuper des postes de hautes responsabilités...
+                      </p>
+                      <p className="font-semibold text-primary">
+                        Femme Debout, Bâtit aujourd'hui pour demain!
+                      </p>
+                      <p>
+                        Stop!!! stop!!!, stop!!!, Le temps change, l'heure est à la prise de conscience maintenant. Femme, tu es une Reine, une déesse, une héroïne, une mère, porteuse de vie, une voix, celle qui apporte la joie, pleine des ressources.
+                      </p>
+                      <p className="font-semibold text-primary">
+                        Femme Debout, Bâtit aujourd'hui pour demain!
+                      </p>
+                      <p>
+                        La clé pour te découvrir et exercer le pouvoir et tout le reste qui sont en toi femme, c'est de t'aimer, t'accepter et d'avoir confiance en toi. Tu es une étoile et tu es appelée à briller, tu as tout en toi pour briller, braver tout et peu importe même traverser la vallée de l'ombre de la mort pour y arriver.
+                      </p>
+                      <p className="text-sm text-right mt-6">
+                        — Alpha Perla
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Poem 2 */}
+            <div className="max-w-6xl mx-auto mb-20">
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-12 bg-gradient-to-br from-secondary/5 to-primary/5 order-2 md:order-1">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
+                      Africa Debout
+                    </h3>
+                    <div className="font-garamond text-base md:text-lg leading-relaxed text-muted-foreground space-y-4 max-h-[500px] overflow-y-auto">
+                      <p className="font-semibold text-lg">
+                        Africaaaaaaa!!! Ooooo!!! Africa,
+                      </p>
+                      <p>
+                        BERCEAU DE L'HUMANITÉ, terre accueillante, chaleureuse, symbole d'amour et Fraternité, tu as vus naître des grandes empires, royaumes et civilisations qui ont marqués le monde entier par leur maîtrise en construction pharaonique...
+                      </p>
+                      <p className="font-semibold text-lg">
+                        Africaaaaaaa!!! Ooooo!!!! Africa,
+                      </p>
+                      <p>
+                        Plusieurs savants reconnus mondialement ont piétinés les terres Africaines un jour à la recherche du savoir, un SAVOIR pur et très complexe, convoité jusqu'à vouloir s'en approprier. Terre des plusieurs merveilles et scandales géographique, démographique et climatique...
+                      </p>
+                      <p>
+                        Le moment est arrivé ou tout AFRICAIN doit prendre conscience, être consciencieux de notre situation et étudier sur comment nous développer, nous imposer, sortir de tout enclos de diverses formes des colonialismes et prouver au monde entier que nous sommes capable, fort, libre..., le berceau de l'humanité, Africains Noirs et fier de l'être.
+                      </p>
+                      <p className="text-sm text-right mt-6">
+                        — Alpha Perla
+                      </p>
+                    </div>
+                  </div>
+                  <div className="overflow-hidden order-1 md:order-2">
+                    <img 
+                      src={poem2Image} 
+                      alt="Africa Debout" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Poem 3 - Kinshasa en Larme (no image) */}
+            <div className="max-w-4xl mx-auto mb-20">
+              <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary text-center">
+                  Kinshasa en Larme
+                </h3>
+                <div className="font-garamond text-base md:text-lg leading-relaxed text-muted-foreground space-y-4 max-h-[600px] overflow-y-auto">
+                  <p className="font-semibold text-lg">
+                    Oooo!! Kinshasa ma ville,<br />
+                    Oooo!! Kinshasa Ma capitale,
+                  </p>
+                  <p>
+                    Que de larmes!!! Que de maux!!! Que de problèmes complexes t'affligent!!! Comment en es-tu arrivé là? Ma belle ville Kinshasa, jadis tu fus un havre de paix, jadis tu fus propre et on te surnommait la belle avec fierté, jadis tu fus organisé, jadis tu fus pleine de vie et prospère...
+                  </p>
+                  <p className="font-semibold text-lg">
+                    Oooo!! Kinshasa ma ville<br />
+                    Oooo!! Kinshasa ma capitale
+                  </p>
+                  <p>
+                    Misère qui es-tu? Perdu dans l'inconscience, on se retrouve dans une villa, dans un grand salon en face des personnes bizarres qui nous donnent des coups sans pitié, les couteaux et autres instruments médicaux, on veut me prendre mes organes précieux cœur, reins, foie...
+                  </p>
+                  <p>
+                    Chers autorités, vous avez le droit de protéger la population, mettez vous au travail, arrêtez avec le Népotisme, les Tribalisme,... car ce ne sont pas des compétences qui manquent dans ce grand pays.
+                  </p>
+                  <p className="text-sm text-right mt-6">
+                    — Alpha Perla
+                  </p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Poem 4 */}
+            <div className="max-w-6xl mx-auto mb-20">
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="overflow-hidden">
+                    <img 
+                      src={poem4Image} 
+                      alt="Les Cris des Douleurs" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 bg-gradient-to-br from-secondary/5 to-primary/5">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
+                      Les Cris des Douleurs d'une Femme Meurtrie
+                    </h3>
+                    <div className="font-garamond text-base md:text-lg leading-relaxed text-muted-foreground space-y-4 max-h-[500px] overflow-y-auto">
+                      <p className="font-semibold">
+                        Au secours!!!<br />
+                        Au secours!!!<br />
+                        Au secours !!!
+                      </p>
+                      <p>
+                        Je m'appelle Femme, Woman, Muasi, Bibi, Mukaji, celle qui donne la vie, la mère de l'humanité, celle qu'on devrait respecter et honorer, un être présenter comme faible mais aussi forte car elle a les deux en elle...
+                      </p>
+                      <p className="font-semibold">
+                        Au secours !!!<br />
+                        Au secours !!!
+                      </p>
+                      <p>
+                        Mère dévouée, mais aujourd'hui déchirée dans son amour propre par des multiples violences très déplorables, l'homme a montré ses limites en affligeant toute sortes des violences à la femme, cet être si vénéré, spécial et unique...
+                      </p>
+                      <p>
+                        Violé à répétition, comme des milliers Des femmes les sont à l'Est de notre RDC, Avec une méchanceté sans nom, profaneant totalement le corps de la Femme et ses parties intimes...
+                      </p>
+                      <p className="text-sm text-right mt-6">
+                        — Alpha Perla
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
