@@ -32,16 +32,7 @@ import gallery5 from "@/assets/gallery5.jpg";
 import gallery6 from "@/assets/gallery6.jpg";
 import excellentiaImage from "@/assets/excellentia-2025.jpg";
 import incroyableTalentImg from "@/assets/incroyable-talent.jpg";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { usePdfStorage } from "@/hooks/usePdfStorage";
-import { useState } from "react";
 const Index = () => {
-  const [isPdfDialogOpen, setIsPdfDialogOpen] = useState(false);
-  const { pdfUrl, loading } = usePdfStorage(
-    '/Mon_incroyable_talent_kinshasa_fap.pdf',
-    'mon-incroyable-talent-kinshasa.pdf'
-  );
-
   const stats = [{
     label: "Femmes Formées",
     value: 500,
@@ -406,13 +397,10 @@ const Index = () => {
               <p className="text-lg text-muted-foreground">
                 Découvrez notre programme exceptionnel qui célèbre et développe les talents créatifs et artistiques de la jeunesse congolaise. Une initiative unique pour promouvoir l'excellence et révéler les étoiles de demain.
               </p>
-              <Button
-                onClick={() => setIsPdfDialogOpen(true)}
-                size="lg"
-                className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                disabled={loading}
-              >
-                {loading ? 'Chargement...' : 'Découvrir'}
+              <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                <Link to="/incroyable-talent">
+                  Découvrir
+                </Link>
               </Button>
             </div>
           </div>
@@ -945,22 +933,6 @@ const Index = () => {
       <NewsSection />
 
       <Footer />
-
-      {/* PDF Dialog */}
-      <Dialog open={isPdfDialogOpen} onOpenChange={setIsPdfDialogOpen}>
-        <DialogContent className="max-w-4xl h-[80vh]">
-          <DialogHeader>
-            <DialogTitle>Mon Incroyable Talent Kinshasa</DialogTitle>
-          </DialogHeader>
-          {pdfUrl && (
-            <iframe
-              src={pdfUrl}
-              className="w-full h-full"
-              title="Mon Incroyable Talent Kinshasa PDF"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
