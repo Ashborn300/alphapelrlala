@@ -57,7 +57,7 @@ const Header = () => {
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
               </Link>)}
-            <a href="https://mail.hostinger.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-secondary transition-colors" aria-label="Email">
+            <a href="mailto:contact@fondationalphaperla.com" className="text-foreground hover:text-secondary transition-colors" aria-label="Email">
               <Mail className="h-5 w-5" />
             </a>
           </div>
@@ -74,9 +74,9 @@ const Header = () => {
               {navLinks.map(link => <Link key={link.path} to={link.path} onClick={() => setIsMobileMenuOpen(false)} className={`text-sm font-medium transition-colors hover:text-secondary ${location.pathname === link.path ? "text-secondary" : "text-foreground"}`}>
                   {link.name}
                 </Link>)}
-              <a href="https://mail.hostinger.com/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
+              <a href="mailto:contact@fondationalphaperla.com" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
                 <Mail className="h-5 w-5" />
-                <span>Email</span>
+                <span>contact@fondationalphaperla.com</span>
               </a>
               <a href="https://youtube.com/@fondationalphaperla" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm font-medium text-destructive hover:text-destructive/80 transition-colors">
                 <Youtube className="h-5 w-5" />

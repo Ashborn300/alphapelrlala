@@ -34,7 +34,7 @@ const IncroyableTalent = () => {
           </p>
           <div className="mt-8 text-sm">
             <p>Contacts: +243 977 074 034</p>
-            <p>fondationalphaperla@gmail.com</p>
+            <p>contact@fondationalphaperla.com</p>
           </div>
         </div>
       </section>
