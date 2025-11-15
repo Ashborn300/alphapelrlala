@@ -18,6 +18,7 @@ import social1 from "@/assets/social1.jpg";
 import social2 from "@/assets/social2.jpg";
 import social3 from "@/assets/social3.jpg";
 import social4 from "@/assets/social4.jpg";
+import valorisationEspaces from "@/assets/valorisation-espaces.jpg";
 import bookImage from "@/assets/book.jpg";
 import masterFormationImage from "@/assets/master-formation.jpg";
 import laureats1 from "@/assets/laureats1.jpg";
@@ -404,6 +405,47 @@ const Index = () => {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Valorisation des Espaces Publiques Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll>
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                <img 
+                  src={valorisationEspaces} 
+                  alt="Projet de valorisation des espaces publiques - Assainissement Kinshasa" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight">
+                  Projet de Valorisation des Espaces Publiques et Grandes Artères
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Pour l'assainissement de la ville de Kinshasa
+                </p>
+                <p className="text-muted-foreground">
+                  Un projet ambitieux visant à améliorer la propreté et l'esthétique de nos espaces publics et grandes artères pour une ville plus saine et plus belle.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-secondary hover:bg-secondary/90 text-white"
+                >
+                  <a 
+                    href="https://drive.google.com/uc?id=19IRyqatkTfSSsLPW6TVjibpk-aiCyVZR" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Découvrir
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </FadeInOnScroll>
         </div>
       </section>
 
