@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { Upload, X } from "lucide-react";
 
 interface ArticleFormProps {
   onSuccess: () => void;
@@ -18,25 +19,105 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
     auteur: "",
     extrait: "",
     contenu: "",
-    image_couverture: "",
   });
+  const [coverImage, setCoverImage] = useState<File | null>(null);
+  const [coverImagePreview, setCoverImagePreview] = useState("");
+  const [secondaryImages, setSecondaryImages] = useState<File[]>([]);
+  const [secondaryImagesPreviews, setSecondaryImagesPreviews] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const handleCoverImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setCoverImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setCoverImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSecondaryImagesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    setSecondaryImages([...secondaryImages, ...files]);
+    
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSecondaryImagesPreviews(prev => [...prev, reader.result as string]);
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const removeSecondaryImage = (index: number) => {
+    setSecondaryImages(prev => prev.filter((_, i) => i !== index));
+    setSecondaryImagesPreviews(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const uploadImage = async (file: File, path: string) => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
+    const filePath = `${path}/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('article-images')
+      .upload(filePath, file);
+
+    if (uploadError) throw uploadError;
+
+    const { data: { publicUrl } } = supabase.storage
+      .from('article-images')
+      .getPublicUrl(filePath);
+
+    return publicUrl;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await supabase.from("blog_articles").insert([
-      {
-        ...formData,
-        slug: formData.slug || formData.titre.toLowerCase().replace(/\s+/g, "-"),
-      },
-    ]);
+    try {
+      let coverImageUrl = "";
+      
+      // Upload cover image
+      if (coverImage) {
+        coverImageUrl = await uploadImage(coverImage, 'covers');
+      }
 
-    if (error) {
-      toast.error("Erreur lors de la création de l'article");
-      console.error(error);
-    } else {
+      // Insert article
+      const { data: articleData, error: articleError } = await supabase
+        .from("blog_articles")
+        .insert([{
+          ...formData,
+          slug: formData.slug || formData.titre.toLowerCase().replace(/\s+/g, "-"),
+          image_couverture: coverImageUrl,
+        }])
+        .select()
+        .single();
+
+      if (articleError) throw articleError;
+
+      // Upload secondary images
+      if (secondaryImages.length > 0) {
+        const imageUrls = await Promise.all(
+          secondaryImages.map((file, index) => 
+            uploadImage(file, 'secondary').then(url => ({
+              article_id: articleData.id,
+              image_url: url,
+              ordre: index
+            }))
+          )
+        );
+
+        const { error: imagesError } = await supabase
+          .from('article_images')
+          .insert(imageUrls);
+
+        if (imagesError) throw imagesError;
+      }
+
       toast.success("Article créé avec succès");
       setFormData({
         titre: "",
@@ -44,11 +125,18 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
         auteur: "",
         extrait: "",
         contenu: "",
-        image_couverture: "",
       });
+      setCoverImage(null);
+      setCoverImagePreview("");
+      setSecondaryImages([]);
+      setSecondaryImagesPreviews([]);
       onSuccess();
+    } catch (error) {
+      console.error("Error creating article:", error);
+      toast.error("Erreur lors de la création de l'article");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -110,14 +198,71 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="image_couverture">URL de l'image de couverture</Label>
-            <Input
-              id="image_couverture"
-              type="url"
-              value={formData.image_couverture}
-              onChange={(e) => setFormData({ ...formData, image_couverture: e.target.value })}
-              placeholder="https://..."
-            />
+            <Label htmlFor="coverImage">Image de Couverture *</Label>
+            <div className="mt-2">
+              {coverImagePreview ? (
+                <div className="relative inline-block">
+                  <img src={coverImagePreview} alt="Cover preview" className="w-40 h-40 object-cover rounded" />
+                  <Button
+                    type="button"
+                    variant="destructive"
+                    size="icon"
+                    className="absolute -top-2 -right-2"
+                    onClick={() => {
+                      setCoverImage(null);
+                      setCoverImagePreview("");
+                    }}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+              ) : (
+                <label className="flex flex-col items-center justify-center w-40 h-40 border-2 border-dashed border-border rounded cursor-pointer hover:bg-muted/50 transition-colors">
+                  <Upload className="h-8 w-8 mb-2 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">Upload</span>
+                  <Input
+                    id="coverImage"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleCoverImageChange}
+                  />
+                </label>
+              )}
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label>Images Secondaires (optionnelles)</Label>
+            <div className="mt-2 space-y-4">
+              <div className="flex flex-wrap gap-4">
+                {secondaryImagesPreviews.map((preview, index) => (
+                  <div key={index} className="relative">
+                    <img src={preview} alt={`Secondary ${index + 1}`} className="w-32 h-32 object-cover rounded" />
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      size="icon"
+                      className="absolute -top-2 -right-2"
+                      onClick={() => removeSecondaryImage(index)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))}
+                <label className="flex flex-col items-center justify-center w-32 h-32 border-2 border-dashed border-border rounded cursor-pointer hover:bg-muted/50 transition-colors">
+                  <Upload className="h-6 w-6 mb-1 text-muted-foreground" />
+                  <span className="text-xs text-muted-foreground">Ajouter</span>
+                  <Input
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    className="hidden"
+                    onChange={handleSecondaryImagesChange}
+                  />
+                </label>
+              </div>
+            </div>
           </div>
 
           <Button type="submit" disabled={loading} className="w-full">

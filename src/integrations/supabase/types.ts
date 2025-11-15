@@ -14,6 +14,38 @@ export type Database = {
   }
   public: {
     Tables: {
+      article_images: {
+        Row: {
+          article_id: string
+          created_at: string | null
+          id: string
+          image_url: string
+          ordre: number | null
+        }
+        Insert: {
+          article_id: string
+          created_at?: string | null
+          id?: string
+          image_url: string
+          ordre?: number | null
+        }
+        Update: {
+          article_id?: string
+          created_at?: string | null
+          id?: string
+          image_url?: string
+          ordre?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "article_images_article_id_fkey"
+            columns: ["article_id"]
+            isOneToOne: false
+            referencedRelation: "blog_articles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       blog_articles: {
         Row: {
           auteur: string
