@@ -31,6 +31,7 @@ import gallery4 from "@/assets/gallery4.jpg";
 import gallery5 from "@/assets/gallery5.jpg";
 import gallery6 from "@/assets/gallery6.jpg";
 import excellentiaImage from "@/assets/excellentia-2025.jpg";
+import incroyableTalentImg from "@/assets/incroyable-talent.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -372,6 +373,36 @@ const Index = () => {
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
               <img src={excellence4} alt="Lauréates Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mon Incroyable Talent Kinshasa Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src={incroyableTalentImg}
+                alt="Mon Incroyable Talent Kinshasa"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                Mon Incroyable Talent Kinshasa
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Découvrez notre programme exceptionnel qui célèbre et développe les talents créatifs et artistiques de la jeunesse congolaise. Une initiative unique pour promouvoir l'excellence et révéler les étoiles de demain.
+              </p>
+              <Button
+                onClick={() => window.open('/Mon_incroyable_talent_kinshasa_fap.pdf', '_blank')}
+                size="lg"
+                className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              >
+                Découvrir
+              </Button>
             </div>
           </div>
         </div>
