@@ -573,6 +573,17 @@ const Index = () => {
             <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
               <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
             </div>
+            <div className="text-center mt-8">
+              <Button 
+                asChild
+                size="lg" 
+                className="bg-secondary hover:bg-secondary/90 text-white"
+              >
+                <a href="/writing">
+                  En savoir plus
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
