@@ -126,7 +126,8 @@ const Index = () => {
     question: "Comment puis-je soutenir la fondation?",
     answer: "Vous pouvez soutenir nos initiatives en devenant partenaire, en participant à nos événements, ou en nous contactant pour discuter des opportunités de collaboration."
   }];
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
