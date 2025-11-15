@@ -398,13 +398,9 @@ const Index = () => {
                 Découvrez notre programme exceptionnel qui célèbre et développe les talents créatifs et artistiques de la jeunesse congolaise. Une initiative unique pour promouvoir l'excellence et révéler les étoiles de demain.
               </p>
               <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                <a 
-                  href="https://drive.google.com/uc?id=139FYbgHcg1gV7NV4PpxfgNZQ_u-8h4Nt" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+                <Link to="/incroyable-talent">
                   Découvrir
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
