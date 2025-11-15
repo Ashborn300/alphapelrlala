@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NewsSection from "@/components/NewsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -887,6 +888,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <NewsSection />
 
       <Footer />
     </div>;
