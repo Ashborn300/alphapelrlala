@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ShoppingCart, Quote, Heart } from "lucide-react";
 import bookImage from "@/assets/book.jpg";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -172,7 +173,14 @@ const Writing = () => {
                   
                   {/* Author Carousel */}
                   <div className="mb-6">
-                    <Carousel className="w-full max-w-lg mx-auto">
+                    <Carousel 
+                      className="w-full max-w-lg mx-auto"
+                      plugins={[
+                        Autoplay({
+                          delay: 2500,
+                        }),
+                      ]}
+                    >
                       <CarouselContent>
                         {[author1, author2, author3, author4, author5, author6, author7, author8, author9, author10].map((image, index) => (
                           <CarouselItem key={index}>
