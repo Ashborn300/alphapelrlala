@@ -6,13 +6,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, ShoppingCart, Quote, Heart } from "lucide-react";
 import bookImage from "@/assets/book.jpg";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import author1 from "@/assets/author-1.jpg";
 import author2 from "@/assets/author-2.jpg";
 import author3 from "@/assets/author-3.jpg";
@@ -23,17 +17,13 @@ import author7 from "@/assets/author-7.jpg";
 import author8 from "@/assets/author-8.jpg";
 import author9 from "@/assets/author-9.jpg";
 import author10 from "@/assets/author-10.jpg";
-
 const Writing = () => {
   const [quantity, setQuantity] = useState(1);
-
   const handleOrder = () => {
     const message = `Bonjour, je souhaite commander ${quantity} exemplaire(s) du livre "Les larmes d'une femme meurtrie sècheront-elles" de Alpha Perla Mboyo.`;
     window.open(`https://wa.me/243977074034?text=${encodeURIComponent(message)}`, '_blank');
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       
       <main>
@@ -58,11 +48,7 @@ const Writing = () => {
               {/* Book Image */}
               <div className="animate-fade-in">
                 <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 sticky top-24">
-                  <img 
-                    src={bookImage} 
-                    alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" 
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-                  />
+                  <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
 
@@ -136,32 +122,18 @@ const Writing = () => {
                   <div className="flex items-center space-x-4 mb-6">
                     <label className="text-muted-foreground font-medium">Quantité:</label>
                     <div className="flex items-center space-x-2">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="h-10 w-10"
-                      >
+                      <Button variant="outline" size="sm" onClick={() => setQuantity(Math.max(1, quantity - 1))} className="h-10 w-10">
                         -
                       </Button>
                       <span className="text-2xl font-bold text-primary min-w-[3rem] text-center">
                         {quantity}
                       </span>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => setQuantity(quantity + 1)}
-                        className="h-10 w-10"
-                      >
+                      <Button variant="outline" size="sm" onClick={() => setQuantity(quantity + 1)} className="h-10 w-10">
                         +
                       </Button>
                     </div>
                   </div>
-                  <Button 
-                    onClick={handleOrder}
-                    size="lg" 
-                    className="w-full bg-secondary hover:bg-secondary/90 text-white"
-                  >
+                  <Button onClick={handleOrder} size="lg" className="w-full bg-secondary hover:bg-secondary/90 text-white">
                     <ShoppingCart className="mr-2 h-5 w-5" />
                     Commander via WhatsApp
                   </Button>
@@ -169,30 +141,19 @@ const Writing = () => {
 
                 {/* Author Section */}
                 <Card className="p-6">
-                  <h3 className="text-2xl font-bold text-primary mb-6">À propos de l'auteure</h3>
+                  <h3 className="text-2xl font-bold text-primary mb-6">À propos de l'autrice</h3>
                   
                   {/* Author Carousel */}
                   <div className="mb-6">
-                    <Carousel 
-                      className="w-full max-w-lg mx-auto"
-                      plugins={[
-                        Autoplay({
-                          delay: 2500,
-                        }),
-                      ]}
-                    >
+                    <Carousel className="w-full max-w-lg mx-auto" plugins={[Autoplay({
+                    delay: 2500
+                  })]}>
                       <CarouselContent>
-                        {[author1, author2, author3, author4, author5, author6, author7, author8, author9, author10].map((image, index) => (
-                          <CarouselItem key={index}>
+                        {[author1, author2, author3, author4, author5, author6, author7, author8, author9, author10].map((image, index) => <CarouselItem key={index}>
                             <div className="overflow-hidden rounded-xl">
-                              <img 
-                                src={image} 
-                                alt={`Alpha Perla Mboyo - Photo ${index + 1}`}
-                                className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300"
-                              />
+                              <img src={image} alt={`Alpha Perla Mboyo - Photo ${index + 1}`} className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300" />
                             </div>
-                          </CarouselItem>
-                        ))}
+                          </CarouselItem>)}
                       </CarouselContent>
                       <CarouselPrevious />
                       <CarouselNext />
@@ -218,16 +179,8 @@ const Writing = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Aidez-nous à faire entendre ces voix et à sensibiliser le monde aux réalités vécues par les femmes de l'est du Congo.
               </p>
-              <Button 
-                asChild
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              >
-                <a 
-                  href="https://wa.me/243977074034?text=Bonjour,%20je%20souhaite%20commander%20le%20livre%20%22Les%20larmes%20d'une%20femme%20meurtrie%20s%C3%A8cheront-elles%22%20de%20Alpha%20Perla%20Mboyo."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a href="https://wa.me/243977074034?text=Bonjour,%20je%20souhaite%20commander%20le%20livre%20%22Les%20larmes%20d'une%20femme%20meurtrie%20s%C3%A8cheront-elles%22%20de%20Alpha%20Perla%20Mboyo." target="_blank" rel="noopener noreferrer">
                   Commander maintenant
                 </a>
               </Button>
@@ -237,8 +190,6 @@ const Writing = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Writing;
