@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Trash2 } from "lucide-react";
+import { Trash2, FileText, MessageSquare, Briefcase, TrendingUp, Users, Eye, BarChart3 } from "lucide-react";
 import ArticleForm from "@/components/ArticleForm";
 import JobForm from "@/components/JobForm";
 
@@ -113,162 +113,194 @@ const Admin = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-muted/30">
       <Header />
-      <main className="flex-1 py-12 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h1 className="text-4xl font-bold text-primary mb-8">Tableau de bord Admin</h1>
+      <main className="flex-1 py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold mb-2">Tableau de bord Admin</h1>
+            <p className="text-muted-foreground">Gérez vos contenus et suivez vos statistiques</p>
+          </div>
 
-          <Tabs defaultValue="articles" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="articles">Articles ({articles.length})</TabsTrigger>
-              <TabsTrigger value="commentaires">Commentaires ({commentaires.length})</TabsTrigger>
-              <TabsTrigger value="offres">Offres ({offres.length})</TabsTrigger>
-            </TabsList>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <Card className="bg-gradient-to-br from-green-500 to-green-600 border-0 text-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-white/90">Articles</CardTitle>
+                <FileText className="h-5 w-5 text-white/80" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold">{articles.length}</div>
+                <p className="text-xs text-white/80 mt-1 flex items-center gap-1">
+                  <TrendingUp className="h-3 w-3" />
+                  Publications totales
+                </p>
+              </CardContent>
+            </Card>
 
-            <TabsContent value="articles" className="space-y-4">
-              <ArticleForm onSuccess={fetchData} />
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle>Articles existants</CardTitle>
-                  <CardDescription>Liste de tous les articles de blog</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {articles.length === 0 ? (
-                      <p className="text-muted-foreground text-center py-8">Aucun article pour le moment</p>
-                    ) : (
-                      articles.map((article) => (
-                        <div key={article.id} className="flex items-center justify-between p-4 border rounded-lg">
-                          <div className="flex-1">
-                            <h3 className="font-semibold">{article.titre}</h3>
-                            <p className="text-sm text-muted-foreground">{article.auteur}</p>
-                            <p className="text-xs text-muted-foreground mt-1">
-                              {new Date(article.date_publication).toLocaleDateString("fr-FR")}
-                            </p>
+            <Card className="bg-gradient-to-br from-purple-500 to-purple-600 border-0 text-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-white/90">Commentaires</CardTitle>
+                <MessageSquare className="h-5 w-5 text-white/80" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold">{commentaires.length}</div>
+                <p className="text-xs text-white/80 mt-1 flex items-center gap-1">
+                  <Users className="h-3 w-3" />
+                  Interactions
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-orange-500 to-orange-600 border-0 text-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-white/90">Offres</CardTitle>
+                <Briefcase className="h-5 w-5 text-white/80" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold">{offres.length}</div>
+                <p className="text-xs text-white/80 mt-1 flex items-center gap-1">
+                  <Eye className="h-3 w-3" />
+                  Postes disponibles
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-cyan-500 to-cyan-600 border-0 text-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-white/90">Total</CardTitle>
+                <BarChart3 className="h-5 w-5 text-white/80" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold">{articles.length + commentaires.length + offres.length}</div>
+                <p className="text-xs text-white/80 mt-1 flex items-center gap-1">
+                  <TrendingUp className="h-3 w-3" />
+                  Éléments gérés
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="shadow-lg">
+            <Tabs defaultValue="articles">
+              <TabsList className="grid w-full grid-cols-3 h-auto p-2">
+                <TabsTrigger value="articles" className="flex items-center gap-2 py-3">
+                  <FileText className="h-4 w-4" />
+                  <span className="hidden sm:inline">Articles</span>
+                </TabsTrigger>
+                <TabsTrigger value="commentaires" className="flex items-center gap-2 py-3">
+                  <MessageSquare className="h-4 w-4" />
+                  <span className="hidden sm:inline">Commentaires</span>
+                </TabsTrigger>
+                <TabsTrigger value="offres" className="flex items-center gap-2 py-3">
+                  <Briefcase className="h-4 w-4" />
+                  <span className="hidden sm:inline">Offres</span>
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="articles" className="p-6 space-y-6">
+                <Card className="border-l-4 border-l-green-500">
+                  <CardHeader>
+                    <CardTitle>Créer un article</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ArticleForm onSuccess={fetchData} />
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-green-500">
+                  <CardHeader>
+                    <CardTitle>Articles ({articles.length})</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {articles.map((article) => (
+                        <div key={article.id} className="flex justify-between items-start p-4 border rounded-lg hover:shadow-md transition-shadow">
+                          <div className="flex gap-3 flex-1">
+                            {article.image_couverture && (
+                              <img src={article.image_couverture} alt={article.titre} className="w-16 h-16 object-cover rounded" />
+                            )}
+                            <div>
+                              <h3 className="font-semibold">{article.titre}</h3>
+                              <p className="text-sm text-muted-foreground">{article.auteur}</p>
+                            </div>
                           </div>
-                          <Button
-                            variant="destructive"
-                            size="icon"
-                            onClick={() => handleDeleteArticle(article.id)}
-                          >
+                          <Button variant="destructive" size="sm" onClick={() => handleDeleteArticle(article.id)}>
                             <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
-                      ))
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-            <TabsContent value="commentaires" className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Gérer les commentaires</CardTitle>
-                  <CardDescription>Liste de tous les commentaires en attente de modération</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {commentaires.length === 0 ? (
-                      <p className="text-muted-foreground text-center py-8">Aucun commentaire pour le moment</p>
-                    ) : (
-                      commentaires.map((comment) => (
-                        <div key={comment.id} className="p-4 border rounded-lg space-y-3">
-                          <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-1">
-                                <h3 className="font-semibold">{comment.nom}</h3>
-                                <span className="text-xs text-muted-foreground">({comment.email})</span>
-                              </div>
-                              <p className="text-sm text-muted-foreground mb-2">
-                                Article: {comment.blog_articles?.titre}
-                              </p>
-                              <p className="text-sm">{comment.message}</p>
-                              <p className="text-xs text-muted-foreground mt-2">
-                                {new Date(comment.date_commentaire).toLocaleDateString("fr-FR")}
-                              </p>
+              <TabsContent value="commentaires" className="p-6">
+                <Card className="border-l-4 border-l-purple-500">
+                  <CardHeader>
+                    <CardTitle>Commentaires ({commentaires.length})</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {commentaires.map((comment: any) => (
+                        <div key={comment.id} className="p-4 border rounded-lg space-y-2">
+                          <div className="flex justify-between">
+                            <div>
+                              <p className="font-semibold">{comment.nom}</p>
+                              <p className="text-sm text-muted-foreground">{comment.message}</p>
                             </div>
-                            <Button
-                              variant="destructive"
-                              size="icon"
-                              onClick={() => handleDeleteComment(comment.id)}
-                            >
+                            <Button variant="destructive" size="sm" onClick={() => handleDeleteComment(comment.id)}>
                               <Trash2 className="h-4 w-4" />
                             </Button>
                           </div>
-                          {!comment.reponse_admin ? (
-                            <div className="space-y-2 bg-muted/50 p-3 rounded">
-                              <Textarea
-                                placeholder="Votre réponse..."
-                                id={`reply-${comment.id}`}
-                                className="bg-background"
-                              />
-                              <Button
-                                onClick={() => {
-                                  const textarea = document.getElementById(`reply-${comment.id}`) as HTMLTextAreaElement;
-                                  if (textarea.value.trim()) {
-                                    handleReplyComment(comment.id, textarea.value);
-                                  } else {
-                                    toast.error("Veuillez écrire une réponse");
-                                  }
-                                }}
-                              >
-                                Répondre
-                              </Button>
-                            </div>
-                          ) : (
-                            <div className="bg-primary/10 p-3 rounded border border-primary/20">
-                              <p className="text-sm font-medium mb-1">Votre réponse:</p>
-                              <p className="text-sm">{comment.reponse_admin}</p>
+                          {!comment.reponse_admin && (
+                            <div className="flex gap-2">
+                              <Textarea placeholder="Réponse..." id={`reply-${comment.id}`} />
+                              <Button onClick={() => {
+                                const textarea = document.getElementById(`reply-${comment.id}`) as HTMLTextAreaElement;
+                                handleReplyComment(comment.id, textarea.value);
+                              }}>Répondre</Button>
                             </div>
                           )}
                         </div>
-                      ))
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-            <TabsContent value="offres" className="space-y-4">
-              <JobForm onSuccess={fetchData} />
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle>Offres d'emploi existantes</CardTitle>
-                  <CardDescription>Liste de toutes les offres publiées</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {offres.length === 0 ? (
-                      <p className="text-muted-foreground text-center py-8">Aucune offre pour le moment</p>
-                    ) : (
-                      offres.map((offre) => (
-                        <div key={offre.id} className="flex items-center justify-between p-4 border rounded-lg">
-                          <div className="flex-1">
+              <TabsContent value="offres" className="p-6 space-y-6">
+                <Card className="border-l-4 border-l-orange-500">
+                  <CardHeader>
+                    <CardTitle>Créer une offre</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <JobForm onSuccess={fetchData} />
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-orange-500">
+                  <CardHeader>
+                    <CardTitle>Offres ({offres.length})</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      {offres.map((offre) => (
+                        <div key={offre.id} className="flex justify-between p-4 border rounded-lg">
+                          <div>
                             <h3 className="font-semibold">{offre.titre_poste}</h3>
-                            <p className="text-sm text-muted-foreground">{offre.type_contrat} - {offre.localisation}</p>
-                            <p className="text-xs text-muted-foreground mt-1">
-                              Publié le {new Date(offre.date_publication).toLocaleDateString("fr-FR")}
-                            </p>
+                            <p className="text-sm text-muted-foreground">{offre.localisation}</p>
                           </div>
-                          <Button
-                            variant="destructive"
-                            size="icon"
-                            onClick={() => handleDeleteOffre(offre.id)}
-                          >
+                          <Button variant="destructive" size="sm" onClick={() => handleDeleteOffre(offre.id)}>
                             <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
-                      ))
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
+          </Card>
         </div>
       </main>
       <Footer />
