@@ -60,12 +60,6 @@ const Header = () => {
             <a href="https://mail.hostinger.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-secondary transition-colors" aria-label="Email">
               <Mail className="h-5 w-5" />
             </a>
-            <a href="https://youtube.com/@fondationalphaperla" target="_blank" rel="noopener noreferrer" className="text-destructive hover:text-destructive/80 transition-colors" aria-label="YouTube">
-              <Youtube className="h-5 w-5" />
-            </a>
-            <Button asChild variant="default" size="sm">
-              <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer">Nous Contacter</a>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
