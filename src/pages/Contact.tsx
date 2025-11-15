@@ -71,13 +71,13 @@ const Contact = () => {
                     Cliquez sur le bouton ci-dessous pour nous envoyer un email. Nous vous répondrons dans les plus brefs délais.
                   </p>
                   <Button asChild size="lg" className="text-lg px-8 py-6">
-                    <a href="mailto:foundationalphaperla@gmail.com">
+                    <a href="mailto:contact@fondationalphaperla.com">
                       <Mail className="mr-2 h-5 w-5" />
                       Envoyer un Email
                     </a>
                   </Button>
                   <p className="text-sm text-muted-foreground mt-4">
-                    foundationalphaperla@gmail.com
+                    contact@fondationalphaperla.com
                   </p>
                 </CardContent>
               </Card>
@@ -137,10 +137,10 @@ const Contact = () => {
                     Email
                   </h3>
                   <a
-                    href="mailto:fondationalphaperla@gmail.com"
+                    href="mailto:contact@fondationalphaperla.com"
                     className="text-muted-foreground hover:text-secondary transition-colors"
                   >
-                    fondationalphaperla@gmail.com
+                    contact@fondationalphaperla.com
                   </a>
                 </CardContent>
               </Card>
