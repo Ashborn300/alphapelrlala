@@ -5,6 +5,23 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ShoppingCart, Quote, Heart } from "lucide-react";
 import bookImage from "@/assets/book.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import author1 from "@/assets/author-1.jpg";
+import author2 from "@/assets/author-2.jpg";
+import author3 from "@/assets/author-3.jpg";
+import author4 from "@/assets/author-4.jpg";
+import author5 from "@/assets/author-5.jpg";
+import author6 from "@/assets/author-6.jpg";
+import author7 from "@/assets/author-7.jpg";
+import author8 from "@/assets/author-8.jpg";
+import author9 from "@/assets/author-9.jpg";
+import author10 from "@/assets/author-10.jpg";
 
 const Writing = () => {
   const [quantity, setQuantity] = useState(1);
@@ -151,7 +168,29 @@ const Writing = () => {
 
                 {/* Author Section */}
                 <Card className="p-6">
-                  <h3 className="text-2xl font-bold text-primary mb-4">À propos de l'auteure</h3>
+                  <h3 className="text-2xl font-bold text-primary mb-6">À propos de l'auteure</h3>
+                  
+                  {/* Author Carousel */}
+                  <div className="mb-6">
+                    <Carousel className="w-full max-w-lg mx-auto">
+                      <CarouselContent>
+                        {[author1, author2, author3, author4, author5, author6, author7, author8, author9, author10].map((image, index) => (
+                          <CarouselItem key={index}>
+                            <div className="overflow-hidden rounded-xl">
+                              <img 
+                                src={image} 
+                                alt={`Alpha Perla Mboyo - Photo ${index + 1}`}
+                                className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
+                  </div>
+
                   <p className="text-muted-foreground leading-relaxed">
                     <span className="font-semibold text-primary">Alpha Perla Mboyo</span> est une femme engagée, présidente fondatrice de la Fondation Alpha Perla. Passionnée de littérature, elle utilise sa plume pour défendre les droits humains et sensibiliser aux injustices sociales. Son œuvre reflète son engagement profond pour l'excellence, l'éducation et l'action humanitaire.
                   </p>
