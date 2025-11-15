@@ -172,11 +172,17 @@ const Writing = () => {
                 Aidez-nous à faire entendre ces voix et à sensibiliser le monde aux réalités vécues par les femmes de l'est du Congo.
               </p>
               <Button 
-                onClick={handleOrder}
+                asChild
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                Commander maintenant
+                <a 
+                  href="https://wa.me/243977074034?text=Bonjour,%20je%20souhaite%20commander%20le%20livre%20%22Les%20larmes%20d'une%20femme%20meurtrie%20s%C3%A8cheront-elles%22%20de%20Alpha%20Perla%20Mboyo."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Commander maintenant
+                </a>
               </Button>
             </div>
           </div>
