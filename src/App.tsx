@@ -16,6 +16,7 @@ import Jobs from "./pages/Jobs";
 import Job from "./pages/Job";
 import Admin from "./pages/Admin";
 import Writing from "./pages/Writing";
+import IncroyableTalent from "./pages/IncroyableTalent";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/jobs/:id" element={<Job />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/writing" element={<Writing />} />
+          <Route path="/incroyable-talent" element={<IncroyableTalent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
