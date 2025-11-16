@@ -76,9 +76,10 @@ const Contact = () => {
                       Envoyer un Email
                     </a>
                   </Button>
-                  <p className="text-sm text-muted-foreground mt-4">
-                    contact@fondationalphaperla.com
-                  </p>
+                  <div className="text-sm text-muted-foreground mt-4 space-y-1">
+                    <p>contact@fondationalphaperla.com</p>
+                    <p>fondationalphaperla@gmail.com</p>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -136,12 +137,20 @@ const Contact = () => {
                     <Mail className="h-5 w-5 mr-2 text-secondary" />
                     Email
                   </h3>
-                  <a
-                    href="mailto:contact@fondationalphaperla.com"
-                    className="text-muted-foreground hover:text-secondary transition-colors"
-                  >
-                    contact@fondationalphaperla.com
-                  </a>
+                  <div className="space-y-2">
+                    <a
+                      href="mailto:contact@fondationalphaperla.com"
+                      className="block text-muted-foreground hover:text-secondary transition-colors"
+                    >
+                      contact@fondationalphaperla.com
+                    </a>
+                    <a
+                      href="mailto:fondationalphaperla@gmail.com"
+                      className="block text-muted-foreground hover:text-secondary transition-colors"
+                    >
+                      fondationalphaperla@gmail.com
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
