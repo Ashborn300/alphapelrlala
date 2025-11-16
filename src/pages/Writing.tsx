@@ -20,6 +20,7 @@ import author10 from "@/assets/author-10.jpg";
 import poem1Image from "@/assets/poem-1.jpg";
 import poem2Image from "@/assets/poem-2.jpg";
 import poem4Image from "@/assets/poem-4.jpg";
+import poemTunnelImage from "@/assets/poem-tunnel.jpg";
 const Writing = () => {
   const [quantity, setQuantity] = useState(1);
   const handleOrder = () => {
@@ -480,6 +481,91 @@ const Writing = () => {
                       </p>
                       <p className="text-sm text-right mt-6">
                         — ALPHA PERLA
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Poem 5 - Le Prix de la Persévérance */}
+            <div className="max-w-6xl mx-auto mb-20">
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="overflow-hidden">
+                    <img 
+                      src={poemTunnelImage} 
+                      alt="Le Prix de la Persévérance - Tunnel vers la lumière" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary text-center">
+                      LE PRIX DE LA PERSÉVÉRANCE
+                    </h3>
+                    <div className="font-garamond text-base md:text-lg leading-relaxed text-muted-foreground space-y-4 max-h-[500px] overflow-y-auto">
+                      <p className="font-semibold text-center">
+                        Avance et regarde l'avenir devant toi,<br />
+                        Il est radieux,<br />
+                        Croit en toi,<br />
+                        Tu dois y arriver,
+                      </p>
+                      <p>
+                        Je réfléchis mais j'ai pas la force d'agir,<br />
+                        j'avance avec mes peines,<br />
+                        je souris à la vie avec gratitude en me posant trop des questions de fois sans réponses mais,<br />
+                        je dois m'accrocher,<br />
+                        elle me récompense avec des surprises inattendues et soudain tout change,<br />
+                        le ténèbre se transforme en lumière petit àpetit,<br />
+                        je vois enfin le bout du tunnel,<br />
+                        tout est claire et une vue à couper le souffle de loin,
+                      </p>
+                      <p className="font-semibold text-center">
+                        Avance et regarde l'avenir devant toi,<br />
+                        Il est radieux,<br />
+                        crois en toi,<br />
+                        Tu dois y arriver,
+                      </p>
+                      <p>
+                        Mais comment goûter a cette vie,<br />
+                        certes le bout du tunnel est là mais il ya juste là devant un grand faussé avant la sortie,<br />
+                        il faut du courage,de la confiance en soi et de la créativité en puissent cela dans son moi intérieure,sa beauté intérieure et de la détermination pour réussir à passer outre et c'est là où tout le monde lâche tout et accepte de vivre sur le bout du tunnel et savourer sa réussite ou sa liberté,...de loin après avoir lutter durement,donnant tout pour y arriver,
+                      </p>
+                      <p className="font-semibold text-center">
+                        Avance et regarde l'avenir devant toi,<br />
+                        Il est radieux,<br />
+                        croit en toi,<br />
+                        Tu vas y arriver,
+                      </p>
+                      <p>
+                        Personne ne porte avec toi ton fardeau pour savoir exactement ce que tu vis ou endure,<br />
+                        Personne ne sait avec exactitude ce que tu traverse ni voit ton coeur comment il est en mille morceaux,<br />
+                        la seule personne qui te comprend très bien et sait tout de toi et comment l'expliquer et te sortir de là,<br />
+                        c'est toi même et Dieu,<br />
+                        croit en toi et en lui,<br />
+                        tu vas y arriver car tout ses grands et célèbres personnages qui ont marqués leurs passages ici bas ont braves la peur,se sont surpassés,ont crus en eux plus et avaient confiance en eux enfin de donner les meilleurs d'eux même en travaillant durement sans relâche jusqu'à réussir.
+                      </p>
+                      <p className="font-semibold text-center">
+                        Avance et regarde l'avenir devant toi,<br />
+                        Il est radieux,<br />
+                        croit en toi,<br />
+                        Tu vas y arriver,
+                      </p>
+                      <p>
+                        Ne lâche pas,Tu y'es presque,<br />
+                        utilise toutes les armes possibles à ta possession pour réussir,<br />
+                        accroche-toi de toutes tes forces à ta vision, tes ambitions,surtout plus à toi même et en Dieu les deux seules personnes qui croient en toi,écoute ton moi intérieure,c'est lui ton ami et ton allié pour la vie,tu vas y arriver, tu y arrivera, peut importe le temps que ça prendra ne lâche jamais,<br />
+                        tu entrera dans ta destiné,<br />
+                        la tunnel restera derrière toi et tu la regardera enfin de derrière et tu serviras d'exemple pour plusieurs.
+                      </p>
+                      <p className="font-semibold text-center">
+                        Avance et regarde l'avenir devant toi,<br />
+                        Il est radieux,<br />
+                        croit en toi,<br />
+                        Tu vas y arriver,
+                      </p>
+                      <p className="text-sm text-right mt-6">
+                        — Alpha Perla
                       </p>
                     </div>
                   </div>
