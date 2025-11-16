@@ -32,9 +32,10 @@ const IncroyableTalent = () => {
           <p className="text-2xl font-medium">
             "Crée. Brille. Inspire."
           </p>
-          <div className="mt-8 text-sm">
+          <div className="mt-8 text-sm space-y-1">
             <p>Contacts: +243 977 074 034</p>
             <p>contact@fondationalphaperla.com</p>
+            <p>fondationalphaperla@gmail.com</p>
           </div>
         </div>
       </section>
