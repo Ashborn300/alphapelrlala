@@ -21,6 +21,7 @@ import poem1Image from "@/assets/poem-1.jpg";
 import poem2Image from "@/assets/poem-2.jpg";
 import poem4Image from "@/assets/poem-4.jpg";
 import poemTunnelImage from "@/assets/poem-tunnel.jpg";
+import poemLoveChoiceImage from "@/assets/poem-love-choice.jpg";
 const Writing = () => {
   const [quantity, setQuantity] = useState(1);
   const handleOrder = () => {
@@ -563,6 +564,69 @@ const Writing = () => {
                         Il est radieux,<br />
                         croit en toi,<br />
                         Tu vas y arriver,
+                      </p>
+                      <p className="text-sm text-right mt-6">
+                        — Alpha Perla
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Poem 6 - Choisi l'Amour */}
+            <div className="max-w-6xl mx-auto mb-20">
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="overflow-hidden">
+                    <img 
+                      src={poemLoveChoiceImage} 
+                      alt="Choisi l'Amour" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary text-center">
+                      CHOISI L'AMOUR
+                    </h3>
+                    <div className="font-garamond text-base md:text-lg leading-relaxed text-muted-foreground space-y-4 max-h-[500px] overflow-y-auto">
+                      <p className="font-semibold text-center">
+                        La haine et l'amour,<br />
+                        Oooooo!!!! choisi l' amour!!!
+                      </p>
+                      <p>
+                        On vit dans une époque où tout sable vrai, mais tout est encore plus fausse que vrai en réalité, le sourire faux, la joie fausse, les excuses fausses, les compassions fausses, nos sohaits faux, le pardon faux,...<br />
+                        On ne sait pas découvrir d'emblée qui nous aime et qui nous hait car la vérité et le mensonge devient difficile à découvrir, la bouche te ment mais le visage te fait croire que ce que dit la bouche est vrai, on te fait un câlin avec sourire et on te poignarde dans le dos avec le même sourire, on te donne un verre, tu tourne le regard à gauche, on verse du poison dans le même verre avec sourire toujours, mais qui nous aime et qui nous hait?<br />
+                        Une mère déteste sa fille au point de jeter son venin sur elle sous prétexte qu'elle le fait par amour, un père détruit son fils comme quoi lui aussi son père lui faisait pareil, mais où allons-nous?<br />
+                        On se déteste et se hait sans cause...
+                      </p>
+                      <p className="font-semibold text-center">
+                        La haine et l'amour,<br />
+                        Oooooo!!!! choisi l'amour!!!
+                      </p>
+                      <p>
+                        On te montre l'amour et ses actes, tu es emballé, éblouis et tu te laisses emporter, enveloppé d'attention, tu etale tout, ouvre ton coeur, tu te deballe comme un cadeau à cœur ouvert sans rien laisser et perdu dans ton rêve tout en ignorant que c'est une ruse pour bien se jouer de toi car en réalité c'est de la haine déguisée pour bien t'avoir, te dompter, succer ta joie de vivre... comme un sangsue, tu as mordu à l hameçon en toute facilité,<br />
+                        On ne sait plus en réalité qui nous aime et qui nous hait car il cache tellement son jeu et bon nombre y tombe par manque de discernement ooooh misère !!!!
+                      </p>
+                      <p className="font-semibold text-center">
+                        L'amour et la haine,<br />
+                        Oooooo!!!!choisi l'amour!!!
+                      </p>
+                      <p>
+                        Le monde d'aujourd'hui et à son cycle transversal, l'homme est devenu très ambitieux, une ambition démesurée, manipulateur, aigrie,...sacrifient même l'avenir des autres pour nourrir sa haine, elle rend son cœur dure comme une pierre à telle point que la douleur et les atrocités qu'il inflige a son prochain l'excite et l'enfonce dans ses delires égoïstes et prêt à tout pour obtenir ce qu'il veut, la gloire, la visibilité, le succès,...<br />
+                        Mettant de côté des valeurs fondamentaux et biblique telle que le plus grand commandement de Dieu: "l'AMOUR", mais comment aussi aimer si on a jamais reçu cet amour?
+                      </p>
+                      <p className="font-semibold text-center">
+                        L'amour et la haine<br />
+                        Oooooo!!!! chosi t' amour!!!
+                      </p>
+                      <p>
+                        C'est pas non plus une excuse pour s'enfoncer dans la haine, Tout s'apprend en commençant par t'aimer toi même, car l'amour prime sur la haine et le choix est claire entre les deux, la haine ne t'apportera que destruction hors l'amour t'enrichira des bonheurs et joie de vivre, paix intérieure, confiance en soi, succè pur, l'amour inconditionnel, Aimer ou faire une action sans attendre quoi que ce soit de l'autre apporte joie immense, la haine te détruira à petit feu mais l'amour t'elèvera et te fera triompher, l'amour nous donne la paix du cœur même si on est fauché mais la haine nous ruinera à coup sûr, elle est comme du poison, l'amour t'apporte épanouissement et te fais voir la beauté de la vie que tu sois riche ou pauvre mais la haine t'apporte un sentiment d'insatisfaction totale même si tu as tout,<br />
+                        Choisi l'amour et vit le bonheur mais n'oublie surtout pas de garder la clé du bonheur avec toi.
+                      </p>
+                      <p className="font-semibold text-center">
+                        L'amour et la haine<br />
+                        Oooooo!!!! choisi l' amour!!!!
                       </p>
                       <p className="text-sm text-right mt-6">
                         — Alpha Perla
