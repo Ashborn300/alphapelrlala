@@ -139,11 +139,11 @@ const HeritageManagement = () => {
               {gallery.map((item, index) => (
                 <FadeInOnScroll key={index} delay={index * 100}>
                   <Card className="overflow-hidden hover:shadow-elegant transition-all duration-300">
-                    <div className="aspect-[16/10] overflow-hidden">
+                    <div className="aspect-[16/10] overflow-hidden bg-muted/30">
                       <img 
                         src={item.image} 
                         alt={item.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <CardContent className="p-6">
