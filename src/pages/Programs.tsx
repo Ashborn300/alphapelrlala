@@ -155,6 +155,15 @@ const Programs = () => {
                       </li>
                     ))}
                   </ul>
+                  {program.category === "Éducation et Formation" && (
+                    <div className="mt-6">
+                      <Button asChild variant="default" size="sm">
+                        <a href="/education">
+                          Découvrir
+                        </a>
+                      </Button>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}

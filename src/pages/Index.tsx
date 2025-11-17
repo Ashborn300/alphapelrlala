@@ -330,7 +330,15 @@ const Index = () => {
                     <h3 className="text-xl font-bold mb-3 text-primary">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <p className="text-muted-foreground mb-4">{service.description}</p>
+                    {service.title === "Éducation & Formation" && (
+                      <Button asChild variant="outline" size="sm" className="mt-2">
+                        <Link to="/education">
+                          Découvrir
+                          <ChevronRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               </FadeInOnScroll>
