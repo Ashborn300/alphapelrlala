@@ -58,6 +58,7 @@ const Programs = () => {
         "Projets liés à la santé communautaire",
         "Initiatives pour l'environnement",
       ],
+      link: "/social-action"
     },
     {
       icon: Award,
@@ -177,6 +178,15 @@ const Programs = () => {
                     <div className="mt-6">
                       <Button asChild variant="default" size="sm">
                         <a href="/personal-development">
+                          Découvrir
+                        </a>
+                      </Button>
+                    </div>
+                  )}
+                  {program.category === "Action Sociale et Humanitaire" && (
+                    <div className="mt-6">
+                      <Button asChild variant="default" size="sm">
+                        <a href="/social-action">
                           Découvrir
                         </a>
                       </Button>
