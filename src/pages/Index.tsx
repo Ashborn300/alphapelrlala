@@ -347,6 +347,14 @@ const Index = () => {
                         </Link>
                       </Button>
                     )}
+                    {service.title === "Développement Personnel" && (
+                      <Button asChild variant="outline" size="sm" className="mt-2">
+                        <Link to="/personal-development">
+                          Découvrir
+                          <ChevronRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               </FadeInOnScroll>
