@@ -540,9 +540,17 @@ const Index = () => {
             <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
               <img src={social3} alt="Soutien aux communautés - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
-            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+          <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
               <img src={social4} alt="Action sociale - Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild variant="default" size="lg">
+              <a href="/social-action">
+                Découvrir nos Actions Sociales
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>

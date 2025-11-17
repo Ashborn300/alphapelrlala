@@ -9,6 +9,7 @@ import Programs from "./pages/Programs";
 import Education from "./pages/Education";
 import Entrepreneurship from "./pages/Entrepreneurship";
 import PersonalDevelopment from "./pages/PersonalDevelopment";
+import SocialAction from "./pages/SocialAction";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/education" element={<Education />} />
           <Route path="/entrepreneurship" element={<Entrepreneurship />} />
           <Route path="/personal-development" element={<PersonalDevelopment />} />
+          <Route path="/social-action" element={<SocialAction />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/auth" element={<Auth />} />
