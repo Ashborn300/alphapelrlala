@@ -3,6 +3,11 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import educationEventImage from "@/assets/education-event.jpg";
+import entrepreneurshipAwardsImg from "@/assets/entrepreneurship-awards.jpg";
+import personalDevConferenceImg from "@/assets/personal-development-conference.jpg";
+import socialActionCommunityImg from "@/assets/social-action-community.jpg";
+import culturalEventsCeremonyImg from "@/assets/cultural-events-ceremony.jpg";
+import heritageManagementMeetingImg from "@/assets/heritage-management-meeting.jpg";
 import {
   GraduationCap,
   TrendingUp,
@@ -176,30 +181,75 @@ const Programs = () => {
                     </>
                   )}
                   {program.category === "Entrepreneuriat et Leadership Féminin" && (
-                    <div className="mt-6">
-                      <Button asChild variant="default" size="sm">
-                        <a href="/entrepreneurship">
-                          Découvrir
-                        </a>
-                      </Button>
-                    </div>
+                    <>
+                      <div className="mt-6 overflow-hidden rounded-lg">
+                        <img 
+                          src={entrepreneurshipAwardsImg} 
+                          alt="Cérémonie Entrepreneuriat Féminin" 
+                          className="w-full h-auto object-contain bg-muted/30"
+                        />
+                      </div>
+                      <div className="mt-6">
+                        <Button asChild variant="default" size="sm">
+                          <a href="/entrepreneurship">
+                            Découvrir
+                          </a>
+                        </Button>
+                      </div>
+                    </>
                   )}
                   {program.category === "Développement Personnel" && (
-                    <div className="mt-6">
-                      <Button asChild variant="default" size="sm">
-                        <a href="/personal-development">
-                          Découvrir
-                        </a>
-                      </Button>
-                    </div>
+                    <>
+                      <div className="mt-6 overflow-hidden rounded-lg">
+                        <img 
+                          src={personalDevConferenceImg} 
+                          alt="Conférence Développement Personnel" 
+                          className="w-full h-auto object-contain bg-muted/30"
+                        />
+                      </div>
+                      <div className="mt-6">
+                        <Button asChild variant="default" size="sm">
+                          <a href="/personal-development">
+                            Découvrir
+                          </a>
+                        </Button>
+                      </div>
+                    </>
                   )}
                   {program.category === "Action Sociale et Humanitaire" && (
-                    <div className="mt-6">
-                      <Button asChild variant="default" size="sm">
-                        <a href="/social-action">
-                          Découvrir
-                        </a>
-                      </Button>
+                    <>
+                      <div className="mt-6 overflow-hidden rounded-lg">
+                        <img 
+                          src={socialActionCommunityImg} 
+                          alt="Action Sociale et Humanitaire" 
+                          className="w-full h-auto object-contain bg-muted/30"
+                        />
+                      </div>
+                      <div className="mt-6">
+                        <Button asChild variant="default" size="sm">
+                          <a href="/social-action">
+                            Découvrir
+                          </a>
+                        </Button>
+                      </div>
+                    </>
+                  )}
+                  {program.category === "Événements Culturels" && (
+                    <div className="mt-6 overflow-hidden rounded-lg">
+                      <img 
+                        src={culturalEventsCeremonyImg} 
+                        alt="Cérémonie Événements Culturels" 
+                        className="w-full h-auto object-contain bg-muted/30"
+                      />
+                    </div>
+                  )}
+                  {program.category === "Gestion de Patrimoine et Projets" && (
+                    <div className="mt-6 overflow-hidden rounded-lg">
+                      <img 
+                        src={heritageManagementMeetingImg} 
+                        alt="Réunion Gestion de Patrimoine" 
+                        className="w-full h-auto object-contain bg-muted/30"
+                      />
                     </div>
                   )}
                 </CardContent>
