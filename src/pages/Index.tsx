@@ -40,6 +40,12 @@ import personalDevConferenceImg from "@/assets/personal-development-conference.j
 import socialActionCommunityImg from "@/assets/social-action-community.jpg";
 import culturalEventsCeremonyImg from "@/assets/cultural-events-ceremony.jpg";
 import heritageManagementMeetingImg from "@/assets/heritage-management-meeting.jpg";
+import magazineCover1 from "@/assets/magazine-cover-1.jpg";
+import magazineSpread1 from "@/assets/magazine-spread-1.jpg";
+import magazineSpread2 from "@/assets/magazine-spread-2.jpg";
+import magazineSpread3 from "@/assets/magazine-spread-3.jpg";
+import magazineSpread4 from "@/assets/magazine-spread-4.jpg";
+import magazineSpread5 from "@/assets/magazine-spread-5.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -819,6 +825,100 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Press & Media Coverage Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Fondation Alpha Perla à la une des journaux
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Notre impact reconnu dans les médias nationaux et internationaux
+            </p>
+          </FadeInOnScroll>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <FadeInOnScroll delay={0}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={magazineCover1} 
+                    alt="Magazine Un Plus - Couverture Alpha Perla" 
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={100}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={magazineSpread1} 
+                    alt="Magazine Un Plus - Article Fondation Alpha Perla" 
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={200}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={magazineSpread2} 
+                    alt="Magazine Un Plus - Interview" 
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={300}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={magazineSpread3} 
+                    alt="Magazine Un Plus - Publications" 
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={400}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={magazineSpread4} 
+                    alt="Magazine Un Plus - Reportage" 
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={500}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={magazineSpread5} 
+                    alt="Magazine Un Plus - Article détaillé" 
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </FadeInOnScroll>
           </div>
         </div>
       </section>
