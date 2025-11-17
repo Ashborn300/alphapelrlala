@@ -14,6 +14,13 @@ import entrepreneur7 from "@/assets/entrepreneur-7.jpg";
 import entrepreneur8 from "@/assets/entrepreneur-8.jpg";
 import entrepreneur9 from "@/assets/entrepreneur-9.jpg";
 import entrepreneur10 from "@/assets/entrepreneur-10.jpg";
+import entrepreneurSpeaker1 from "@/assets/entrepreneur-speaker-1.jpg";
+import entrepreneurPanel1 from "@/assets/entrepreneur-panel-1.jpg";
+import entrepreneurLeader from "@/assets/entrepreneur-leader.jpg";
+import entrepreneurPanel2 from "@/assets/entrepreneur-panel-2.jpg";
+import entrepreneurParticipants from "@/assets/entrepreneur-participants.jpg";
+import entrepreneurConference1 from "@/assets/entrepreneur-conference-1.jpg";
+import entrepreneurAudience from "@/assets/entrepreneur-audience.jpg";
 
 const Entrepreneurship = () => {
   const images = [
@@ -196,6 +203,127 @@ const Entrepreneurship = () => {
                 <div className="text-5xl font-bold text-secondary mb-2">85%</div>
                 <div className="text-muted-foreground">Taux de Réussite</div>
               </Card>
+            </FadeInOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Conference & Events Gallery */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Conférences et Événements
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Découvrez nos conférences, panels et événements dédiés à l'entrepreneuriat féminin et au leadership
+            </p>
+          </FadeInOnScroll>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <FadeInOnScroll delay={0}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurSpeaker1} 
+                    alt="Conférence Leadership Féminin - Dynamique des Femmes" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Conférence Dynamique des Femmes</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={100}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurPanel1} 
+                    alt="Panel discussion entrepreneuriat" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Panel discussion</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={200}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurLeader} 
+                    alt="Leadership et autonomisation" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Leadership et empowerment</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={300}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurPanel2} 
+                    alt="Table ronde femmes entrepreneures" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Table ronde</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={400}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurParticipants} 
+                    alt="Participantes conférence" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Participantes engagées</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={500}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurConference1} 
+                    alt="Intervention conférence entrepreneuriat" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Interventions inspirantes</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={600}>
+              <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={entrepreneurAudience} 
+                    alt="Audience entrepreneures" 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-semibold">Audience active</p>
+                  </div>
+                </div>
+              </div>
             </FadeInOnScroll>
           </div>
         </div>
