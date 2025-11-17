@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import educationEventImage from "@/assets/education-event.jpg";
 import {
   GraduationCap,
   TrendingUp,
@@ -157,13 +158,22 @@ const Programs = () => {
                     ))}
                   </ul>
                   {program.category === "Éducation et Formation" && (
-                    <div className="mt-6">
-                      <Button asChild variant="default" size="sm">
-                        <a href="/education">
-                          Découvrir
-                        </a>
-                      </Button>
-                    </div>
+                    <>
+                      <div className="mt-6 overflow-hidden rounded-lg">
+                        <img 
+                          src={educationEventImage} 
+                          alt="Événement Éducation et Formation" 
+                          className="w-full h-auto object-contain bg-muted/30"
+                        />
+                      </div>
+                      <div className="mt-6">
+                        <Button asChild variant="default" size="sm">
+                          <a href="/education">
+                            Découvrir
+                          </a>
+                        </Button>
+                      </div>
+                    </>
                   )}
                   {program.category === "Entrepreneuriat et Leadership Féminin" && (
                     <div className="mt-6">

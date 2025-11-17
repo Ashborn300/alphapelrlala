@@ -21,6 +21,7 @@ import social4 from "@/assets/social4.jpg";
 import valorisationEspaces from "@/assets/valorisation-espaces.jpg";
 import bookImage from "@/assets/book.jpg";
 import masterFormationImage from "@/assets/master-formation.jpg";
+import educationEventImage from "@/assets/education-event.jpg";
 import laureats1 from "@/assets/laureats1.jpg";
 import laureats2 from "@/assets/laureats2.jpg";
 import laureats3 from "@/assets/laureats3.jpg";
@@ -608,9 +609,9 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
               <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
                 <img 
-                  src={masterFormationImage} 
-                  alt="Master et Formations - Fondation Alpha Perla" 
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" 
+                  src={educationEventImage} 
+                  alt="Événement Éducation et Formation - Fondation Alpha Perla" 
+                  className="w-full h-auto object-contain bg-muted/30 hover:scale-105 transition-transform duration-300" 
                 />
               </div>
               <div className="space-y-6">
