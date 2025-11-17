@@ -34,6 +34,7 @@ import gallery5 from "@/assets/gallery5.jpg";
 import gallery6 from "@/assets/gallery6.jpg";
 import excellentiaImage from "@/assets/excellentia-2025.jpg";
 import incroyableTalentImg from "@/assets/incroyable-talent.jpg";
+import educationConferenceImg from "@/assets/education-conference.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -327,6 +328,15 @@ const Index = () => {
               <FadeInOnScroll key={index} delay={index * 100}>
                 <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 h-full">
                   <CardContent className="pt-6">
+                    {service.title === "Éducation & Formation" && (
+                      <div className="mb-4 overflow-hidden rounded-lg">
+                        <img 
+                          src={educationConferenceImg} 
+                          alt="Conférence Éducation - Fondation Alpha Perla" 
+                          className="w-full h-48 object-cover"
+                        />
+                      </div>
+                    )}
                     <service.icon className="h-12 w-12 mb-4 text-secondary group-hover:scale-110 transition-transform duration-300" />
                     <h3 className="text-xl font-bold mb-3 text-primary">
                       {service.title}
