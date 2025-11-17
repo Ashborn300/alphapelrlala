@@ -13,6 +13,12 @@ import formation6 from "@/assets/formation-6.jpg";
 import formation7 from "@/assets/formation-7.jpg";
 import formation8 from "@/assets/formation-8.jpg";
 import masterFormationImage from "@/assets/master-formation.jpg";
+import educationMedia from "@/assets/education-media.jpg";
+import educationCommunity from "@/assets/education-community.jpg";
+import educationSpeech from "@/assets/education-speech.jpg";
+import educationTraining from "@/assets/education-training.jpg";
+import educationTeam from "@/assets/education-team.jpg";
+import educationWorkshop from "@/assets/education-workshop.jpg";
 
 const Education = () => {
   const formations = [
@@ -158,6 +164,100 @@ const Education = () => {
             <div>
               <div className="text-5xl font-bold text-secondary mb-2">20+</div>
               <div className="text-xl text-muted-foreground">Domaines de Formation</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Gallery Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Nos Actions sur le Terrain
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Découvrez en images nos formations, ateliers et initiatives éducatives qui transforment des vies
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={educationMedia} 
+                  alt="Intervention médiatique - Fondation Alpha Perla" 
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold">Couverture médiatique</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={educationCommunity} 
+                  alt="Formation communautaire - Fondation Alpha Perla" 
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold">Actions dans les communautés</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={educationSpeech} 
+                  alt="Discours Alpha Perla - Fondation Alpha Perla" 
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold">Conférences et allocutions</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={educationTraining} 
+                  alt="Session de sensibilisation - Fondation Alpha Perla" 
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold">Sensibilisation terrain</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={educationTeam} 
+                  alt="Équipe de formation - Fondation Alpha Perla" 
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold">Équipe et partenaires</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={educationWorkshop} 
+                  alt="Atelier de formation - Fondation Alpha Perla" 
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold">Ateliers pratiques</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
