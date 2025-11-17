@@ -35,6 +35,7 @@ import gallery6 from "@/assets/gallery6.jpg";
 import excellentiaImage from "@/assets/excellentia-2025.jpg";
 import incroyableTalentImg from "@/assets/incroyable-talent.jpg";
 import educationConferenceImg from "@/assets/education-conference.jpg";
+import entrepreneurshipAwardsImg from "@/assets/entrepreneurship-awards.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -333,6 +334,15 @@ const Index = () => {
                         <img 
                           src={educationConferenceImg} 
                           alt="Conférence Éducation - Fondation Alpha Perla" 
+                          className="w-full h-48 object-cover"
+                        />
+                      </div>
+                    )}
+                    {service.title === "Entrepreneuriat Féminin" && (
+                      <div className="mb-4 overflow-hidden rounded-lg">
+                        <img 
+                          src={entrepreneurshipAwardsImg} 
+                          alt="Cérémonie Entrepreneuriat Féminin - Fondation Alpha Perla" 
                           className="w-full h-48 object-cover"
                         />
                       </div>
