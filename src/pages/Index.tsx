@@ -39,6 +39,7 @@ import entrepreneurshipAwardsImg from "@/assets/entrepreneurship-awards.jpg";
 import personalDevConferenceImg from "@/assets/personal-development-conference.jpg";
 import socialActionCommunityImg from "@/assets/social-action-community.jpg";
 import culturalEventsCeremonyImg from "@/assets/cultural-events-ceremony.jpg";
+import heritageManagementMeetingImg from "@/assets/heritage-management-meeting.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -373,6 +374,15 @@ const Index = () => {
                         <img 
                           src={culturalEventsCeremonyImg} 
                           alt="Cérémonie Événements Culturels - Fondation Alpha Perla" 
+                          className="w-full h-48 object-cover"
+                        />
+                      </div>
+                    )}
+                    {service.title === "Gestion de Patrimoine" && (
+                      <div className="mb-4 overflow-hidden rounded-lg">
+                        <img 
+                          src={heritageManagementMeetingImg} 
+                          alt="Réunion Gestion de Patrimoine - Fondation Alpha Perla" 
                           className="w-full h-48 object-cover"
                         />
                       </div>
