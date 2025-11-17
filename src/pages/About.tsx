@@ -76,32 +76,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Interview Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-                Interview avec la Fondation Alpha Perla
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Découvrez notre vision et nos actions à travers cette interview
-              </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <video 
-                controls 
-                className="w-full"
-                preload="metadata"
-              >
-                <source src="/videos/interview-fondation.mp4" type="video/mp4" />
-                Votre navigateur ne supporte pas la lecture de vidéos.
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Vision Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
@@ -222,6 +196,32 @@ const About = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Interview Section */}
+      <section className="py-20 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+                Interview avec la Fondation Alpha Perla
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Découvrez notre vision et nos actions à travers cette interview
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <video 
+                controls 
+                className="w-full"
+                preload="metadata"
+              >
+                <source src="/videos/interview-fondation.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéos.
+              </video>
+            </div>
           </div>
         </div>
       </section>
