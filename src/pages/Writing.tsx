@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
@@ -23,11 +22,6 @@ import poem4Image from "@/assets/poem-4.jpg";
 import poemTunnelImage from "@/assets/poem-tunnel.jpg";
 import poemLoveChoiceImage from "@/assets/poem-love-choice.jpg";
 const Writing = () => {
-  const [quantity, setQuantity] = useState(1);
-  const handleOrder = () => {
-    const message = `Bonjour, je souhaite commander ${quantity} exemplaire(s) du livre "Les larmes d'une femme meurtrie sècheront-elles" de Alpha Perla Mboyo.`;
-    window.open(`https://wa.me/243977074034?text=${encodeURIComponent(message)}`, '_blank');
-  };
   return <div className="min-h-screen">
       <Header />
       
@@ -124,23 +118,15 @@ const Writing = () => {
                   <p className="text-muted-foreground mb-6">
                     Procurez-vous votre exemplaire et soutenez la voix de celles qui n'ont pas été entendues.
                   </p>
-                  <div className="flex items-center space-x-4 mb-6">
-                    <label className="text-muted-foreground font-medium">Quantité:</label>
-                    <div className="flex items-center space-x-2">
-                      <Button variant="outline" size="sm" onClick={() => setQuantity(Math.max(1, quantity - 1))} className="h-10 w-10">
-                        -
-                      </Button>
-                      <span className="text-2xl font-bold text-primary min-w-[3rem] text-center">
-                        {quantity}
-                      </span>
-                      <Button variant="outline" size="sm" onClick={() => setQuantity(quantity + 1)} className="h-10 w-10">
-                        +
-                      </Button>
-                    </div>
-                  </div>
-                  <Button onClick={handleOrder} size="lg" className="w-full bg-secondary hover:bg-secondary/90 text-white">
-                    <ShoppingCart className="mr-2 h-5 w-5" />
-                    Commander via WhatsApp
+                  <Button 
+                    asChild
+                    size="lg" 
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                  >
+                    <a href="https://pay.lygosapp.com/link/d942fc09-1f46-4b27-ad26-62834a86001b" target="_blank" rel="noopener noreferrer">
+                      <ShoppingCart className="mr-2 h-5 w-5" />
+                      Acheter
+                    </a>
                   </Button>
                 </Card>
 
