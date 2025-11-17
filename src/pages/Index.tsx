@@ -363,6 +363,22 @@ const Index = () => {
                         </Link>
                       </Button>
                     )}
+                    {service.title === "Événements Culturels" && (
+                      <Button asChild variant="outline" size="sm" className="mt-2">
+                        <Link to="/cultural-events">
+                          Découvrir
+                          <ChevronRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
+                    {service.title === "Gestion de Patrimoine" && (
+                      <Button asChild variant="outline" size="sm" className="mt-2">
+                        <Link to="/heritage-management">
+                          Découvrir
+                          <ChevronRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               </FadeInOnScroll>
