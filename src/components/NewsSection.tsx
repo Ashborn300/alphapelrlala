@@ -34,8 +34,6 @@ const NewsSection = () => {
     fetchArticles();
   }, []);
 
-  if (articles.length === 0) return null;
-
   return (
     <section className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
@@ -50,7 +48,17 @@ const NewsSection = () => {
           </div>
         </FadeInOnScroll>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        {articles.length === 0 ? (
+          <FadeInOnScroll>
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">
+                Pas d'actualité pour le moment
+              </p>
+            </div>
+          </FadeInOnScroll>
+        ) : (
+          <>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
           {articles.map((article) => (
             <FadeInOnScroll key={article.id}>
               <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -93,6 +101,8 @@ const NewsSection = () => {
             </Link>
           </div>
         </FadeInOnScroll>
+          </>
+        )}
       </div>
     </section>
   );
