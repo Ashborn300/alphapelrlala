@@ -14,14 +14,18 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user, signIn, signUp } = useAuth();
+  const { user, isAdmin, loading: authLoading, signIn, signUp } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
-      navigate("/");
+    if (user && !authLoading) {
+      if (isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     }
-  }, [user, navigate]);
+  }, [user, isAdmin, authLoading, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +36,6 @@ const Auth = () => {
         const { error } = await signIn(email, password);
         if (error) throw error;
         toast.success("Connexion réussie!");
-        navigate("/");
       } else {
         const { error } = await signUp(email, password);
         if (error) throw error;
