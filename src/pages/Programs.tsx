@@ -164,6 +164,15 @@ const Programs = () => {
                       </Button>
                     </div>
                   )}
+                  {program.category === "Entrepreneuriat et Leadership Féminin" && (
+                    <div className="mt-6">
+                      <Button asChild variant="default" size="sm">
+                        <a href="/entrepreneurship">
+                          Découvrir
+                        </a>
+                      </Button>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
