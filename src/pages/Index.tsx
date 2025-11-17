@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook } from "lucide-react";
+import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook, ShoppingCart } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import heroImage from "@/assets/hero-bg.jpg";
@@ -702,7 +702,7 @@ const Index = () => {
             <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
               <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
             </div>
-            <div className="text-center mt-8">
+            <div className="text-center mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 asChild
                 size="lg" 
@@ -710,6 +710,16 @@ const Index = () => {
               >
                 <a href="/writing">
                   En savoir plus
+                </a>
+              </Button>
+              <Button 
+                asChild
+                size="lg" 
+                variant="default"
+              >
+                <a href="https://pay.lygosapp.com/link/d942fc09-1f46-4b27-ad26-62834a86001b" target="_blank" rel="noopener noreferrer">
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  Acheter le livre
                 </a>
               </Button>
             </div>
