@@ -72,13 +72,21 @@ export const useAuth = () => {
 
   const signUp = async (email: string, password: string) => {
     const redirectUrl = `${window.location.origin}/`;
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         emailRedirectTo: redirectUrl
       }
     });
+    
+    // Assign initial admin role if this is the first user
+    if (data.user && !error) {
+      await supabase.rpc('ensure_initial_admin', {
+        _user_id: data.user.id
+      });
+    }
+    
     return { error };
   };
 
