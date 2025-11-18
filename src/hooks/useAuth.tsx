@@ -10,25 +10,36 @@ export const useAuth = () => {
 
   useEffect(() => {
     const checkAdminRole = async (userId: string) => {
-      const { data } = await supabase
-        .from('user_roles')
-        .select('role')
-        .eq('user_id', userId)
-        .eq('role', 'admin')
-        .maybeSingle();
-      
-      setIsAdmin(!!data);
-      setLoading(false);
+      try {
+        const { data, error } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', userId)
+          .eq('role', 'admin')
+          .maybeSingle();
+
+        if (error) {
+          console.error('Error checking admin role:', error);
+        }
+        setIsAdmin(!!data);
+      } catch (e) {
+        console.error('Role check failed:', e);
+        setIsAdmin(false);
+      } finally {
+        setLoading(false);
+      }
     };
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      (event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
         
         if (session?.user) {
           setLoading(true);
-          await checkAdminRole(session.user.id);
+          setTimeout(() => {
+            checkAdminRole(session.user!.id).catch(() => setIsAdmin(false));
+          }, 0);
         } else {
           setIsAdmin(false);
           setLoading(false);
@@ -41,6 +52,7 @@ export const useAuth = () => {
       setUser(session?.user ?? null);
       
       if (session?.user) {
+        setLoading(true);
         await checkAdminRole(session.user.id);
       } else {
         setLoading(false);
