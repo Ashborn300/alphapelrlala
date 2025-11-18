@@ -30,10 +30,17 @@ interface Commentaire {
   reponse_admin: string | null;
 }
 
+interface ArticleImage {
+  id: string;
+  image_url: string;
+  ordre: number | null;
+}
+
 const Article = () => {
   const { slug } = useParams();
   const [article, setArticle] = useState<Article | null>(null);
   const [commentaires, setCommentaires] = useState<Commentaire[]>([]);
+  const [images, setImages] = useState<ArticleImage[]>([]);
   const [loading, setLoading] = useState(true);
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
@@ -53,6 +60,7 @@ const Article = () => {
       } else if (articleData) {
         setArticle(articleData);
 
+        // Fetch comments
         const { data: commentsData, error: commentsError } = await supabase
           .from("commentaires")
           .select("*")
@@ -63,6 +71,19 @@ const Article = () => {
           console.error("Error fetching comments:", commentsError);
         } else {
           setCommentaires(commentsData || []);
+        }
+
+        // Fetch article images
+        const { data: imagesData, error: imagesError } = await supabase
+          .from("article_images")
+          .select("*")
+          .eq("article_id", articleData.id)
+          .order("ordre", { ascending: true });
+
+        if (imagesError) {
+          console.error("Error fetching images:", imagesError);
+        } else {
+          setImages(imagesData || []);
         }
       }
       setLoading(false);
@@ -154,6 +175,23 @@ const Article = () => {
                 <p key={index} className="mb-4">{paragraph}</p>
               ))}
             </div>
+
+            {images.length > 0 && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-primary mb-6">Galerie d'images</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {images.map((image) => (
+                    <div key={image.id} className="relative group overflow-hidden rounded-lg aspect-video">
+                      <img
+                        src={image.image_url}
+                        alt={`Image ${image.ordre || ''}`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="border-t pt-12">
               <h2 className="text-2xl font-bold text-primary mb-6">
