@@ -19,11 +19,16 @@ const Auth = () => {
 
   useEffect(() => {
     if (user && !authLoading) {
-      if (isAdmin) {
-        navigate("/admin");
-      } else {
-        navigate("/");
-      }
+      // Add a small delay to ensure isAdmin state is fully updated
+      const timer = setTimeout(() => {
+        if (isAdmin) {
+          navigate("/admin", { replace: true });
+        } else {
+          navigate("/", { replace: true });
+        }
+      }, 100);
+      
+      return () => clearTimeout(timer);
     }
   }, [user, isAdmin, authLoading, navigate]);
 
