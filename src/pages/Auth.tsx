@@ -18,9 +18,11 @@ const Auth = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log('Auth page - user:', user, 'isAdmin:', isAdmin, 'authLoading:', authLoading);
     if (user && !authLoading) {
       // Add a small delay to ensure isAdmin state is fully updated
       const timer = setTimeout(() => {
+        console.log('Redirecting - isAdmin:', isAdmin);
         if (isAdmin) {
           navigate("/admin", { replace: true });
         } else {
