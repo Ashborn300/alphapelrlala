@@ -57,6 +57,9 @@ const Header = () => {
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
               </Link>)}
+            <Link to="/auth" className="text-sm font-medium transition-colors hover:text-secondary">
+              Admin
+            </Link>
             <a href="mailto:contact@fondationalphaperla.com" className="text-foreground hover:text-secondary transition-colors" aria-label="Email">
               <Mail className="h-5 w-5" />
             </a>
@@ -74,6 +77,9 @@ const Header = () => {
               {navLinks.map(link => <Link key={link.path} to={link.path} onClick={() => setIsMobileMenuOpen(false)} className={`text-sm font-medium transition-colors hover:text-secondary ${location.pathname === link.path ? "text-secondary" : "text-foreground"}`}>
                   {link.name}
                 </Link>)}
+              <Link to="/auth" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-medium transition-colors hover:text-secondary text-foreground">
+                Connexion Admin
+              </Link>
               <a href="mailto:contact@fondationalphaperla.com" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
                 <Mail className="h-5 w-5" />
                 <span>contact@fondationalphaperla.com</span>
