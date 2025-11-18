@@ -11,15 +11,14 @@ export const useAuth = () => {
   useEffect(() => {
     const checkAdminRole = async (userId: string) => {
       try {
-        const { data, error } = await supabase
-          .from('user_roles')
-          .select('role')
-          .eq('user_id', userId)
-          .eq('role', 'admin')
-          .maybeSingle();
+        // Use backend function with security definer to avoid RLS issues
+        const { data, error } = await supabase.rpc('has_role', {
+          _role: 'admin',
+          _user_id: userId,
+        });
 
         if (error) {
-          console.error('Error checking admin role:', error);
+          console.error('Error checking admin role via RPC:', error);
         }
         setIsAdmin(!!data);
       } catch (e) {
@@ -37,6 +36,7 @@ export const useAuth = () => {
         
         if (session?.user) {
           setLoading(true);
+          // Defer any async work to avoid blocking the auth event
           setTimeout(() => {
             checkAdminRole(session.user!.id).catch(() => setIsAdmin(false));
           }, 0);
