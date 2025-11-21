@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook, ShoppingCart } from "lucide-react";
+import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook, Instagram, Linkedin, ShoppingCart } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import heroImage from "@/assets/hero-bg.jpg";
@@ -935,7 +935,7 @@ const Index = () => {
             <p className="text-lg text-muted-foreground mb-8 animate-fade-in">
               Rejoignez notre communauté en ligne et restez informés de toutes nos activités, événements et programmes.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up flex-wrap">
               <Button asChild size="lg" variant="default" className="w-full sm:w-auto">
                 <a href="https://youtube.com/@fondationalphaperla?si=4PRNSY_c6-LxqA4O" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Youtube className="h-5 w-5" />
@@ -946,6 +946,18 @@ const Index = () => {
                 <a href="https://www.facebook.com/profile.php?id=100066871133653" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Facebook className="h-5 w-5" />
                   Suivre sur Facebook
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
+                <a href="https://www.instagram.com/fondation_alphaperla?igsh=OXFnY2I4NnM1Y3lp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Instagram className="h-5 w-5" />
+                  Suivre sur Instagram
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
+                <a href="https://cd.linkedin.com/in/fondation-alpha-perla-177572392" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Linkedin className="h-5 w-5" />
+                  Suivre sur LinkedIn
                 </a>
               </Button>
             </div>
