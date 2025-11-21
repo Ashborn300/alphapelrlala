@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Youtube } from "lucide-react";
+import { Mail, MapPin, Youtube, Facebook, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -117,15 +117,45 @@ const Footer = () => {
                 </p>
               </div>
               <div className="mt-4">
-                <a
-                  href="https://youtube.com/@fondationalphaperla"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
-                >
-                  <Youtube className="h-5 w-5" />
-                  <span>Notre Chaîne YouTube</span>
-                </a>
+                <h5 className="text-sm font-semibold mb-3">Suivez-nous</h5>
+                <div className="flex flex-col space-y-2">
+                  <a
+                    href="https://youtube.com/@fondationalphaperla"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                  >
+                    <Youtube className="h-5 w-5" />
+                    <span>YouTube</span>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100066871133653"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                  >
+                    <Facebook className="h-5 w-5" />
+                    <span>Facebook</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/fondation_alphaperla?igsh=OXFnY2I4NnM1Y3lp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                  >
+                    <Instagram className="h-5 w-5" />
+                    <span>Instagram</span>
+                  </a>
+                  <a
+                    href="https://cd.linkedin.com/in/fondation-alpha-perla-177572392"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
