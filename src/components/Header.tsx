@@ -84,6 +84,10 @@ const Header = () => {
                 <Mail className="h-5 w-5" />
                 <span>contact@fondationalphaperla.com</span>
               </a>
+              <a href="https://mail.hostinger.com/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
+                <Mail className="h-5 w-5" />
+                <span>Webmail</span>
+              </a>
               <a href="https://youtube.com/@fondationalphaperla" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm font-medium text-destructive hover:text-destructive/80 transition-colors">
                 <Youtube className="h-5 w-5" />
                 <span>Notre Chaîne YouTube</span>
