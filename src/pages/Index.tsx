@@ -46,6 +46,9 @@ import magazineSpread2 from "@/assets/magazine-spread-2.jpg";
 import magazineSpread3 from "@/assets/magazine-spread-3.jpg";
 import magazineSpread4 from "@/assets/magazine-spread-4.jpg";
 import magazineSpread5 from "@/assets/magazine-spread-5.jpg";
+import reunion1 from "@/assets/reunion-1.jpg";
+import reunion2 from "@/assets/reunion-2.jpg";
+import reunion3 from "@/assets/reunion-3.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -829,8 +832,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Press & Media Coverage Section */}
+      {/* Strategic Meeting Section */}
       <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+              Réunion Stratégique
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              La Fondation Alpha Perla organise régulièrement des réunions stratégiques avec ses partenaires et bénéficiaires 
+              pour planifier et coordonner nos actions. Ces moments d'échange permettent de renforcer notre engagement 
+              collectif et d'assurer un impact durable dans nos communautés.
+            </p>
+          </FadeInOnScroll>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <FadeInOnScroll delay={0}>
+              <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img 
+                  src={reunion1} 
+                  alt="Réunion stratégique de la Fondation Alpha Perla" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </FadeInOnScroll>
+            
+            <FadeInOnScroll delay={100}>
+              <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img 
+                  src={reunion2} 
+                  alt="Discussion stratégique avec les partenaires" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </FadeInOnScroll>
+            
+            <FadeInOnScroll delay={200}>
+              <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img 
+                  src={reunion3} 
+                  alt="Photo de groupe de la réunion stratégique" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </FadeInOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Press & Media Coverage Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <FadeInOnScroll className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
