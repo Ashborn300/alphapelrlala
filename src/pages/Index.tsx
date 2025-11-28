@@ -134,8 +134,7 @@ const Index = () => {
     question: "Comment puis-je soutenir la fondation?",
     answer: "Vous pouvez soutenir nos initiatives en devenant partenaire, en participant à nos événements, ou en nous contactant pour discuter des opportunités de collaboration."
   }];
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
@@ -194,8 +193,7 @@ const Index = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <FadeInOnScroll key={index} delay={index * 100}>
+            {stats.map((stat, index) => <FadeInOnScroll key={index} delay={index * 100}>
                 <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="pt-6">
                     <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
@@ -205,8 +203,7 @@ const Index = () => {
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                   </CardContent>
                 </Card>
-              </FadeInOnScroll>
-            ))}
+              </FadeInOnScroll>)}
           </div>
         </div>
       </section>
@@ -261,11 +258,7 @@ const Index = () => {
                 <div className="grid md:grid-cols-2 gap-0">
                   {/* Image */}
                   <div className="h-full min-h-[400px]">
-                    <img 
-                      src={excellentiaImage} 
-                      alt="Trophée Congolese Woman Excellentia - 3ème édition 2025" 
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={excellentiaImage} alt="Trophée Congolese Woman Excellentia - 3ème édition 2025" className="w-full h-full object-cover" />
                   </div>
                   
                   {/* Content */}
@@ -300,19 +293,10 @@ const Index = () => {
                       Cette édition mettra à l'honneur celles qui, par leur engagement, leur courage et leur vision, bâtissent l'avenir de notre continent.
                     </p>
                     
-                    <Button 
-                      asChild 
-                      size="lg" 
-                      className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      <a 
-                        href="https://wa.me/243977074034" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
+                    <Button asChild size="lg" className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                      <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                         Pour plus d'informations
                       </a>
@@ -325,25 +309,14 @@ const Index = () => {
                       </h3>
                       
                       <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-xl p-6 mb-6">
-                        <p className="text-lg text-center text-muted-foreground mb-3">
-                          Un accès buffet et cocktail inclus
-                        </p>
+                        <p className="text-lg text-center text-muted-foreground mb-3">Un accès buffet et cocktail offertes</p>
                         <p className="text-4xl font-bold text-center text-primary mb-2">
                           150$
                         </p>
                       </div>
 
-                      <Button 
-                        asChild 
-                        size="lg" 
-                        className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                      >
-                        <a 
-                          href="https://wa.me/243977074034" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2"
-                        >
+                      <Button asChild size="lg" className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                           <Heart className="w-5 h-5" />
                           Faire un don
                         </a>
@@ -370,121 +343,71 @@ const Index = () => {
             </p>
           </FadeInOnScroll>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <FadeInOnScroll key={index} delay={index * 100}>
+            {services.map((service, index) => <FadeInOnScroll key={index} delay={index * 100}>
                 <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 h-full">
                   <CardContent className="pt-6">
-                    {service.title === "Éducation & Formation" && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={educationConferenceImg} 
-                          alt="Conférence Éducation - Fondation Alpha Perla" 
-                          className="w-full h-48 object-cover"
-                        />
-                      </div>
-                    )}
-                    {service.title === "Entrepreneuriat Féminin" && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={entrepreneurshipAwardsImg} 
-                          alt="Cérémonie Entrepreneuriat Féminin - Fondation Alpha Perla" 
-                          className="w-full h-48 object-cover"
-                        />
-                      </div>
-                    )}
-                    {service.title === "Développement Personnel" && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={personalDevConferenceImg} 
-                          alt="Conférence Développement Personnel - Fondation Alpha Perla" 
-                          className="w-full h-48 object-cover"
-                        />
-                      </div>
-                    )}
-                    {service.title === "Action Sociale" && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={socialActionCommunityImg} 
-                          alt="Action Sociale et Humanitaire - Fondation Alpha Perla" 
-                          className="w-full h-48 object-cover"
-                        />
-                      </div>
-                    )}
-                    {service.title === "Événements Culturels" && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={culturalEventsCeremonyImg} 
-                          alt="Cérémonie Événements Culturels - Fondation Alpha Perla" 
-                          className="w-full h-48 object-cover"
-                        />
-                      </div>
-                    )}
-                    {service.title === "Gestion de Patrimoine" && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={heritageManagementMeetingImg} 
-                          alt="Réunion Gestion de Patrimoine - Fondation Alpha Perla" 
-                          className="w-full h-48 object-cover"
-                        />
-                      </div>
-                    )}
+                    {service.title === "Éducation & Formation" && <div className="mb-4 overflow-hidden rounded-lg">
+                        <img src={educationConferenceImg} alt="Conférence Éducation - Fondation Alpha Perla" className="w-full h-48 object-cover" />
+                      </div>}
+                    {service.title === "Entrepreneuriat Féminin" && <div className="mb-4 overflow-hidden rounded-lg">
+                        <img src={entrepreneurshipAwardsImg} alt="Cérémonie Entrepreneuriat Féminin - Fondation Alpha Perla" className="w-full h-48 object-cover" />
+                      </div>}
+                    {service.title === "Développement Personnel" && <div className="mb-4 overflow-hidden rounded-lg">
+                        <img src={personalDevConferenceImg} alt="Conférence Développement Personnel - Fondation Alpha Perla" className="w-full h-48 object-cover" />
+                      </div>}
+                    {service.title === "Action Sociale" && <div className="mb-4 overflow-hidden rounded-lg">
+                        <img src={socialActionCommunityImg} alt="Action Sociale et Humanitaire - Fondation Alpha Perla" className="w-full h-48 object-cover" />
+                      </div>}
+                    {service.title === "Événements Culturels" && <div className="mb-4 overflow-hidden rounded-lg">
+                        <img src={culturalEventsCeremonyImg} alt="Cérémonie Événements Culturels - Fondation Alpha Perla" className="w-full h-48 object-cover" />
+                      </div>}
+                    {service.title === "Gestion de Patrimoine" && <div className="mb-4 overflow-hidden rounded-lg">
+                        <img src={heritageManagementMeetingImg} alt="Réunion Gestion de Patrimoine - Fondation Alpha Perla" className="w-full h-48 object-cover" />
+                      </div>}
                     <service.icon className="h-12 w-12 mb-4 text-secondary group-hover:scale-110 transition-transform duration-300" />
                     <h3 className="text-xl font-bold mb-3 text-primary">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground mb-4">{service.description}</p>
-                    {service.title === "Éducation & Formation" && (
-                      <Button asChild variant="outline" size="sm" className="mt-2">
+                    {service.title === "Éducation & Formation" && <Button asChild variant="outline" size="sm" className="mt-2">
                         <Link to="/education">
                           Découvrir
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
-                      </Button>
-                    )}
-                    {service.title === "Entrepreneuriat Féminin" && (
-                      <Button asChild variant="outline" size="sm" className="mt-2">
+                      </Button>}
+                    {service.title === "Entrepreneuriat Féminin" && <Button asChild variant="outline" size="sm" className="mt-2">
                         <Link to="/entrepreneurship">
                           Découvrir
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
-                      </Button>
-                    )}
-                    {service.title === "Développement Personnel" && (
-                      <Button asChild variant="outline" size="sm" className="mt-2">
+                      </Button>}
+                    {service.title === "Développement Personnel" && <Button asChild variant="outline" size="sm" className="mt-2">
                         <Link to="/personal-development">
                           Découvrir
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
-                      </Button>
-                    )}
-                    {service.title === "Action Sociale" && (
-                      <Button asChild variant="outline" size="sm" className="mt-2">
+                      </Button>}
+                    {service.title === "Action Sociale" && <Button asChild variant="outline" size="sm" className="mt-2">
                         <Link to="/social-action">
                           Découvrir
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
-                      </Button>
-                    )}
-                    {service.title === "Événements Culturels" && (
-                      <Button asChild variant="outline" size="sm" className="mt-2">
+                      </Button>}
+                    {service.title === "Événements Culturels" && <Button asChild variant="outline" size="sm" className="mt-2">
                         <Link to="/cultural-events">
                           Découvrir
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
-                      </Button>
-                    )}
-                    {service.title === "Gestion de Patrimoine" && (
-                      <Button asChild variant="outline" size="sm" className="mt-2">
+                      </Button>}
+                    {service.title === "Gestion de Patrimoine" && <Button asChild variant="outline" size="sm" className="mt-2">
                         <Link to="/heritage-management">
                           Découvrir
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
-                      </Button>
-                    )}
+                      </Button>}
                   </CardContent>
                 </Card>
-              </FadeInOnScroll>
-            ))}
+              </FadeInOnScroll>)}
           </div>
           <div className="text-center mt-12">
             <Button asChild variant="default" size="lg">
@@ -535,11 +458,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
-              <img
-                src={incroyableTalentImg}
-                alt="Mon Incroyable Talent Kinshasa"
-                className="w-full h-full object-cover"
-              />
+              <img src={incroyableTalentImg} alt="Mon Incroyable Talent Kinshasa" className="w-full h-full object-cover" />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-primary">
@@ -564,11 +483,7 @@ const Index = () => {
           <FadeInOnScroll>
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-                <img 
-                  src={valorisationEspaces} 
-                  alt="Projet de valorisation des espaces publiques - Assainissement Kinshasa" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <img src={valorisationEspaces} alt="Projet de valorisation des espaces publiques - Assainissement Kinshasa" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight">
@@ -580,16 +495,8 @@ const Index = () => {
                 <p className="text-muted-foreground">
                   Un projet ambitieux visant à améliorer la propreté et l'esthétique de nos espaces publics et grandes artères pour une ville plus saine et plus belle.
                 </p>
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-secondary hover:bg-secondary/90 text-white"
-                >
-                  <a 
-                    href="https://drive.google.com/uc?id=19IRyqatkTfSSsLPW6TVjibpk-aiCyVZR" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-white">
+                  <a href="https://drive.google.com/uc?id=19IRyqatkTfSSsLPW6TVjibpk-aiCyVZR" target="_blank" rel="noopener noreferrer">
                     Découvrir
                   </a>
                 </Button>
@@ -709,11 +616,7 @@ const Index = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
               <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-                <img 
-                  src={educationEventImage} 
-                  alt="Événement Éducation et Formation - Fondation Alpha Perla" 
-                  className="w-full h-auto object-contain bg-muted/30 hover:scale-105 transition-transform duration-300" 
-                />
+                <img src={educationEventImage} alt="Événement Éducation et Formation - Fondation Alpha Perla" className="w-full h-auto object-contain bg-muted/30 hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="space-y-6">
                 <div>
@@ -739,46 +642,22 @@ const Index = () => {
                   <h3 className="text-xl font-bold mb-4 text-primary">Nos Lauréats</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <img 
-                        src={laureats1} 
-                        alt="Lauréats de la formation Alpha Perla" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                      <img src={laureats1} alt="Lauréats de la formation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <img 
-                        src={laureats2} 
-                        alt="Remise de certificat de formation" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                      <img src={laureats2} alt="Remise de certificat de formation" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <img 
-                        src={laureats3} 
-                        alt="Cérémonie de remise de prix" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                      <img src={laureats3} alt="Cérémonie de remise de prix" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <img 
-                        src={laureats4} 
-                        alt="Lauréate avec certificat d'excellence" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                      <img src={laureats4} alt="Lauréate avec certificat d'excellence" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     </div>
                   </div>
                 </div>
                 
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="w-full md:w-auto bg-secondary hover:bg-secondary/90 text-white"
-                >
-                  <a 
-                    href="https://wa.me/243977074034" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                <Button asChild size="lg" className="w-full md:w-auto bg-secondary hover:bg-secondary/90 text-white">
+                  <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer">
                     S'inscrire
                   </a>
                 </Button>
@@ -804,20 +683,12 @@ const Index = () => {
               <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="text-center mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild
-                size="lg" 
-                className="bg-secondary hover:bg-secondary/90 text-white"
-              >
+              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-white">
                 <a href="/writing">
                   En savoir plus
                 </a>
               </Button>
-              <Button 
-                asChild
-                size="lg" 
-                variant="default"
-              >
+              <Button asChild size="lg" variant="default">
                 <a href="https://pay.lygosapp.com/link/d942fc09-1f46-4b27-ad26-62834a86001b" target="_blank" rel="noopener noreferrer">
                   <ShoppingCart className="mr-2 h-5 w-5" />
                   Acheter le livre
@@ -881,31 +752,19 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <FadeInOnScroll delay={0}>
               <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img 
-                  src={reunion1} 
-                  alt="Réunion stratégique de la Fondation Alpha Perla" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <img src={reunion1} alt="Réunion stratégique de la Fondation Alpha Perla" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
             </FadeInOnScroll>
             
             <FadeInOnScroll delay={100}>
               <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img 
-                  src={reunion2} 
-                  alt="Discussion stratégique avec les partenaires" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <img src={reunion2} alt="Discussion stratégique avec les partenaires" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
             </FadeInOnScroll>
             
             <FadeInOnScroll delay={200}>
               <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img 
-                  src={reunion3} 
-                  alt="Photo de groupe de la réunion stratégique" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <img src={reunion3} alt="Photo de groupe de la réunion stratégique" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
             </FadeInOnScroll>
           </div>
@@ -928,11 +787,7 @@ const Index = () => {
             <FadeInOnScroll delay={0}>
               <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={magazineCover1} 
-                    alt="Magazine Un Plus - Couverture Alpha Perla" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={magazineCover1} alt="Magazine Un Plus - Couverture Alpha Perla" className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
@@ -941,11 +796,7 @@ const Index = () => {
             <FadeInOnScroll delay={100}>
               <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={magazineSpread1} 
-                    alt="Magazine Un Plus - Article Fondation Alpha Perla" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={magazineSpread1} alt="Magazine Un Plus - Article Fondation Alpha Perla" className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
@@ -954,11 +805,7 @@ const Index = () => {
             <FadeInOnScroll delay={200}>
               <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={magazineSpread2} 
-                    alt="Magazine Un Plus - Interview" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={magazineSpread2} alt="Magazine Un Plus - Interview" className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
@@ -967,11 +814,7 @@ const Index = () => {
             <FadeInOnScroll delay={300}>
               <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={magazineSpread3} 
-                    alt="Magazine Un Plus - Publications" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={magazineSpread3} alt="Magazine Un Plus - Publications" className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
@@ -980,11 +823,7 @@ const Index = () => {
             <FadeInOnScroll delay={400}>
               <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={magazineSpread4} 
-                    alt="Magazine Un Plus - Reportage" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={magazineSpread4} alt="Magazine Un Plus - Reportage" className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
@@ -993,11 +832,7 @@ const Index = () => {
             <FadeInOnScroll delay={500}>
               <div className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={magazineSpread5} 
-                    alt="Magazine Un Plus - Article détaillé" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={magazineSpread5} alt="Magazine Un Plus - Article détaillé" className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
@@ -1139,8 +974,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
