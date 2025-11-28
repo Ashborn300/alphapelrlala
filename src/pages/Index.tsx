@@ -317,6 +317,38 @@ const Index = () => {
                         Pour plus d'informations
                       </a>
                     </Button>
+
+                    {/* Support Section */}
+                    <div className="mt-10 pt-8 border-t border-border">
+                      <h3 className="text-2xl font-bold text-primary mb-4 text-center">
+                        Soutenir l'événement
+                      </h3>
+                      
+                      <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-xl p-6 mb-6">
+                        <p className="text-lg text-center text-muted-foreground mb-3">
+                          Un accès buffet et cocktail inclus
+                        </p>
+                        <p className="text-4xl font-bold text-center text-primary mb-2">
+                          150$
+                        </p>
+                      </div>
+
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        <a 
+                          href="https://wa.me/243977074034" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2"
+                        >
+                          <Heart className="w-5 h-5" />
+                          Faire un don
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardContent>
