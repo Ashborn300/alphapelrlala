@@ -310,8 +310,11 @@ const Index = () => {
                       
                       <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-xl p-6 mb-6">
                         <p className="text-lg text-center text-muted-foreground mb-3">Un accès buffet et cocktail offertes</p>
-                        <p className="text-4xl font-bold text-center text-primary mb-2">
+                        <p className="text-4xl font-bold text-center text-primary mb-1">
                           150$
+                        </p>
+                        <p className="text-lg text-center text-muted-foreground">
+                          équivalent à 375000 FC
                         </p>
                       </div>
 
