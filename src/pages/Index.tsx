@@ -315,8 +315,8 @@ const Index = () => {
                         </p>
                       </div>
 
-                      <Button asChild size="lg" className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                        <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        <a href="https://pay.lygosapp.com/link/3f683587-6b52-403e-992c-71f3407e677f" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                           <Heart className="w-5 h-5" />
                           Faire un don
                         </a>
