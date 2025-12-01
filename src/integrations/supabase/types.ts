@@ -159,6 +159,104 @@ export type Database = {
         }
         Relationships: []
       }
+      project_images: {
+        Row: {
+          created_at: string
+          id: string
+          image_url: string
+          legende: string | null
+          ordre: number | null
+          project_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          image_url: string
+          legende?: string | null
+          ordre?: number | null
+          project_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          image_url?: string
+          legende?: string | null
+          ordre?: number | null
+          project_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_images_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          categorie: string
+          date_creation: string
+          date_modification: string
+          description_complete: string
+          description_courte: string
+          id: string
+          image_principale: string | null
+          lien_don_100: string | null
+          lien_don_250: string | null
+          lien_don_50: string | null
+          lien_don_500: string | null
+          lien_whatsapp: string | null
+          objectifs: string | null
+          ordre: number | null
+          resultats: string | null
+          slug: string
+          statut: string
+          titre: string
+        }
+        Insert: {
+          categorie: string
+          date_creation?: string
+          date_modification?: string
+          description_complete: string
+          description_courte: string
+          id?: string
+          image_principale?: string | null
+          lien_don_100?: string | null
+          lien_don_250?: string | null
+          lien_don_50?: string | null
+          lien_don_500?: string | null
+          lien_whatsapp?: string | null
+          objectifs?: string | null
+          ordre?: number | null
+          resultats?: string | null
+          slug: string
+          statut?: string
+          titre: string
+        }
+        Update: {
+          categorie?: string
+          date_creation?: string
+          date_modification?: string
+          description_complete?: string
+          description_courte?: string
+          id?: string
+          image_principale?: string | null
+          lien_don_100?: string | null
+          lien_don_250?: string | null
+          lien_don_50?: string | null
+          lien_don_500?: string | null
+          lien_whatsapp?: string | null
+          objectifs?: string | null
+          ordre?: number | null
+          resultats?: string | null
+          slug?: string
+          statut?: string
+          titre?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
