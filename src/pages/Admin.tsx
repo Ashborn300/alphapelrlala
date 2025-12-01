@@ -9,9 +9,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Trash2, FileText, MessageSquare, Briefcase, TrendingUp, Users, Eye, BarChart3 } from "lucide-react";
+import { Trash2, FileText, MessageSquare, Briefcase, TrendingUp, Users, Eye, BarChart3, FolderKanban } from "lucide-react";
 import ArticleForm from "@/components/ArticleForm";
 import JobForm from "@/components/JobForm";
+import ProjectForm from "@/components/ProjectForm";
 
 const Admin = () => {
   const { isAdmin, loading: authLoading } = useAuth();
@@ -19,6 +20,7 @@ const Admin = () => {
   const [articles, setArticles] = useState<any[]>([]);
   const [commentaires, setCommentaires] = useState<any[]>([]);
   const [offres, setOffres] = useState<any[]>([]);
+  const [projets, setProjets] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,15 +36,17 @@ const Admin = () => {
   }, [isAdmin]);
 
   const fetchData = async () => {
-    const [articlesRes, commentsRes, offresRes] = await Promise.all([
+    const [articlesRes, commentsRes, offresRes, projetsRes] = await Promise.all([
       supabase.from("blog_articles").select("*").order("date_publication", { ascending: false }),
       supabase.from("commentaires").select("*, blog_articles(titre)").order("date_commentaire", { ascending: false }),
       supabase.from("offres_emploi").select("*").order("date_publication", { ascending: false }),
+      supabase.from("projects").select("*").order("ordre", { ascending: true }).order("date_creation", { ascending: false }),
     ]);
 
     setArticles(articlesRes.data || []);
     setCommentaires(commentsRes.data || []);
     setOffres(offresRes.data || []);
+    setProjets(projetsRes.data || []);
     setLoading(false);
   };
 
@@ -77,6 +81,18 @@ const Admin = () => {
         toast.error("Erreur lors de la suppression");
       } else {
         toast.success("Offre supprimée");
+        fetchData();
+      }
+    }
+  };
+
+  const handleDeleteProject = async (id: string) => {
+    if (confirm("Êtes-vous sûr de vouloir supprimer ce projet?")) {
+      const { error } = await supabase.from("projects").delete().eq("id", id);
+      if (error) {
+        toast.error("Erreur lors de la suppression");
+      } else {
+        toast.success("Projet supprimé");
         fetchData();
       }
     }
@@ -165,13 +181,27 @@ const Admin = () => {
               </CardContent>
             </Card>
 
+            <Card className="bg-gradient-to-br from-blue-500 to-blue-600 border-0 text-white shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-white/90">Projets</CardTitle>
+                <FolderKanban className="h-5 w-5 text-white/80" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold">{projets.length}</div>
+                <p className="text-xs text-white/80 mt-1 flex items-center gap-1">
+                  <TrendingUp className="h-3 w-3" />
+                  Projets actifs
+                </p>
+              </CardContent>
+            </Card>
+
             <Card className="bg-gradient-to-br from-cyan-500 to-cyan-600 border-0 text-white shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium text-white/90">Total</CardTitle>
                 <BarChart3 className="h-5 w-5 text-white/80" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{articles.length + commentaires.length + offres.length}</div>
+                <div className="text-3xl font-bold">{articles.length + commentaires.length + offres.length + projets.length}</div>
                 <p className="text-xs text-white/80 mt-1 flex items-center gap-1">
                   <TrendingUp className="h-3 w-3" />
                   Éléments gérés
@@ -182,7 +212,7 @@ const Admin = () => {
 
           <Card className="shadow-lg">
             <Tabs defaultValue="articles">
-              <TabsList className="grid w-full grid-cols-3 h-auto p-2">
+              <TabsList className="grid w-full grid-cols-4 h-auto p-2">
                 <TabsTrigger value="articles" className="flex items-center gap-2 py-3">
                   <FileText className="h-4 w-4" />
                   <span className="hidden sm:inline">Articles</span>
@@ -194,6 +224,10 @@ const Admin = () => {
                 <TabsTrigger value="offres" className="flex items-center gap-2 py-3">
                   <Briefcase className="h-4 w-4" />
                   <span className="hidden sm:inline">Offres</span>
+                </TabsTrigger>
+                <TabsTrigger value="projets" className="flex items-center gap-2 py-3">
+                  <FolderKanban className="h-4 w-4" />
+                  <span className="hidden sm:inline">Projets</span>
                 </TabsTrigger>
               </TabsList>
 
@@ -291,6 +325,43 @@ const Admin = () => {
                             <p className="text-sm text-muted-foreground">{offre.localisation}</p>
                           </div>
                           <Button variant="destructive" size="sm" onClick={() => handleDeleteOffre(offre.id)}>
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="projets" className="p-6 space-y-6">
+                <Card className="border-l-4 border-l-blue-500">
+                  <CardHeader>
+                    <CardTitle>Créer un projet</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ProjectForm onSuccess={fetchData} />
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-blue-500">
+                  <CardHeader>
+                    <CardTitle>Projets ({projets.length})</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {projets.map((projet) => (
+                        <div key={projet.id} className="flex justify-between items-start p-4 border rounded-lg hover:shadow-md transition-shadow">
+                          <div className="flex gap-3 flex-1">
+                            {projet.image_principale && (
+                              <img src={projet.image_principale} alt={projet.titre} className="w-16 h-16 object-cover rounded" />
+                            )}
+                            <div>
+                              <h3 className="font-semibold">{projet.titre}</h3>
+                              <p className="text-sm text-muted-foreground">{projet.categorie} - {projet.statut}</p>
+                            </div>
+                          </div>
+                          <Button variant="destructive" size="sm" onClick={() => handleDeleteProject(projet.id)}>
                             <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
