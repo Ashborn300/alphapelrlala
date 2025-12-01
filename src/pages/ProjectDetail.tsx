@@ -48,9 +48,7 @@ const ProjectDetail = () => {
   }, [slug]);
 
   const handleWhatsAppClick = () => {
-    if (project?.lien_whatsapp) {
-      window.open(project.lien_whatsapp, "_blank");
-    }
+    window.open("https://wa.me/243977074034", "_blank");
   };
 
   const handleDonation = (montant: number, lien: string) => {
@@ -289,8 +287,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Financer le projet */}
-      {project.lien_whatsapp && (
-        <section className="py-16">
+      <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <FadeInOnScroll>
@@ -316,7 +313,6 @@ const ProjectDetail = () => {
             </div>
           </div>
         </section>
-      )}
 
       <Footer />
     </div>
