@@ -49,6 +49,7 @@ import magazineSpread5 from "@/assets/magazine-spread-5.jpg";
 import reunion1 from "@/assets/reunion-1.jpg";
 import reunion2 from "@/assets/reunion-2.jpg";
 import reunion3 from "@/assets/reunion-3.jpg";
+import projetCentreFormation from "@/assets/projet-centre-formation.jpg";
 const Index = () => {
   const stats = [{
     label: "Femmes Formées",
@@ -204,6 +205,45 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </FadeInOnScroll>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Voir nos projets Section */}
+      <section className="py-20 bg-gradient-to-br from-secondary/10 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <FadeInOnScroll direction="right">
+              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={projetCentreFormation} 
+                  alt="Centre de formation de la Fondation Alpha Perla" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+            </FadeInOnScroll>
+            
+            <FadeInOnScroll direction="left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+                Découvrez Nos Projets en Cours
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                La <strong>Fondation Alpha Perla</strong> mène des projets concrets pour 
+                transformer des vies et bâtir un avenir meilleur pour nos communautés.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Des centres de formation à l'entrepreneuriat féminin, en passant par 
+                l'action sociale et les événements culturels, chaque projet est une 
+                opportunité de créer un impact durable.
+              </p>
+              <Button asChild size="lg" variant="default" className="group">
+                <Link to="/projects" className="flex items-center gap-2">
+                  Voir Tous nos Projets
+                  <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </FadeInOnScroll>
           </div>
         </div>
       </section>
