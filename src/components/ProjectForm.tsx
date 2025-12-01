@@ -304,7 +304,7 @@ const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
             </div>
 
             <div>
-              <Label htmlFor="lien_don_250">Lien Lygos - 250$ (625000 FC)</Label>
+              <Label htmlFor="lien_don_250">Lien Lygos - 150$ (375000 FC)</Label>
               <Input
                 id="lien_don_250"
                 value={formData.lien_don_250}
@@ -314,7 +314,7 @@ const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
             </div>
 
             <div>
-              <Label htmlFor="lien_don_500">Lien Lygos - 500$ (1250000 FC)</Label>
+              <Label htmlFor="lien_don_500">Lien Lygos - 200$ (500000 FC)</Label>
               <Input
                 id="lien_don_500"
                 value={formData.lien_don_500}
