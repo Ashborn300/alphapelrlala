@@ -16,10 +16,6 @@ const ProjectDetail = () => {
   const [images, setImages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchProject();
-  }, [slug]);
-
   const fetchProject = async () => {
     const { data: projectData, error: projectError } = await supabase
       .from("projects")
@@ -43,6 +39,13 @@ const ProjectDetail = () => {
     setImages(imagesData || []);
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (slug) {
+      fetchProject();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
 
   const handleWhatsAppClick = () => {
     if (project?.lien_whatsapp) {

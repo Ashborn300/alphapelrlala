@@ -24,10 +24,6 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("Tous");
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
   const fetchProjects = async () => {
     const { data, error } = await supabase
       .from("projects")
@@ -41,7 +37,12 @@ const Projects = () => {
     setLoading(false);
   };
 
-  const filteredProjects = selectedCategory === "Tous" 
+  useEffect(() => {
+    fetchProjects();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const filteredProjects = selectedCategory === "Tous"
     ? projects 
     : projects.filter(p => p.categorie === selectedCategory);
 
