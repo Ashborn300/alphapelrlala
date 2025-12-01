@@ -23,6 +23,7 @@ import Writing from "./pages/Writing";
 import IncroyableTalent from "./pages/IncroyableTalent";
 import CulturalEvents from "./pages/CulturalEvents";
 import HeritageManagement from "./pages/HeritageManagement";
+import Projects from "./pages/Projects";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/incroyable-talent" element={<IncroyableTalent />} />
           <Route path="/cultural-events" element={<CulturalEvents />} />
           <Route path="/heritage-management" element={<HeritageManagement />} />
+          <Route path="/projects" element={<Projects />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
