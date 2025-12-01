@@ -296,8 +296,7 @@ const ProjectDetail = () => {
                     <MessageCircle className="h-12 w-12 mx-auto mb-4 text-primary" />
                     <h2 className="text-3xl font-bold mb-4">Financer le projet</h2>
                     <p className="text-muted-foreground mb-6">
-                      Contactez-nous sur WhatsApp pour discuter des opportunités de financement
-                      et de partenariat pour ce projet.
+                      Contactez-nous sur WhatsApp pour discuter de votre besoin de financement de ce projet
                     </p>
                     <Button
                       size="lg"
