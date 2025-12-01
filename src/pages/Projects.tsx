@@ -7,8 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { BookOpen, Users, Briefcase, Heart, Globe, Award, Lightbulb, Music } from "lucide-react";
-
-const iconMap: { [key: string]: any } = {
+const iconMap: {
+  [key: string]: any;
+} = {
   Éducation: BookOpen,
   Entrepreneuriat: Briefcase,
   Social: Heart,
@@ -16,48 +17,33 @@ const iconMap: { [key: string]: any } = {
   Développement: Lightbulb,
   Excellence: Award,
   Patrimoine: Globe,
-  Mentorat: Users,
+  Mentorat: Users
 };
-
 const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("Tous");
-
   const fetchProjects = async () => {
-    const { data, error } = await supabase
-      .from("projects")
-      .select("*")
-      .order("ordre", { ascending: true })
-      .order("date_creation", { ascending: false });
-
+    const {
+      data,
+      error
+    } = await supabase.from("projects").select("*").order("ordre", {
+      ascending: true
+    }).order("date_creation", {
+      ascending: false
+    });
     if (!error && data) {
       setProjects(data);
     }
     setLoading(false);
   };
-
   useEffect(() => {
     fetchProjects();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const filteredProjects = selectedCategory === "Tous"
-    ? projects 
-    : projects.filter(p => p.categorie === selectedCategory);
-
-  const categories = [
-    "Tous",
-    "Éducation",
-    "Entrepreneuriat",
-    "Social",
-    "Culture",
-    "Développement",
-    "Excellence"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const filteredProjects = selectedCategory === "Tous" ? projects : projects.filter(p => p.categorie === selectedCategory);
+  const categories = ["Tous", "Éducation", "Entrepreneuriat", "Social", "Culture", "Développement", "Excellence"];
+  return <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -86,19 +72,9 @@ const Projects = () => {
         <div className="container mx-auto px-4">
           <FadeInOnScroll>
             <div className="flex flex-wrap gap-3 justify-center">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                    selectedCategory === category
-                      ? "bg-primary text-primary-foreground shadow-lg"
-                      : "bg-background text-foreground hover:bg-muted"
-                  }`}
-                >
+              {categories.map(category => <button key={category} onClick={() => setSelectedCategory(category)} className={`px-6 py-2 rounded-full font-semibold transition-all ${selectedCategory === category ? "bg-primary text-primary-foreground shadow-lg" : "bg-background text-foreground hover:bg-muted"}`}>
                   {category}
-                </button>
-              ))}
+                </button>)}
             </div>
           </FadeInOnScroll>
         </div>
@@ -107,37 +83,27 @@ const Projects = () => {
       {/* Projects Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          {loading ? (
-            <div className="text-center py-12">
+          {loading ? <div className="text-center py-12">
               <p className="text-muted-foreground">Chargement des projets...</p>
-            </div>
-          ) : filteredProjects.length === 0 ? (
-            <div className="text-center py-12">
+            </div> : filteredProjects.length === 0 ? <div className="text-center py-12">
               <p className="text-muted-foreground">Aucun projet disponible pour le moment.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project, index) => {
-                const Icon = iconMap[project.categorie] || BookOpen;
-                const colorMap: { [key: string]: string } = {
-                  "En cours": "bg-green-500",
-                  "À venir": "bg-yellow-500",
-                  "Terminé": "bg-gray-500",
-                  "Annuel": "bg-purple-500"
-                };
-                const statusColor = colorMap[project.statut] || "bg-blue-500";
-
-                return (
-                  <FadeInOnScroll key={project.id} delay={index * 100}>
+            const Icon = iconMap[project.categorie] || BookOpen;
+            const colorMap: {
+              [key: string]: string;
+            } = {
+              "En cours": "bg-green-500",
+              "À venir": "bg-yellow-500",
+              "Terminé": "bg-gray-500",
+              "Annuel": "bg-purple-500"
+            };
+            const statusColor = colorMap[project.statut] || "bg-blue-500";
+            return <FadeInOnScroll key={project.id} delay={index * 100}>
                     <Link to={`/projects/${project.slug}`}>
                       <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/20 overflow-hidden h-full cursor-pointer">
-                        {project.image_principale && (
-                          <div className="relative h-48 overflow-hidden">
-                            <img
-                              src={project.image_principale}
-                              alt={project.titre}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
+                        {project.image_principale && <div className="relative h-48 overflow-hidden">
+                            <img src={project.image_principale} alt={project.titre} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                             <div className={`absolute top-4 right-4 ${statusColor} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
                               {project.statut}
@@ -147,8 +113,7 @@ const Projects = () => {
                                 {project.categorie}
                               </Badge>
                             </div>
-                          </div>
-                        )}
+                          </div>}
                         
                         <CardContent className="p-6">
                           <div className="flex items-start gap-4 mb-4">
@@ -166,11 +131,9 @@ const Projects = () => {
                         </CardContent>
                       </Card>
                     </Link>
-                  </FadeInOnScroll>
-                );
-              })}
-            </div>
-          )}
+                  </FadeInOnScroll>;
+          })}
+            </div>}
         </div>
       </section>
 
@@ -187,20 +150,10 @@ const Projects = () => {
                 des communautés en RDC.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
+                <a href="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors">
                   Nous Contacter
                 </a>
-                <a
-                  href="https://pay.lygosapp.com/link/3f683587-6b52-403e-992c-71f3407e677f"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-white rounded-lg font-semibold hover:bg-secondary/90 transition-colors"
-                >
-                  Faire un Don
-                </a>
+                
               </div>
             </div>
           </FadeInOnScroll>
@@ -208,8 +161,6 @@ const Projects = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Projects;
