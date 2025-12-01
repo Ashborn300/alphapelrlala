@@ -94,8 +94,8 @@ const ProjectDetail = () => {
   const donationOptions = [
     { montant: 50, fc: "125000", lien: project.lien_don_50 },
     { montant: 100, fc: "250000", lien: project.lien_don_100 },
-    { montant: 250, fc: "625000", lien: project.lien_don_250 },
-    { montant: 500, fc: "1250000", lien: project.lien_don_500 },
+    { montant: 150, fc: "375000", lien: project.lien_don_250 },
+    { montant: 200, fc: "500000", lien: project.lien_don_500 },
   ];
 
   return (
