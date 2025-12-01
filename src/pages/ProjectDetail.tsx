@@ -245,36 +245,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Financer le projet */}
-      {project.lien_whatsapp && (
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto">
-              <FadeInOnScroll>
-                <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
-                  <CardContent className="p-8 text-center">
-                    <MessageCircle className="h-12 w-12 mx-auto mb-4 text-primary" />
-                    <h2 className="text-3xl font-bold mb-4">Financer le projet</h2>
-                    <p className="text-muted-foreground mb-6">
-                      Contactez-nous sur WhatsApp pour discuter des opportunités de financement
-                      et de partenariat pour ce projet.
-                    </p>
-                    <Button
-                      size="lg"
-                      onClick={handleWhatsAppClick}
-                      className="bg-[#25D366] hover:bg-[#20BA5A] text-white"
-                    >
-                      <MessageCircle className="mr-2 h-5 w-5" />
-                      Contacter sur WhatsApp
-                    </Button>
-                  </CardContent>
-                </Card>
-              </FadeInOnScroll>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Faire un don */}
       <section className="py-16 bg-gradient-to-br from-secondary/10 to-accent/5">
         <div className="container mx-auto px-4">
@@ -317,6 +287,36 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Financer le projet */}
+      {project.lien_whatsapp && (
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <FadeInOnScroll>
+                <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+                  <CardContent className="p-8 text-center">
+                    <MessageCircle className="h-12 w-12 mx-auto mb-4 text-primary" />
+                    <h2 className="text-3xl font-bold mb-4">Financer le projet</h2>
+                    <p className="text-muted-foreground mb-6">
+                      Contactez-nous sur WhatsApp pour discuter des opportunités de financement
+                      et de partenariat pour ce projet.
+                    </p>
+                    <Button
+                      size="lg"
+                      onClick={handleWhatsAppClick}
+                      className="bg-[#25D366] hover:bg-[#20BA5A] text-white"
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Contacter sur WhatsApp
+                    </Button>
+                  </CardContent>
+                </Card>
+              </FadeInOnScroll>
+            </div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>
