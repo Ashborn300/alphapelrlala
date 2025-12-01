@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Trash2, FileText, MessageSquare, Briefcase, TrendingUp, Users, Eye, BarChart3, FolderKanban } from "lucide-react";
+import { Trash2, FileText, MessageSquare, Briefcase, TrendingUp, Users, Eye, BarChart3, FolderKanban, Edit } from "lucide-react";
 import ArticleForm from "@/components/ArticleForm";
 import JobForm from "@/components/JobForm";
 import ProjectForm from "@/components/ProjectForm";
@@ -22,6 +22,7 @@ const Admin = () => {
   const [offres, setOffres] = useState<any[]>([]);
   const [projets, setProjets] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [editingProject, setEditingProject] = useState<any>(null);
 
   useEffect(() => {
     if (!authLoading && !isAdmin) {
@@ -337,10 +338,22 @@ const Admin = () => {
               <TabsContent value="projets" className="p-6 space-y-6">
                 <Card className="border-l-4 border-l-blue-500">
                   <CardHeader>
-                    <CardTitle>Créer un projet</CardTitle>
+                    <CardTitle>{editingProject ? "Modifier le projet" : "Créer un projet"}</CardTitle>
+                    {editingProject && (
+                      <CardDescription>
+                        Modification de : {editingProject.titre}
+                      </CardDescription>
+                    )}
                   </CardHeader>
                   <CardContent>
-                    <ProjectForm onSuccess={fetchData} />
+                    <ProjectForm 
+                      onSuccess={() => {
+                        fetchData();
+                        setEditingProject(null);
+                      }} 
+                      editingProject={editingProject}
+                      onCancelEdit={() => setEditingProject(null)}
+                    />
                   </CardContent>
                 </Card>
 
@@ -361,9 +374,21 @@ const Admin = () => {
                               <p className="text-sm text-muted-foreground">{projet.categorie} - {projet.statut}</p>
                             </div>
                           </div>
-                          <Button variant="destructive" size="sm" onClick={() => handleDeleteProject(projet.id)}>
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
+                          <div className="flex gap-2">
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              onClick={() => {
+                                setEditingProject(projet);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }}
+                            >
+                              <Edit className="h-4 w-4" />
+                            </Button>
+                            <Button variant="destructive" size="sm" onClick={() => handleDeleteProject(projet.id)}>
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
                         </div>
                       ))}
                     </div>

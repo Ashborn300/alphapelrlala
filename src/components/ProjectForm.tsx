@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,9 +10,11 @@ import { Loader2, Upload, X } from "lucide-react";
 
 interface ProjectFormProps {
   onSuccess: () => void;
+  editingProject?: any;
+  onCancelEdit?: () => void;
 }
 
-const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
+const ProjectForm = ({ onSuccess, editingProject, onCancelEdit }: ProjectFormProps) => {
   const [loading, setLoading] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,6 +33,27 @@ const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
     lien_don_250: "",
     lien_don_500: "",
   });
+
+  useEffect(() => {
+    if (editingProject) {
+      setFormData({
+        titre: editingProject.titre || "",
+        slug: editingProject.slug || "",
+        description_courte: editingProject.description_courte || "",
+        description_complete: editingProject.description_complete || "",
+        objectifs: editingProject.objectifs || "",
+        resultats: editingProject.resultats || "",
+        categorie: editingProject.categorie || "",
+        statut: editingProject.statut || "En cours",
+        image_principale: editingProject.image_principale || "",
+        lien_whatsapp: editingProject.lien_whatsapp || "",
+        lien_don_50: editingProject.lien_don_50 || "",
+        lien_don_100: editingProject.lien_don_100 || "",
+        lien_don_250: editingProject.lien_don_250 || "",
+        lien_don_500: editingProject.lien_don_500 || "",
+      });
+    }
+  }, [editingProject]);
 
   const categories = [
     "Éducation",
@@ -103,11 +126,22 @@ const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
     setLoading(true);
 
     try {
-      const { error } = await supabase.from("projects").insert([formData]);
+      if (editingProject) {
+        // Mode édition
+        const { error } = await supabase
+          .from("projects")
+          .update(formData)
+          .eq("id", editingProject.id);
 
-      if (error) throw error;
+        if (error) throw error;
+        toast.success("Projet mis à jour avec succès");
+      } else {
+        // Mode création
+        const { error } = await supabase.from("projects").insert([formData]);
+        if (error) throw error;
+        toast.success("Projet créé avec succès");
+      }
 
-      toast.success("Projet créé avec succès");
       setFormData({
         titre: "",
         slug: "",
@@ -125,9 +159,10 @@ const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
         lien_don_500: "",
       });
       onSuccess();
+      if (onCancelEdit) onCancelEdit();
     } catch (error) {
-      console.error("Error creating project:", error);
-      toast.error("Erreur lors de la création du projet");
+      console.error("Error with project:", error);
+      toast.error(editingProject ? "Erreur lors de la mise à jour" : "Erreur lors de la création du projet");
     } finally {
       setLoading(false);
     }
@@ -326,16 +361,23 @@ const ProjectForm = ({ onSuccess }: ProjectFormProps) => {
         </div>
       </div>
 
-      <Button type="submit" disabled={loading} className="w-full">
-        {loading ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Création en cours...
-          </>
-        ) : (
-          "Créer le projet"
+      <div className="flex gap-3">
+        {editingProject && onCancelEdit && (
+          <Button type="button" variant="outline" onClick={onCancelEdit} className="flex-1">
+            Annuler
+          </Button>
         )}
-      </Button>
+        <Button type="submit" disabled={loading} className="flex-1">
+          {loading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              {editingProject ? "Mise à jour..." : "Création en cours..."}
+            </>
+          ) : (
+            editingProject ? "Mettre à jour le projet" : "Créer le projet"
+          )}
+        </Button>
+      </div>
     </form>
   );
 };
