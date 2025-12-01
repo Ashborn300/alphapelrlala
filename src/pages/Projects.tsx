@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,8 +8,42 @@ import { Badge } from "@/components/ui/badge";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { BookOpen, Users, Briefcase, Heart, Globe, Award, Lightbulb, Music } from "lucide-react";
 
+const iconMap: { [key: string]: any } = {
+  Éducation: BookOpen,
+  Entrepreneuriat: Briefcase,
+  Social: Heart,
+  Culture: Music,
+  Développement: Lightbulb,
+  Excellence: Award,
+  Patrimoine: Globe,
+  Mentorat: Users,
+};
+
 const Projects = () => {
-  const projects = [];
+  const [projects, setProjects] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("Tous");
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    const { data, error } = await supabase
+      .from("projects")
+      .select("*")
+      .order("ordre", { ascending: true })
+      .order("date_creation", { ascending: false });
+
+    if (!error && data) {
+      setProjects(data);
+    }
+    setLoading(false);
+  };
+
+  const filteredProjects = selectedCategory === "Tous" 
+    ? projects 
+    : projects.filter(p => p.categorie === selectedCategory);
 
   const categories = [
     "Tous",
@@ -43,51 +80,96 @@ const Projects = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10" />
       </section>
 
+      {/* Category Filter */}
+      <section className="py-8 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                    selectedCategory === category
+                      ? "bg-primary text-primary-foreground shadow-lg"
+                      : "bg-background text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </section>
+
       {/* Projects Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => {
-              const Icon = project.icon;
-              return (
-                <FadeInOnScroll key={project.id} delay={index * 100}>
-                  <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/20 overflow-hidden h-full">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className={`absolute top-4 right-4 ${project.color} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
-                        {project.status}
-                      </div>
-                      <div className="absolute bottom-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-foreground">
-                          {project.category}
-                        </Badge>
-                      </div>
-                    </div>
-                    
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className={`${project.color} p-3 rounded-lg text-white`}>
-                          <Icon className="h-6 w-6" />
-                        </div>
-                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors flex-1">
-                          {project.title}
-                        </h3>
-                      </div>
-                      
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </FadeInOnScroll>
-              );
-            })}
-          </div>
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Chargement des projets...</p>
+            </div>
+          ) : filteredProjects.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Aucun projet disponible pour le moment.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => {
+                const Icon = iconMap[project.categorie] || BookOpen;
+                const colorMap: { [key: string]: string } = {
+                  "En cours": "bg-green-500",
+                  "À venir": "bg-yellow-500",
+                  "Terminé": "bg-gray-500",
+                  "Annuel": "bg-purple-500"
+                };
+                const statusColor = colorMap[project.statut] || "bg-blue-500";
+
+                return (
+                  <FadeInOnScroll key={project.id} delay={index * 100}>
+                    <Link to={`/projects/${project.slug}`}>
+                      <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/20 overflow-hidden h-full cursor-pointer">
+                        {project.image_principale && (
+                          <div className="relative h-48 overflow-hidden">
+                            <img
+                              src={project.image_principale}
+                              alt={project.titre}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                            <div className={`absolute top-4 right-4 ${statusColor} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
+                              {project.statut}
+                            </div>
+                            <div className="absolute bottom-4 left-4">
+                              <Badge variant="secondary" className="bg-white/90 text-foreground">
+                                {project.categorie}
+                              </Badge>
+                            </div>
+                          </div>
+                        )}
+                        
+                        <CardContent className="p-6">
+                          <div className="flex items-start gap-4 mb-4">
+                            <div className="bg-primary p-3 rounded-lg text-primary-foreground">
+                              <Icon className="h-6 w-6" />
+                            </div>
+                            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors flex-1">
+                              {project.titre}
+                            </h3>
+                          </div>
+                          
+                          <p className="text-muted-foreground leading-relaxed">
+                            {project.description_courte}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  </FadeInOnScroll>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
