@@ -56,10 +56,10 @@ const Index = () => {
   const [isDonationOpen, setIsDonationOpen] = useState(false);
   
   const donationOptions = [
-    { amount: 50, fc: "125 000", link: "https://pay.lygosapp.com/link/donation-50" },
-    { amount: 100, fc: "250 000", link: "https://pay.lygosapp.com/link/donation-100" },
-    { amount: 150, fc: "375 000", link: "https://pay.lygosapp.com/link/donation-150" },
-    { amount: 200, fc: "500 000", link: "https://pay.lygosapp.com/link/donation-200" },
+    { amount: 50, fc: "125 000", link: "https://pay.lygosapp.com/link/98417b6d-c137-45ae-9f1a-f7fdc0ec667b" },
+    { amount: 100, fc: "250 000", link: "https://pay.lygosapp.com/link/4700815b-71db-4d14-a651-56b626683cf3" },
+    { amount: 150, fc: "375 000", link: "https://pay.lygosapp.com/link/259d4d56-b0ce-43db-ab4b-580505538c08" },
+    { amount: 200, fc: "500 000", link: "https://pay.lygosapp.com/link/3aadb258-99c5-4f07-a504-5d9b576f1927" },
   ];
   
   const stats = [{
