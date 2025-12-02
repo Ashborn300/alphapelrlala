@@ -70,9 +70,7 @@ const Projects = () => {
       {/* Category Filter */}
       <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4">
-          <FadeInOnScroll>
-            
-          </FadeInOnScroll>
+          <div></div>
         </div>
       </section>
 
