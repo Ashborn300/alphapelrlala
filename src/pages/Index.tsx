@@ -190,97 +190,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => <FadeInOnScroll key={index} delay={index * 100}>
-                <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="pt-6">
-                    <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
-                    <h3 className="text-3xl font-bold text-primary mb-2">
-                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
-                  </CardContent>
-                </Card>
-              </FadeInOnScroll>)}
-          </div>
-        </div>
-      </section>
-
-      {/* Voir nos projets Section */}
-      <section className="py-20 bg-gradient-to-br from-secondary/10 to-primary/10">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <FadeInOnScroll direction="right">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={projetCentreFormation} 
-                  alt="Centre de formation de la Fondation Alpha Perla" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-            </FadeInOnScroll>
-            
-            <FadeInOnScroll direction="left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-                Découvrez Nos Projets en Cours
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                La <strong>Fondation Alpha Perla</strong> mène des projets concrets pour 
-                transformer des vies et bâtir un avenir meilleur pour nos communautés.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8">
-                Des centres de formation à l'entrepreneuriat féminin, en passant par 
-                l'action sociale et les événements culturels, chaque projet est une 
-                opportunité de créer un impact durable.
-              </p>
-              <Button asChild size="lg" variant="default" className="group">
-                <Link to="/projects" className="flex items-center gap-2">
-                  Voir Tous nos Projets
-                  <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </FadeInOnScroll>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <FadeInOnScroll direction="right">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-                Mission de la Fondation Alpha Perla
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                La <strong>Fondation Alpha Perla</strong> est dédiée à créer des opportunités
-                éducatives, sociales, culturelles et personnelles pour permettre
-                à chacun de réaliser son plein potentiel.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                Nous croyons en l'autonomisation des femmes et des jeunes comme
-                moteur du développement durable en Afrique. À travers nos
-                <Link to="/programs" className="text-secondary hover:underline ml-1">programmes</Link>, la <strong>Fondation Alpha Perla</strong> cultive le leadership, l'excellence et
-                l'entrepreneuriat.
-              </p>
-              <Button asChild variant="default">
-                <Link to="/about">
-                  En Savoir Plus
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </FadeInOnScroll>
-            <FadeInOnScroll direction="left">
-              <img src={missionImage} alt="Fondation Alpha Perla - Perla Coaching" className="rounded-2xl shadow-2xl w-full h-auto" />
-            </FadeInOnScroll>
-          </div>
-        </div>
-      </section>
-
       {/* Excellentia Event Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4">
@@ -370,6 +279,97 @@ const Index = () => {
               </CardContent>
             </Card>
           </FadeInOnScroll>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => <FadeInOnScroll key={index} delay={index * 100}>
+                <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="pt-6">
+                    <stat.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                    <h3 className="text-3xl font-bold text-primary mb-2">
+                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                    </h3>
+                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  </CardContent>
+                </Card>
+              </FadeInOnScroll>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Voir nos projets Section */}
+      <section className="py-20 bg-gradient-to-br from-secondary/10 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <FadeInOnScroll direction="right">
+              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={projetCentreFormation} 
+                  alt="Centre de formation de la Fondation Alpha Perla" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+            </FadeInOnScroll>
+            
+            <FadeInOnScroll direction="left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+                Découvrez Nos Projets en Cours
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                La <strong>Fondation Alpha Perla</strong> mène des projets concrets pour 
+                transformer des vies et bâtir un avenir meilleur pour nos communautés.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Des centres de formation à l'entrepreneuriat féminin, en passant par 
+                l'action sociale et les événements culturels, chaque projet est une 
+                opportunité de créer un impact durable.
+              </p>
+              <Button asChild size="lg" variant="default" className="group">
+                <Link to="/projects" className="flex items-center gap-2">
+                  Voir Tous nos Projets
+                  <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </FadeInOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <FadeInOnScroll direction="right">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+                Mission de la Fondation Alpha Perla
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                La <strong>Fondation Alpha Perla</strong> est dédiée à créer des opportunités
+                éducatives, sociales, culturelles et personnelles pour permettre
+                à chacun de réaliser son plein potentiel.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6">
+                Nous croyons en l'autonomisation des femmes et des jeunes comme
+                moteur du développement durable en Afrique. À travers nos
+                <Link to="/programs" className="text-secondary hover:underline ml-1">programmes</Link>, la <strong>Fondation Alpha Perla</strong> cultive le leadership, l'excellence et
+                l'entrepreneuriat.
+              </p>
+              <Button asChild variant="default">
+                <Link to="/about">
+                  En Savoir Plus
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </FadeInOnScroll>
+            <FadeInOnScroll direction="left">
+              <img src={missionImage} alt="Fondation Alpha Perla - Perla Coaching" className="rounded-2xl shadow-2xl w-full h-auto" />
+            </FadeInOnScroll>
+          </div>
         </div>
       </section>
 
