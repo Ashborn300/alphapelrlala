@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsSection from "@/components/NewsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
 import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook, Instagram, Linkedin, ShoppingCart } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
@@ -51,6 +53,15 @@ import reunion2 from "@/assets/reunion-2.jpg";
 import reunion3 from "@/assets/reunion-3.jpg";
 import projetCentreFormation from "@/assets/projet-centre-formation.jpg";
 const Index = () => {
+  const [isDonationOpen, setIsDonationOpen] = useState(false);
+  
+  const donationOptions = [
+    { amount: 50, fc: "125 000", link: "https://pay.lygosapp.com/link/donation-50" },
+    { amount: 100, fc: "250 000", link: "https://pay.lygosapp.com/link/donation-100" },
+    { amount: 150, fc: "375 000", link: "https://pay.lygosapp.com/link/donation-150" },
+    { amount: 200, fc: "500 000", link: "https://pay.lygosapp.com/link/donation-200" },
+  ];
+  
   const stats = [{
     label: "Femmes Formées",
     value: 500,
@@ -329,12 +340,57 @@ const Index = () => {
                 l'action sociale et les événements culturels, chaque projet est une 
                 opportunité de créer un impact durable.
               </p>
-              <Button asChild size="lg" variant="default" className="group">
-                <Link to="/projects" className="flex items-center gap-2">
-                  Voir Tous nos Projets
-                  <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Dialog open={isDonationOpen} onOpenChange={setIsDonationOpen}>
+                  <DialogTrigger asChild>
+                    <Button size="lg" className="bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold group">
+                      <Heart className="mr-2 h-5 w-5" />
+                      Faire un Don
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md bg-background">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-primary text-center">
+                        Soutenez nos Projets
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4 mt-6">
+                      <p className="text-center text-muted-foreground mb-6">
+                        Choisissez le montant de votre don pour soutenir nos projets et aider à transformer des vies.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4">
+                        {donationOptions.map((option) => (
+                          <a
+                            key={option.amount}
+                            href={option.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block"
+                          >
+                            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2 hover:border-secondary">
+                              <CardContent className="p-4 text-center">
+                                <p className="text-3xl font-bold text-primary mb-1">
+                                  {option.amount}$
+                                </p>
+                                <p className="text-sm text-muted-foreground">
+                                  {option.fc} FC
+                                </p>
+                              </CardContent>
+                            </Card>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                
+                <Button asChild size="lg" variant="default" className="group">
+                  <Link to="/projects" className="flex items-center gap-2">
+                    Voir Tous nos Projets
+                    <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
             </FadeInOnScroll>
           </div>
         </div>
