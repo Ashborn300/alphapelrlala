@@ -34,6 +34,7 @@ interface ArticleImage {
   id: string;
   image_url: string;
   ordre: number | null;
+  type: 'image' | 'video';
 }
 
 const Article = () => {
@@ -73,7 +74,7 @@ const Article = () => {
           setCommentaires(commentsData || []);
         }
 
-        // Fetch article images
+        // Fetch article images and videos
         const { data: imagesData, error: imagesError } = await supabase
           .from("article_images")
           .select("*")
@@ -83,7 +84,13 @@ const Article = () => {
         if (imagesError) {
           console.error("Error fetching images:", imagesError);
         } else {
-          setImages(imagesData || []);
+          // Sort videos first, then images
+          const sorted = (imagesData || []).sort((a, b) => {
+            if (a.type === 'video' && b.type !== 'video') return -1;
+            if (a.type !== 'video' && b.type === 'video') return 1;
+            return (a.ordre || 0) - (b.ordre || 0);
+          }) as ArticleImage[];
+          setImages(sorted);
         }
       }
       setLoading(false);
@@ -178,15 +185,23 @@ const Article = () => {
 
             {images.length > 0 && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-primary mb-6">Galerie d'images</h2>
+                <h2 className="text-2xl font-bold text-primary mb-6">Galerie</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {images.map((image) => (
-                    <div key={image.id} className="relative group overflow-hidden rounded-lg aspect-video">
-                      <img
-                        src={image.image_url}
-                        alt={`Image ${image.ordre || ''}`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+                  {images.map((media) => (
+                    <div key={media.id} className="relative group overflow-hidden rounded-lg aspect-video">
+                      {media.type === 'video' ? (
+                        <video
+                          src={media.image_url}
+                          controls
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <img
+                          src={media.image_url}
+                          alt={`Image ${media.ordre || ''}`}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                      )}
                     </div>
                   ))}
                 </div>

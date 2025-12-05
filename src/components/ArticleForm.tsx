@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Upload, X } from "lucide-react";
+import { Upload, X, Video } from "lucide-react";
 
 interface ArticleFormProps {
   onSuccess: () => void;
@@ -24,6 +24,8 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
   const [coverImagePreview, setCoverImagePreview] = useState("");
   const [secondaryImages, setSecondaryImages] = useState<File[]>([]);
   const [secondaryImagesPreviews, setSecondaryImagesPreviews] = useState<string[]>([]);
+  const [videos, setVideos] = useState<File[]>([]);
+  const [videosPreviews, setVideosPreviews] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
   const handleCoverImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +56,24 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
   const removeSecondaryImage = (index: number) => {
     setSecondaryImages(prev => prev.filter((_, i) => i !== index));
     setSecondaryImagesPreviews(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const handleVideosChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    setVideos([...videos, ...files]);
+    
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setVideosPreviews(prev => [...prev, reader.result as string]);
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const removeVideo = (index: number) => {
+    setVideos(prev => prev.filter((_, i) => i !== index));
+    setVideosPreviews(prev => prev.filter((_, i) => i !== index));
   };
 
   const uploadImage = async (file: File, path: string) => {
@@ -99,14 +119,36 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
 
       if (articleError) throw articleError;
 
+      // Upload videos first (they will be displayed first)
+      let mediaOrder = 0;
+      if (videos.length > 0) {
+        const videoUrls = await Promise.all(
+          videos.map((file) => 
+            uploadImage(file, 'videos').then(url => ({
+              article_id: articleData.id,
+              image_url: url,
+              ordre: mediaOrder++,
+              type: 'video'
+            }))
+          )
+        );
+
+        const { error: videosError } = await supabase
+          .from('article_images')
+          .insert(videoUrls);
+
+        if (videosError) throw videosError;
+      }
+
       // Upload secondary images
       if (secondaryImages.length > 0) {
         const imageUrls = await Promise.all(
-          secondaryImages.map((file, index) => 
+          secondaryImages.map((file) => 
             uploadImage(file, 'secondary').then(url => ({
               article_id: articleData.id,
               image_url: url,
-              ordre: index
+              ordre: mediaOrder++,
+              type: 'image'
             }))
           )
         );
@@ -130,6 +172,8 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
       setCoverImagePreview("");
       setSecondaryImages([]);
       setSecondaryImagesPreviews([]);
+      setVideos([]);
+      setVideosPreviews([]);
       onSuccess();
     } catch (error) {
       console.error("Error creating article:", error);
@@ -233,6 +277,39 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
           </div>
 
           <div className="space-y-2">
+            <Label>Vidéos (optionnelles - affichées en premier)</Label>
+            <div className="mt-2 space-y-4">
+              <div className="flex flex-wrap gap-4">
+                {videosPreviews.map((preview, index) => (
+                  <div key={index} className="relative">
+                    <video src={preview} className="w-32 h-32 object-cover rounded" />
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      size="icon"
+                      className="absolute -top-2 -right-2"
+                      onClick={() => removeVideo(index)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))}
+                <label className="flex flex-col items-center justify-center w-32 h-32 border-2 border-dashed border-border rounded cursor-pointer hover:bg-muted/50 transition-colors">
+                  <Video className="h-6 w-6 mb-1 text-muted-foreground" />
+                  <span className="text-xs text-muted-foreground">Ajouter vidéo</span>
+                  <Input
+                    type="file"
+                    accept="video/*"
+                    multiple
+                    className="hidden"
+                    onChange={handleVideosChange}
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-2">
             <Label>Images Secondaires (optionnelles)</Label>
             <div className="mt-2 space-y-4">
               <div className="flex flex-wrap gap-4">
@@ -252,7 +329,7 @@ const ArticleForm = ({ onSuccess }: ArticleFormProps) => {
                 ))}
                 <label className="flex flex-col items-center justify-center w-32 h-32 border-2 border-dashed border-border rounded cursor-pointer hover:bg-muted/50 transition-colors">
                   <Upload className="h-6 w-6 mb-1 text-muted-foreground" />
-                  <span className="text-xs text-muted-foreground">Ajouter</span>
+                  <span className="text-xs text-muted-foreground">Ajouter image</span>
                   <Input
                     type="file"
                     accept="image/*"
