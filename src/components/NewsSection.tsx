@@ -26,7 +26,7 @@ const NewsSection = () => {
         .from("blog_articles")
         .select("id, titre, slug, image_couverture, extrait, date_publication")
         .order("date_publication", { ascending: false })
-        .limit(3);
+        .limit(2);
 
       setArticles(data || []);
     };
@@ -58,7 +58,7 @@ const NewsSection = () => {
           </FadeInOnScroll>
         ) : (
           <>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
           {articles.map((article) => (
             <FadeInOnScroll key={article.id}>
               <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
