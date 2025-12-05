@@ -21,6 +21,7 @@ export type Database = {
           id: string
           image_url: string
           ordre: number | null
+          type: string
         }
         Insert: {
           article_id: string
@@ -28,6 +29,7 @@ export type Database = {
           id?: string
           image_url: string
           ordre?: number | null
+          type?: string
         }
         Update: {
           article_id?: string
@@ -35,6 +37,7 @@ export type Database = {
           id?: string
           image_url?: string
           ordre?: number | null
+          type?: string
         }
         Relationships: [
           {
