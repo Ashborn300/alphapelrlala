@@ -35,6 +35,10 @@ import gallery4 from "@/assets/gallery4.jpg";
 import gallery5 from "@/assets/gallery5.jpg";
 import gallery6 from "@/assets/gallery6.jpg";
 import excellentiaImage from "@/assets/excellentia-2025.jpg";
+import excellentiaAward1 from "@/assets/excellentia-award-1.jpg";
+import excellentiaGroup from "@/assets/excellentia-group.jpg";
+import excellentiaSpeaker from "@/assets/excellentia-speaker.jpg";
+import excellentiaStaff from "@/assets/excellentia-staff.jpg";
 import incroyableTalentImg from "@/assets/incroyable-talent.jpg";
 import educationConferenceImg from "@/assets/education-conference.jpg";
 import entrepreneurshipAwardsImg from "@/assets/entrepreneurship-awards.jpg";
@@ -201,94 +205,49 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Excellentia Event Section */}
+      {/* 3ème Édition Excellentia Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4">
-          <FadeInOnScroll className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary flex items-center justify-center gap-3">
-              <span className="text-4xl">🌟</span>
-              COMMUNIQUÉ OFFICIEL
-              <span className="text-4xl">🌟</span>
+          <FadeInOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary flex items-center justify-center gap-3">
+              <Award className="h-10 w-10 text-secondary" />
+              3ᵉ édition du TROPHÉE CONGOLESE WOMAN EXCELLENTIA
             </h2>
+            <p className="text-xl text-secondary font-semibold mb-4">AFRIQUE-CENTRALE</p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Un événement d'exception célébrant l'excellence féminine congolaise et africaine. 
+              La 3ᵉ édition a réuni des femmes inspirantes, leaders dans leurs domaines, 
+              pour honorer celles qui bâtissent l'avenir de notre continent par leur engagement, 
+              leur courage et leur vision.
+            </p>
           </FadeInOnScroll>
           
-          <FadeInOnScroll className="max-w-5xl mx-auto">
-            <Card className="border-0 shadow-2xl overflow-hidden">
-              <CardContent className="p-0">
-                <div className="grid md:grid-cols-2 gap-0">
-                  {/* Image */}
-                  <div className="h-full min-h-[400px]">
-                    <img src={excellentiaImage} alt="Trophée Congolese Woman Excellentia - 3ème édition 2025" className="w-full h-full object-cover" />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-8 md:p-10 flex flex-col justify-center bg-gradient-to-br from-background to-muted/30">
-                    <p className="text-lg md:text-xl text-foreground mb-6 leading-relaxed">
-                      La <strong className="text-primary">FONDATION Alpha Perla</strong> a l'honneur de vous présenter la <strong className="text-secondary">3ᵉ édition</strong> du <strong className="text-primary">TROPHÉE CONGOLESE WOMAN EXCELLENTIA – AFRIQUE-CENTRALE</strong>
-                    </p>
-                    
-                    <div className="space-y-4 mb-8">
-                      <div className="flex items-start gap-3">
-                        <span className="text-2xl">📅</span>
-                        <div>
-                          <p className="font-bold text-lg text-primary">Date :</p>
-                          <p className="text-muted-foreground"><AnimatedCounter end={7} /> décembre <AnimatedCounter end={2025} /></p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-3">
-                        <span className="text-2xl">📍</span>
-                        <div>
-                          <p className="font-bold text-lg text-primary">Lieu :</p>
-                          <p className="text-muted-foreground">Hôtel Hilton, Kinshasa</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed border-l-4 border-secondary pl-4 italic">
-                      Un rendez-vous d'exception dédié à la femme congolaise et africaine, symbole d'excellence, de leadership et d'impact.
-                    </p>
-                    
-                    <p className="text-base text-muted-foreground mb-8">
-                      Cette édition mettra à l'honneur celles qui, par leur engagement, leur courage et leur vision, bâtissent l'avenir de notre continent.
-                    </p>
-                    
-                    <Button asChild size="lg" className="w-full md:w-auto bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                      <a href="https://wa.me/243977074034" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        Pour plus d'informations
-                      </a>
-                    </Button>
+          <FadeInOnScroll className="max-w-6xl mx-auto">
+            {/* Image Gallery */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaAward1} alt="Remise de prix Excellentia" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaGroup} alt="Photo de groupe des lauréates" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaSpeaker} alt="Discours lors de la cérémonie" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaStaff} alt="Équipe organisatrice" className="w-full h-full object-cover" />
+              </div>
+            </div>
 
-                    {/* Support Section */}
-                    <div className="mt-10 pt-8 border-t border-border">
-                      <h3 className="text-2xl font-bold text-primary mb-4 text-center">
-                        Soutenir l'événement
-                      </h3>
-                      
-                      <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-xl p-6 mb-6">
-                        <p className="text-lg text-center text-muted-foreground mb-3">Un accès buffet et cocktail offertes</p>
-                        <p className="text-4xl font-bold text-center text-primary mb-1">
-                          150$
-                        </p>
-                        <p className="text-lg text-center text-muted-foreground">
-                          équivalent à 375000 FC
-                        </p>
-                      </div>
-
-                      <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                        <a href="https://pay.lygosapp.com/link/3f683587-6b52-403e-992c-71f3407e677f" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                          <Heart className="w-5 h-5" />
-                          Faire un don
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Call to Action */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Link to="/article/excellencia-2024-edition3" className="flex items-center gap-2">
+                  Découvrir l'événement
+                  <ChevronRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </FadeInOnScroll>
         </div>
       </section>
