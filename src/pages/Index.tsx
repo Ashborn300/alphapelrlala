@@ -22,6 +22,7 @@ import social3 from "@/assets/social3.jpg";
 import social4 from "@/assets/social4.jpg";
 import valorisationEspaces from "@/assets/valorisation-espaces.jpg";
 import bookImage from "@/assets/book.jpg";
+import heritageMereBook from "@/assets/heritage-mere-book.jpg";
 import masterFormationImage from "@/assets/master-formation.jpg";
 import educationEventImage from "@/assets/education-event.jpg";
 import laureats1 from "@/assets/laureats1.jpg";
@@ -58,6 +59,7 @@ import reunion3 from "@/assets/reunion-3.jpg";
 import projetCentreFormation from "@/assets/projet-centre-formation.jpg";
 const Index = () => {
   const [isDonationOpen, setIsDonationOpen] = useState(false);
+  const [isHeritageMereOpen, setIsHeritageMereOpen] = useState(false);
   
   const donationOptions = [
     { amount: 50, fc: "125 000", link: "https://pay.lygosapp.com/link/98417b6d-c137-45ae-9f1a-f7fdc0ec667b" },
@@ -733,26 +735,85 @@ const Index = () => {
               Écriture et Publication
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Passionnée de la littérature madame Perla est autrice de l'ouvrage : <span className="font-semibold text-primary">Les larmes d'une femme meurtrie sècheront-elles</span>, inspirée par les atrocités se déroulant à l'est de la RDC.
+              Passionnée de la littérature, Alpha Perla Mboyo est autrice de plusieurs ouvrages inspirants qui touchent les cœurs et transforment les vies.
             </p>
           </div>
-          <div className="max-w-2xl mx-auto animate-fade-in">
-            <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-              <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="text-center mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-white">
-                <a href="/writing">
-                  En savoir plus
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="default">
-                <a href="https://pay.lygosapp.com/link/d942fc09-1f46-4b27-ad26-62834a86001b" target="_blank" rel="noopener noreferrer">
-                  <ShoppingCart className="mr-2 h-5 w-5" />
-                  Acheter le livre
-                </a>
-              </Button>
-            </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Livre 1: Les larmes d'une femme meurtrie */}
+            <FadeInOnScroll className="animate-fade-in">
+              <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                <img src={bookImage} alt="Alpha Perla Mboyo - Les larmes d'une femme meurtrie sècheront-elles" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div className="text-center mt-6">
+                <h3 className="text-xl font-bold text-primary mb-2">Les larmes d'une femme meurtrie sècheront-elles</h3>
+                <p className="text-muted-foreground text-sm mb-4">Inspiré par les atrocités se déroulant à l'est de la RDC.</p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button asChild size="default" className="bg-secondary hover:bg-secondary/90 text-white">
+                    <a href="/writing">En savoir plus</a>
+                  </Button>
+                  <Button asChild size="default" variant="default">
+                    <a href="https://pay.lygosapp.com/link/d942fc09-1f46-4b27-ad26-62834a86001b" target="_blank" rel="noopener noreferrer">
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      Acheter le livre
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </FadeInOnScroll>
+
+            {/* Livre 2: L'héritage d'une mère */}
+            <FadeInOnScroll delay={100} className="animate-fade-in">
+              <div className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                <img src={heritageMereBook} alt="Alpha Perla Mboyo - L'héritage d'une mère" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div className="text-center mt-6">
+                <h3 className="text-xl font-bold text-primary mb-2">L'héritage d'une mère : 12 Clés du Succès</h3>
+                <p className="text-muted-foreground text-sm mb-4">L'histoire de Carla et les 12 clés essentielles de sagesse transmises par sa mère.</p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Dialog open={isHeritageMereOpen} onOpenChange={setIsHeritageMereOpen}>
+                    <DialogTrigger asChild>
+                      <Button size="default" variant="default">
+                        <ShoppingCart className="mr-2 h-4 w-4" />
+                        Acheter le livre
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-lg bg-background">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold text-primary text-center">
+                          L'héritage d'une mère
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4 mt-4">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          La vie ne nous épargne jamais, et parfois, elle nous place face à des choix invisibles avant même que nous ayons appris à marcher. Carla, personnage principal au cœur de cette histoire, n'a jamais connu sa mère, Louise-Marie, une femme puissante et respectée, qui rendit l'âme le jour de la naissance de Carla.
+                        </p>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          Carla grandit donc, entourée de l'amour et des limites de son père, ignorant tout de l'héritage qui l'attendait. Mais sa mère avait choisi, plutôt que de lui laisser un héritage matériel, de lui transmettre sa sagesse en douze clés essentielles contenues dans un carnet.
+                        </p>
+                        <div className="border-t pt-4">
+                          <p className="text-xs text-muted-foreground mb-2 font-semibold">À propos de l'auteur :</p>
+                          <p className="text-xs text-muted-foreground">
+                            ALPHA PERLA MBOYO est une humanitaire congolaise engagée dans l'autonomisation de la femme. Elle est présidente fondatrice de la fondation Alpha Perla et initiatrice du trophée « Congolese Women Excellents ».
+                          </p>
+                        </div>
+                        <div className="flex flex-col gap-3 pt-4 border-t">
+                          <div className="text-center">
+                            <p className="text-lg font-bold text-primary">15$ <span className="text-sm font-normal text-muted-foreground">(équivalent 37 500 FC)</span></p>
+                          </div>
+                          <Button asChild size="lg" className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold">
+                            <a href="https://pay.lygosapp.com/link/1886a1cf-5126-44b8-bd2a-38abf0ce1240" target="_blank" rel="noopener noreferrer">
+                              <ShoppingCart className="mr-2 h-5 w-5" />
+                              Payer maintenant
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              </div>
+            </FadeInOnScroll>
           </div>
         </div>
       </section>
