@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
-import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook, Instagram, Linkedin, ShoppingCart } from "lucide-react";
+import { GraduationCap, Users, Heart, Award, BookOpen, TrendingUp, Globe, ChevronRight, Youtube, Facebook, Instagram, Linkedin, ShoppingCart, Plane, MapPin, Calendar } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import heroImage from "@/assets/hero-bg.jpg";
@@ -202,6 +202,64 @@ const Index = () => {
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </section>
+
+      {/* Formations Dubaï 2026 Section */}
+      <section className="py-20 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="max-w-5xl mx-auto">
+            <div className="bg-card rounded-2xl shadow-2xl overflow-hidden">
+              <div className="bg-gradient-to-r from-primary to-secondary p-6 md:p-8 text-white">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <Plane className="h-10 w-10" />
+                  <h2 className="text-2xl md:text-4xl font-bold text-center">
+                    Programme International de Formation 2026
+                  </h2>
+                </div>
+                <p className="text-xl md:text-2xl text-center font-semibold opacity-90">
+                  Dubaï - Émirats Arabes Unis
+                </p>
+              </div>
+              <div className="p-6 md:p-10">
+                <p className="text-lg text-muted-foreground mb-6 text-center leading-relaxed">
+                  La <strong className="text-primary">Fondation Alpha Perla</strong> organise son programme international 
+                  de formations professionnelles à Dubaï, capitale mondiale de l'innovation et de la performance.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4 mb-8">
+                  <div className="flex items-center gap-3 justify-center p-4 bg-muted rounded-lg">
+                    <Calendar className="h-6 w-6 text-secondary" />
+                    <span className="font-medium">Février - Novembre 2026</span>
+                  </div>
+                  <div className="flex items-center gap-3 justify-center p-4 bg-muted rounded-lg">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                    <span className="font-medium">Dubaï, EAU</span>
+                  </div>
+                  <div className="flex items-center gap-3 justify-center p-4 bg-muted rounded-lg">
+                    <GraduationCap className="h-6 w-6 text-secondary" />
+                    <span className="font-medium">+50 Formations</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 mb-8">
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Finance & Audit</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Marchés Publics</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Management</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Leadership</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Informatique</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Communication</span>
+                </div>
+                <div className="text-center">
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Link to="/formations-dubai" className="flex items-center gap-2">
+                      <Plane className="h-5 w-5" />
+                      Découvrir le Programme Complet
+                      <ChevronRight className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </FadeInOnScroll>
         </div>
