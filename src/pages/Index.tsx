@@ -42,7 +42,7 @@ import excellentiaSpeaker from "@/assets/excellentia-speaker.jpg";
 import excellentiaStaff from "@/assets/excellentia-staff.jpg";
 import incroyableTalentImg from "@/assets/incroyable-talent.jpg";
 import educationConferenceImg from "@/assets/education-conference.jpg";
-import entrepreneurshipAwardsImg from "@/assets/entrepreneurship-awards.jpg";
+import entrepreneurshipAwardsImg from "@/assets/entrepreneuriat-femmes-debout.jpg";
 import personalDevConferenceImg from "@/assets/personal-development-conference.jpg";
 import socialActionCommunityImg from "@/assets/social-action-community.jpg";
 import culturalEventsCeremonyImg from "@/assets/cultural-events-ceremony.jpg";
