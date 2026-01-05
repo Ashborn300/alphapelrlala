@@ -216,7 +216,7 @@ const Index = () => {
               <img 
                 src={formationDubaiHero} 
                 alt="Formation Dubaï - Programme international" 
-                className="w-full h-48 md:h-64 object-cover"
+                className="w-full object-contain"
               />
               <div className="bg-gradient-to-r from-primary to-secondary p-6 md:p-8 text-white">
                 <div className="flex items-center justify-center gap-3 mb-4">
