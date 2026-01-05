@@ -57,6 +57,7 @@ import reunion1 from "@/assets/reunion-1.jpg";
 import reunion2 from "@/assets/reunion-2.jpg";
 import reunion3 from "@/assets/reunion-3.jpg";
 import projetCentreFormation from "@/assets/projet-centre-formation.jpg";
+import formationDubaiHero from "@/assets/formation-dubai-hero.jpg";
 const Index = () => {
   const [isDonationOpen, setIsDonationOpen] = useState(false);
   const [isHeritageMereOpen, setIsHeritageMereOpen] = useState(false);
@@ -212,16 +213,24 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <FadeInOnScroll className="max-w-5xl mx-auto">
             <div className="bg-card rounded-2xl shadow-2xl overflow-hidden">
-              <div className="bg-gradient-to-r from-primary to-secondary p-6 md:p-8 text-white">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Plane className="h-10 w-10" />
-                  <h2 className="text-2xl md:text-4xl font-bold text-center">
-                    Programme International de Formation 2026
-                  </h2>
+              <div className="relative">
+                <img 
+                  src={formationDubaiHero} 
+                  alt="Formation Dubaï - Programme international" 
+                  className="w-full h-48 md:h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-primary/40" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <Plane className="h-8 w-8 md:h-10 md:w-10" />
+                    <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center">
+                      Programme International de Formation 2026
+                    </h2>
+                  </div>
+                  <p className="text-lg md:text-xl text-center font-semibold opacity-90">
+                    Dubaï - Émirats Arabes Unis
+                  </p>
                 </div>
-                <p className="text-xl md:text-2xl text-center font-semibold opacity-90">
-                  Dubaï - Émirats Arabes Unis
-                </p>
               </div>
               <div className="p-6 md:p-10">
                 <p className="text-lg text-muted-foreground mb-6 text-center leading-relaxed">
