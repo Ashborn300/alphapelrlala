@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
+import formationDubaiHero from "@/assets/formation-dubai-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -98,8 +99,15 @@ const FormationsDubai = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-primary via-primary/90 to-secondary overflow-hidden">
-        <div className="absolute inset-0 opacity-30" />
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={formationDubaiHero} 
+            alt="Formation Dubaï - Présentation professionnelle" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-secondary/70" />
+        </div>
         <div className="container mx-auto px-4 pt-16 text-center relative z-10">
           <FadeInOnScroll>
             <Badge className="bg-secondary text-secondary-foreground mb-6 text-lg px-6 py-2">
