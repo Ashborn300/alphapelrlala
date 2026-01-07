@@ -2,11 +2,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import formationDubaiHero from "@/assets/formation-dubai-hero.jpg";
+import formationTransformation360 from "@/assets/formation-transformation-360.jpg";
+import formationJeunesLeaders from "@/assets/formation-jeunes-leaders.jpg";
+import formationMasterclassChine from "@/assets/formation-masterclass-chine.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Calendar, Phone, Globe, GraduationCap, Briefcase, Monitor, Users, MessageSquare, TrendingUp, Plane } from "lucide-react";
+import { MapPin, Calendar, Phone, Globe, GraduationCap, Briefcase, Monitor, Users, MessageSquare, TrendingUp, Plane, Star } from "lucide-react";
 
 const FormationsDubai = () => {
   const financeFormations = [
@@ -301,6 +304,119 @@ const FormationsDubai = () => {
               </TabsContent>
             ))}
           </Tabs>
+        </div>
+      </section>
+
+      {/* Nos autres formations */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="text-center mb-12">
+            <Badge className="bg-secondary text-secondary-foreground mb-4">
+              <Star className="w-4 h-4 mr-2" />
+              Programmes Exclusifs
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Nos Autres Formations
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez nos autres programmes de formation et de développement personnel
+            </p>
+          </FadeInOnScroll>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Transformation 360 */}
+            <FadeInOnScroll>
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                <div className="relative w-full">
+                  <img 
+                    src={formationTransformation360} 
+                    alt="Programme Master National - Transformation 360"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-primary mb-3">
+                    Transformation 360
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 flex-1">
+                    Programme Master National de Leadership Patriotique, Excellence Professionnelle et Impact National. 
+                    Pour bâtir une nouvelle génération de leaders disciplinés, productifs et patriotes.
+                  </p>
+                  <Button asChild className="w-full">
+                    <a
+                      href="https://wa.me/243977074034?text=Bonjour, je suis intéressé(e) par le programme Transformation 360"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      En savoir plus
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </FadeInOnScroll>
+
+            {/* Jeunes Leaders & Ambition */}
+            <FadeInOnScroll>
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                <div className="relative w-full">
+                  <img 
+                    src={formationJeunesLeaders} 
+                    alt="Jeunes Leaders & Ambition 2026"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-primary mb-3">
+                    Jeunes Leaders & Ambition 2026
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 flex-1">
+                    Programme de 4 jours destiné aux jeunes pré-finalistes, finalistes du secondaire et étudiants universitaires. 
+                    Développez votre stabilité émotionnelle, vision personnelle et créativité.
+                  </p>
+                  <Button asChild className="w-full">
+                    <a
+                      href="https://wa.me/243977074034?text=Bonjour, je suis intéressé(e) par le programme Jeunes Leaders %26 Ambition 2026"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      En savoir plus
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </FadeInOnScroll>
+
+            {/* Masterclass Chine */}
+            <FadeInOnScroll>
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                <div className="relative w-full">
+                  <img 
+                    src={formationMasterclassChine} 
+                    alt="Masterclass Opportunités d'Affaires en Chine"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-primary mb-3">
+                    Masterclass Affaires en Chine
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 flex-1">
+                    Du 24 Mars au 04 Avril 2026. Voyage d'affaires tout compris : Visa, billet, hébergement, 
+                    masterclass business, visites d'entreprises et découverte touristique. 3 500 $.
+                  </p>
+                  <Button asChild className="w-full">
+                    <a
+                      href="https://wa.me/243977074034?text=Bonjour, je suis intéressé(e) par la Masterclass Opportunités d'Affaires en Chine"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      En savoir plus
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </FadeInOnScroll>
+          </div>
         </div>
       </section>
 
