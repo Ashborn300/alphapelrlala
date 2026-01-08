@@ -209,10 +209,13 @@ const FormationsDubai = () => {
 
             <TabsContent value="all">
               <FadeInOnScroll>
+                <p className="text-muted-foreground mb-4">
+                  {categories.reduce((acc, cat) => acc + cat.formations.length, 0)} formations disponibles
+                </p>
                 <div className="grid gap-4">
-                  {categories.flatMap((cat) => 
+                  {categories.map((cat) => (
                     cat.formations.map((formation, index) => (
-                      <Card key={`${cat.id}-${index}`} className="hover:shadow-lg transition-all duration-300 hover:border-secondary">
+                      <Card key={`all-${cat.id}-${index}`} className="hover:shadow-lg transition-all duration-300 hover:border-secondary">
                         <CardContent className="p-6">
                           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="flex-1">
@@ -253,7 +256,7 @@ const FormationsDubai = () => {
                         </CardContent>
                       </Card>
                     ))
-                  )}
+                  ))}
                 </div>
               </FadeInOnScroll>
             </TabsContent>
