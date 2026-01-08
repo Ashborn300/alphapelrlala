@@ -186,15 +186,8 @@ const FormationsDubai = () => {
             </p>
           </FadeInOnScroll>
 
-          <Tabs defaultValue="all" className="w-full">
+          <Tabs defaultValue="finance" className="w-full">
             <TabsList className="flex flex-wrap justify-center gap-3 mb-8 h-auto bg-transparent">
-              <TabsTrigger
-                value="all"
-                className="flex flex-col items-center gap-1 px-4 py-3 min-w-[100px] data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-              >
-                <GraduationCap className="w-6 h-6" />
-                <span className="text-xs font-medium">Toutes</span>
-              </TabsTrigger>
               {categories.map((cat) => (
                 <TabsTrigger
                   key={cat.id}
@@ -206,60 +199,6 @@ const FormationsDubai = () => {
                 </TabsTrigger>
               ))}
             </TabsList>
-
-            <TabsContent value="all">
-              <FadeInOnScroll>
-                <p className="text-muted-foreground mb-4">
-                  {categories.reduce((acc, cat) => acc + cat.formations.length, 0)} formations disponibles
-                </p>
-                <div className="grid gap-4">
-                  {categories.map((cat) => (
-                    cat.formations.map((formation, index) => (
-                      <Card key={`all-${cat.id}-${index}`} className="hover:shadow-lg transition-all duration-300 hover:border-secondary">
-                        <CardContent className="p-6">
-                          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-2">
-                                <Badge variant="outline" className="text-xs">
-                                  {cat.label}
-                                </Badge>
-                              </div>
-                              <h3 className="font-semibold text-primary text-lg mb-2">
-                                {formation.theme}
-                              </h3>
-                              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                                <span className="flex items-center gap-1">
-                                  <Calendar className="w-4 h-4 text-secondary" />
-                                  {formation.dates}
-                                </span>
-                                <span className="flex items-center gap-1">
-                                  <MapPin className="w-4 h-4 text-secondary" />
-                                  Dubaï
-                                </span>
-                              </div>
-                            </div>
-                            <div className="flex items-center gap-4">
-                              <Badge variant="secondary" className="text-lg px-4 py-2">
-                                {formation.prix}
-                              </Badge>
-                              <Button asChild>
-                                <a
-                                  href={`https://wa.me/243977074034?text=Bonjour, je suis intéressé(e) par la formation : ${encodeURIComponent(formation.theme)}`}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  S'inscrire
-                                </a>
-                              </Button>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))
-                  ))}
-                </div>
-              </FadeInOnScroll>
-            </TabsContent>
 
             {categories.map((cat) => (
               <TabsContent key={cat.id} value={cat.id}>
