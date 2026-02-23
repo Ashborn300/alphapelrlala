@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Send } from "lucide-react";
+import { Send, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Formulaire = () => {
@@ -77,22 +77,23 @@ const Formulaire = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const validateForm = () => {
     if (!form.raisonSociale || !form.nomComplet || !form.telephone) {
       toast({
         title: "Champs obligatoires",
         description: "Veuillez remplir au moins la raison sociale, le nom complet et le téléphone.",
         variant: "destructive",
       });
-      return;
+      return false;
     }
+    return true;
+  };
 
-    const lines = [
-      "📋 *FORMULAIRE DE PARTICIPATION - MISSION ÉCONOMIQUE WORLD CONNECT*",
+  const buildFormText = () => {
+    return [
+      "📋 FORMULAIRE DE PARTICIPATION - MISSION ÉCONOMIQUE WORLD CONNECT",
       "",
-      "*1. INFORMATIONS GÉNÉRALES*",
+      "1. INFORMATIONS GÉNÉRALES",
       `Raison sociale : ${form.raisonSociale}`,
       `N° ID Nationale : ${form.idNationale}`,
       `N° RCCM : ${form.rccm}`,
@@ -101,7 +102,7 @@ const Formulaire = () => {
       `Adresse siège : ${form.adresseSiege}`,
       `Ville : ${form.villeSiege} | Province : ${form.provinceSiege}`,
       "",
-      "*2. PARTICIPANT*",
+      "2. PARTICIPANT",
       `Nom complet : ${form.nomComplet}`,
       `Fonction : ${form.fonction}`,
       `N° Passeport : ${form.numPasseport}`,
@@ -111,14 +112,14 @@ const Formulaire = () => {
       `Tél : ${form.telephone}`,
       `Personne urgence : ${form.personneUrgence}`,
       "",
-      "*3. ACTIVITÉS*",
+      "3. ACTIVITÉS",
       `Activité principale : ${form.activitePrincipale}`,
       `Activités secondaires : ${form.activitesSecondaires}`,
       `Secteur d'intérêt : ${form.secteurInteret}`,
       `Produits principaux : ${form.produitsPrincipaux}`,
       `Domaines coopération : ${form.domainesCooperation}`,
       "",
-      "*4. PROJET D'INVESTISSEMENT*",
+      "4. PROJET D'INVESTISSEMENT",
       `Organisation : ${form.nomOrganisation}`,
       `Secteur : ${form.secteurActivite}`,
       `Ville/Province : ${form.villeProjet}`,
@@ -136,25 +137,34 @@ const Formulaire = () => {
       `Contact : ${form.personneContact}`,
       `Remarques : ${form.remarques}`,
       "",
-      "*5. CATÉGORIE DE PARTICIPATION*",
+      "5. CATÉGORIE DE PARTICIPATION",
       `Catégorie choisie : ${form.categorie}`,
       "",
-      "*6. FORMALITÉS*",
+      "6. FORMALITÉS",
       `Catégorie d'affaires : ${form.categorieAffaires.join(", ")} ${form.autresCategorieAffaires}`,
       `Intérêt exportation : ${form.interetExportation}`,
       `Intérêt importation : ${form.interetImportation}`,
       `Représentation/Partenariat : ${form.representationPartenariat}`,
       `Profil entreprise : ${form.profilEntreprise}`,
-    ];
+    ].join("\n");
+  };
 
-    const message = encodeURIComponent(lines.filter(l => l !== undefined).join("\n"));
-    const url = `https://wa.me/243974054248?text=${message}`;
-    window.open(url, "_blank");
+  const handleSubmitWhatsApp = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
 
-    toast({
-      title: "Formulaire envoyé",
-      description: "Vous allez être redirigé vers WhatsApp pour envoyer votre formulaire.",
-    });
+    const message = encodeURIComponent(buildFormText());
+    window.open(`https://wa.me/243974054248?text=${message}`, "_blank");
+    toast({ title: "Formulaire envoyé", description: "Vous allez être redirigé vers WhatsApp." });
+  };
+
+  const handleSubmitEmail = () => {
+    if (!validateForm()) return;
+
+    const subject = encodeURIComponent(`Formulaire de Participation - ${form.raisonSociale}`);
+    const body = encodeURIComponent(buildFormText());
+    window.open(`mailto:contact@fondationalphaperla.com?subject=${subject}&body=${body}`, "_blank");
+    toast({ title: "Formulaire envoyé", description: "Votre client e-mail va s'ouvrir avec le formulaire pré-rempli." });
   };
 
   return (
@@ -171,7 +181,7 @@ const Formulaire = () => {
           </div>
         </section>
 
-        <form onSubmit={handleSubmit} className="container mx-auto px-4 max-w-4xl space-y-8">
+        <form onSubmit={handleSubmitWhatsApp} className="container mx-auto px-4 max-w-4xl space-y-8">
           {/* Section 1 */}
           <Card>
             <CardHeader><CardTitle>1. Informations Générales sur l'Entreprise</CardTitle></CardHeader>
@@ -375,10 +385,14 @@ const Formulaire = () => {
             </CardContent>
           </Card>
 
-          <div className="text-center pb-8">
-            <Button type="submit" size="lg" className="gap-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8">
+            <Button type="submit" size="lg" className="gap-2 w-full sm:w-auto">
               <Send className="h-5 w-5" />
               Envoyer via WhatsApp
+            </Button>
+            <Button type="button" onClick={handleSubmitEmail} size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
+              <Mail className="h-5 w-5" />
+              Envoyer par E-mail
             </Button>
           </div>
         </form>
