@@ -154,7 +154,7 @@ const Formulaire = () => {
     if (!validateForm()) return;
 
     const message = encodeURIComponent(buildFormText());
-    window.open(`https://wa.me/243974054248?text=${message}`, "_blank");
+    window.open(`https://wa.me/243831915847?text=${message}`, "_blank");
     toast({ title: "Formulaire envoyé", description: "Vous allez être redirigé vers WhatsApp." });
   };
 
