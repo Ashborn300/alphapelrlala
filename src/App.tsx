@@ -26,6 +26,7 @@ import HeritageManagement from "./pages/HeritageManagement";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import FormationsDubai from "./pages/FormationsDubai";
+import Formulaire from "./pages/Formulaire";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/formations-dubai" element={<FormationsDubai />} />
+          <Route path="/formulaire" element={<Formulaire />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
