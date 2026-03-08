@@ -454,13 +454,13 @@ const Concour = () => {
 
             {/* Boutons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8">
-              <Button type="submit" size="lg" className="gap-2 w-full sm:w-auto bg-orange-500 hover:bg-orange-600">
-                <Send className="h-5 w-5" />
-                Envoyer via WhatsApp
+              <Button type="submit" size="lg" disabled={isUploading} className="gap-2 w-full sm:w-auto bg-orange-500 hover:bg-orange-600">
+                {isUploading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
+                {isUploading ? "Envoi en cours..." : "Envoyer via WhatsApp"}
               </Button>
-              <Button type="button" onClick={handleSubmitEmail} size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
-                <Mail className="h-5 w-5" />
-                Envoyer par E-mail
+              <Button type="button" onClick={handleSubmitEmail} size="lg" variant="outline" disabled={isUploading} className="gap-2 w-full sm:w-auto">
+                {isUploading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Mail className="h-5 w-5" />}
+                {isUploading ? "Envoi en cours..." : "Envoyer par E-mail"}
               </Button>
             </div>
           </form>
