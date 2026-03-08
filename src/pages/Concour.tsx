@@ -340,31 +340,78 @@ const Concour = () => {
               <CardContent className="pt-6 space-y-5">
                 <h2 className="text-lg font-bold text-orange-600">Documents & fichiers</h2>
                 <p className="text-sm text-muted-foreground">
-                  Les fichiers (preuve de paiement, vidéo, photos) doivent être envoyés directement via WhatsApp ou par e-mail à <strong>contact@fondationalphaperla.com</strong>.
+                  Importez vos fichiers ci-dessous. Ils seront envoyés automatiquement avec votre formulaire.
                 </p>
 
-                <div className="border border-dashed rounded-lg p-4 space-y-2">
+                {/* Preuve de paiement */}
+                <div className="border border-dashed rounded-lg p-4 space-y-3">
                   <div className="flex items-center gap-2">
                     <Upload className="h-5 w-5 text-orange-500" />
                     <span className="font-medium">Preuve de paiement (Capture d'écran) <span className="text-destructive">*</span></span>
                   </div>
-                  <p className="text-xs text-muted-foreground">Jusqu'à 5 images, 10 MB max par fichier. À envoyer via WhatsApp ou e-mail.</p>
+                  <p className="text-xs text-muted-foreground">Jusqu'à 5 images, 10 MB max par fichier.</p>
+                  <input ref={preuveRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => {
+                    if (e.target.files) setPreuvePaiement(prev => [...prev, ...Array.from(e.target.files!)].slice(0, 5));
+                  }} />
+                  <Button type="button" variant="outline" size="sm" onClick={() => preuveRef.current?.click()} className="gap-2">
+                    <Upload className="h-4 w-4" /> Choisir des images
+                  </Button>
+                  {preuvePaiement.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {preuvePaiement.map((f, i) => (
+                        <div key={i} className="flex items-center gap-1 bg-muted rounded px-2 py-1 text-xs">
+                          <span className="truncate max-w-[150px]">{f.name}</span>
+                          <button type="button" onClick={() => setPreuvePaiement(prev => prev.filter((_, idx) => idx !== i))}><X className="h-3 w-3" /></button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
-                <div className="border border-dashed rounded-lg p-4 space-y-2">
+                {/* Vidéo recette */}
+                <div className="border border-dashed rounded-lg p-4 space-y-3">
                   <div className="flex items-center gap-2">
                     <Upload className="h-5 w-5 text-orange-500" />
                     <span className="font-medium">Vidéo de la recette (1 min. minimum) <span className="text-destructive">*</span></span>
                   </div>
-                  <p className="text-xs text-muted-foreground">1 fichier, 100 MB max. Montrant l'élaboration de la recette et la mise en valeur du plat terminé (dressage sur table). À envoyer via WhatsApp ou e-mail.</p>
+                  <p className="text-xs text-muted-foreground">1 fichier vidéo, 100 MB max.</p>
+                  <input ref={videoRef} type="file" accept="video/*" className="hidden" onChange={(e) => {
+                    if (e.target.files?.[0]) setVideoRecette(e.target.files[0]);
+                  }} />
+                  <Button type="button" variant="outline" size="sm" onClick={() => videoRef.current?.click()} className="gap-2">
+                    <Upload className="h-4 w-4" /> Choisir une vidéo
+                  </Button>
+                  {videoRecette && (
+                    <div className="flex items-center gap-1 bg-muted rounded px-2 py-1 text-xs w-fit mt-2">
+                      <span className="truncate max-w-[200px]">{videoRecette.name}</span>
+                      <button type="button" onClick={() => setVideoRecette(null)}><X className="h-3 w-3" /></button>
+                    </div>
+                  )}
                 </div>
 
-                <div className="border border-dashed rounded-lg p-4 space-y-2">
+                {/* Photos réalisations */}
+                <div className="border border-dashed rounded-lg p-4 space-y-3">
                   <div className="flex items-center gap-2">
                     <Upload className="h-5 w-5 text-orange-500" />
                     <span className="font-medium">Photos de réalisations culinaires <span className="text-destructive">*</span></span>
                   </div>
-                  <p className="text-xs text-muted-foreground">1 fichier : PDF, document ou image. 10 MB max. À envoyer via WhatsApp ou e-mail.</p>
+                  <p className="text-xs text-muted-foreground">Images ou PDF, 10 MB max par fichier.</p>
+                  <input ref={photosRef} type="file" accept="image/*,.pdf" multiple className="hidden" onChange={(e) => {
+                    if (e.target.files) setPhotosRealisations(prev => [...prev, ...Array.from(e.target.files!)]);
+                  }} />
+                  <Button type="button" variant="outline" size="sm" onClick={() => photosRef.current?.click()} className="gap-2">
+                    <Upload className="h-4 w-4" /> Choisir des fichiers
+                  </Button>
+                  {photosRealisations.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {photosRealisations.map((f, i) => (
+                        <div key={i} className="flex items-center gap-1 bg-muted rounded px-2 py-1 text-xs">
+                          <span className="truncate max-w-[150px]">{f.name}</span>
+                          <button type="button" onClick={() => setPhotosRealisations(prev => prev.filter((_, idx) => idx !== i))}><X className="h-3 w-3" /></button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
