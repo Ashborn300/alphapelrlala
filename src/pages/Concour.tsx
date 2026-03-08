@@ -14,6 +14,13 @@ import { supabase } from "@/integrations/supabase/client";
 
 const Concour = () => {
   const { toast } = useToast();
+  const [isUploading, setIsUploading] = useState(false);
+  const [preuvePaiement, setPreuvePaiement] = useState<File[]>([]);
+  const [videoRecette, setVideoRecette] = useState<File | null>(null);
+  const [photosRealisations, setPhotosRealisations] = useState<File[]>([]);
+  const preuveRef = useRef<HTMLInputElement>(null);
+  const videoRef = useRef<HTMLInputElement>(null);
+  const photosRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState({
     nomComplet: "",
     sexe: "",
