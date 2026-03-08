@@ -96,7 +96,7 @@ const Concour = () => {
             <div className="text-center mt-10">
               <a href={FORM_URL} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-10 py-6 font-bold rounded-full shadow-lg">
-                  <ChefHat className="w-5 h-5 mr-2" /> PARTICIPER AU CONCOURS
+                  <ChefHat className="w-5 h-5 mr-2" /> APPUYEZ ICI POUR PARTICIPER
                 </Button>
               </a>
             </div>
