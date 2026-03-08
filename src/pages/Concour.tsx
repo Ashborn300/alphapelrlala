@@ -54,7 +54,12 @@ const Concour = () => {
     });
   };
 
+
   const validateForm = () => {
+    if (preuvePaiement.length === 0) {
+      toast({ title: "Preuve de paiement requise", description: "Veuillez joindre au moins une capture de la preuve de paiement.", variant: "destructive" });
+      return false;
+    }
     const required = [
       { key: "nomComplet", label: "Nom complet" },
       { key: "sexe", label: "Sexe" },
