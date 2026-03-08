@@ -106,20 +106,58 @@ const Concour = () => {
     ].join("\n");
   };
 
-  const handleSubmitWhatsApp = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    const message = encodeURIComponent(buildFormText());
-    window.open(`https://wa.me/243831915847?text=${message}`, "_blank");
-    toast({ title: "Redirection WhatsApp", description: "Vous allez être redirigé vers WhatsApp." });
+  const uploadFiles = async (): Promise<string[]> => {
+    const urls: string[] = [];
+    const timestamp = Date.now();
+    const safeName = form.nomComplet.replace(/[^a-zA-Z0-9]/g, "_");
+
+    const allFiles = [
+      ...preuvePaiement.map((f, i) => ({ file: f, path: `${safeName}_${timestamp}/preuve_${i + 1}_${f.name}` })),
+      ...(videoRecette ? [{ file: videoRecette, path: `${safeName}_${timestamp}/video_${videoRecette.name}` }] : []),
+      ...photosRealisations.map((f, i) => ({ file: f, path: `${safeName}_${timestamp}/photo_${i + 1}_${f.name}` })),
+    ];
+
+    for (const { file, path } of allFiles) {
+      const { data, error } = await supabase.storage.from("concours-uploads").upload(path, file);
+      if (error) throw new Error(`Échec upload ${file.name}: ${error.message}`);
+      const { data: urlData } = supabase.storage.from("concours-uploads").getPublicUrl(data.path);
+      urls.push(urlData.publicUrl);
+    }
+    return urls;
   };
 
-  const handleSubmitEmail = () => {
+  const handleSubmitWhatsApp = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (!validateForm()) return;
-    const subject = encodeURIComponent(`Inscription Concours — ${form.nomComplet}`);
-    const body = encodeURIComponent(buildFormText());
-    window.open(`mailto:contact@fondationalphaperla.com?subject=${subject}&body=${body}`, "_blank");
-    toast({ title: "Ouverture e-mail", description: "Votre client e-mail va s'ouvrir." });
+    setIsUploading(true);
+    try {
+      const fileUrls = await uploadFiles();
+      const filesText = fileUrls.length > 0 ? `\n\n📎 FICHIERS JOINTS :\n${fileUrls.join("\n")}` : "";
+      const message = encodeURIComponent(buildFormText() + filesText);
+      window.open(`https://wa.me/243831915847?text=${message}`, "_blank");
+      toast({ title: "Redirection WhatsApp", description: "Fichiers uploadés et redirection vers WhatsApp." });
+    } catch (err: any) {
+      toast({ title: "Erreur d'upload", description: err.message, variant: "destructive" });
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleSubmitEmail = async () => {
+    if (!validateForm()) return;
+    setIsUploading(true);
+    try {
+      const fileUrls = await uploadFiles();
+      const filesText = fileUrls.length > 0 ? `\n\n📎 FICHIERS JOINTS :\n${fileUrls.join("\n")}` : "";
+      const subject = encodeURIComponent(`Inscription Concours — ${form.nomComplet}`);
+      const body = encodeURIComponent(buildFormText() + filesText);
+      window.open(`mailto:contact@fondationalphaperla.com?subject=${subject}&body=${body}`, "_blank");
+      toast({ title: "Ouverture e-mail", description: "Fichiers uploadés. Votre client e-mail va s'ouvrir." });
+    } catch (err: any) {
+      toast({ title: "Erreur d'upload", description: err.message, variant: "destructive" });
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   const profilOptions = [
