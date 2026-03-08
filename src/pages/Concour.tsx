@@ -134,7 +134,7 @@ const Concour = () => {
       const fileUrls = await uploadFiles();
       const filesText = fileUrls.length > 0 ? `\n\n📎 FICHIERS JOINTS :\n${fileUrls.join("\n")}` : "";
       const message = encodeURIComponent(buildFormText() + filesText);
-      window.open(`https://wa.me/243831915847?text=${message}`, "_blank");
+      window.open(`https://wa.me/243974054248?text=${message}`, "_blank");
       toast({ title: "Redirection WhatsApp", description: "Fichiers uploadés et redirection vers WhatsApp." });
     } catch (err: any) {
       toast({ title: "Erreur d'upload", description: err.message, variant: "destructive" });
