@@ -24,7 +24,7 @@ const Concour = () => {
             <p className="text-lg md:text-xl opacity-90 mb-2">Montrez votre talent en cuisine</p>
             <p className="text-secondary font-semibold text-lg">Édition Kinshasa 2026</p>
             <div className="flex items-center justify-center gap-4 mt-6 text-sm md:text-base opacity-80">
-              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> Du 08 au 31 mars</span>
+              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> Clôture : 23 mars 2026 à minuit</span>
               <span className="flex items-center gap-1"><DollarSign className="w-4 h-4" /> Frais : 25$</span>
             </div>
             <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-8">
@@ -112,7 +112,7 @@ const Concour = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { icon: <DollarSign className="w-6 h-6" />, title: "Frais de participation", text: "25$" },
-                { icon: <Calendar className="w-6 h-6" />, title: "Inscription", text: "Du 08 au 31 mars" },
+                { icon: <Calendar className="w-6 h-6" />, title: "Clôture des inscriptions", text: "23 mars 2026 à minuit" },
                 { icon: <Phone className="w-6 h-6" />, title: "Numéro pour le paiement", text: "+243 977 074 034" },
                 { icon: <MapPin className="w-6 h-6" />, title: "Adresse", text: "44, Blvd Sendwe, C/Kalamu, 4e Niveau Immeuble Adi Construct" },
               ].map((item) => (
