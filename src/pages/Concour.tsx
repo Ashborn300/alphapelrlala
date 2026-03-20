@@ -112,7 +112,7 @@ const Concour = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { icon: <DollarSign className="w-6 h-6" />, title: "Frais de participation", text: "25$" },
-                { icon: <Calendar className="w-6 h-6" />, title: "Inscription", text: "Du 08 au 31 mars" },
+                { icon: <Calendar className="w-6 h-6" />, title: "Clôture des inscriptions", text: "23 mars 2026 à minuit" },
                 { icon: <Phone className="w-6 h-6" />, title: "Numéro pour le paiement", text: "+243 977 074 034" },
                 { icon: <MapPin className="w-6 h-6" />, title: "Adresse", text: "44, Blvd Sendwe, C/Kalamu, 4e Niveau Immeuble Adi Construct" },
               ].map((item) => (
