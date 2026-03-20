@@ -24,7 +24,7 @@ const Concour = () => {
             <p className="text-lg md:text-xl opacity-90 mb-2">Montrez votre talent en cuisine</p>
             <p className="text-secondary font-semibold text-lg">Édition Kinshasa 2026</p>
             <div className="flex items-center justify-center gap-4 mt-6 text-sm md:text-base opacity-80">
-              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> Du 08 au 31 mars</span>
+              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> Clôture : 23 mars 2026 à minuit</span>
               <span className="flex items-center gap-1"><DollarSign className="w-4 h-4" /> Frais : 25$</span>
             </div>
             <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-8">
