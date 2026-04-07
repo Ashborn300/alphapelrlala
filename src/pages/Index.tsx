@@ -58,6 +58,7 @@ import reunion2 from "@/assets/reunion-2.jpg";
 import reunion3 from "@/assets/reunion-3.jpg";
 import projetCentreFormation from "@/assets/projet-centre-formation.jpg";
 import formationDubaiHero from "@/assets/formation-dubai-hero.jpg";
+import bisharaWorldConnect from "@/assets/biashara-world-connect.png";
 const Index = () => {
   const [isDonationOpen, setIsDonationOpen] = useState(false);
   const [isHeritageMereOpen, setIsHeritageMereOpen] = useState(false);
