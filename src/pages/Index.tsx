@@ -209,6 +209,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Biashara World Connect Section */}
+      <section className="py-20 bg-gradient-to-br from-[hsl(220,60%,10%)] via-[hsl(220,50%,15%)] to-[hsl(220,60%,10%)] text-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="flex justify-center">
+                <img 
+                  src={bisharaWorldConnect} 
+                  alt="Biashara World Connect - Opportunités économiques en Afrique" 
+                  className="w-full max-w-md rounded-2xl shadow-2xl"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                  Biashara <span className="text-secondary">World Connect</span>
+                </h2>
+                <p className="text-lg opacity-90 mb-6 leading-relaxed">
+                  Facilite l'accès aux opportunités économiques en RDC et en Afrique. Connecter entrepreneurs, investisseurs et institutions, et présenter les missions économiques, magazine télé et adhésion au réseau.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <span className="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium">Missions économiques</span>
+                  <span className="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium">Magazine Télé</span>
+                  <span className="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium">Réseau d'entrepreneurs</span>
+                  <span className="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium">Investisseurs</span>
+                </div>
+                <a href="https://biashara.fondationalphaperla.com/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-full shadow-lg">
+                    <Globe className="w-5 h-5 mr-2" />
+                    En savoir plus et nous rejoindre
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </section>
+
       {/* Formations Dubaï 2026 Section */}
       <section className="py-20 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
         <div className="container mx-auto px-4">
