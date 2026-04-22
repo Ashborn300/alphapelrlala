@@ -6,20 +6,19 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { Lock } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user, isAdmin, loading: authLoading, signIn, signUp } = useAuth();
+  const { user, isAdmin, loading: authLoading, signIn } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (user && !authLoading) {
-      // Add a small delay to ensure isAdmin state is fully updated
       const timer = setTimeout(() => {
         if (isAdmin) {
           navigate("/admin", { replace: true });
@@ -27,7 +26,7 @@ const Auth = () => {
           navigate("/", { replace: true });
         }
       }, 100);
-      
+
       return () => clearTimeout(timer);
     }
   }, [user, isAdmin, authLoading, navigate]);
@@ -37,17 +36,11 @@ const Auth = () => {
     setLoading(true);
 
     try {
-      if (isLogin) {
-        const { error } = await signIn(email, password);
-        if (error) throw error;
-        toast.success("Connexion réussie!");
-      } else {
-        const { error } = await signUp(email, password);
-        if (error) throw error;
-        toast.success("Inscription réussie! Vérifiez votre email.");
-      }
+      const { error } = await signIn(email, password);
+      if (error) throw error;
+      toast.success("Connexion réussie!");
     } catch (error: any) {
-      toast.error(error.message || "Une erreur est survenue");
+      toast.error(error.message || "Identifiants incorrects");
     } finally {
       setLoading(false);
     }
@@ -56,14 +49,15 @@ const Auth = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 flex items-center justify-center py-12 px-4">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle>{isLogin ? "Connexion" : "Inscription"}</CardTitle>
+      <main className="flex-1 flex items-center justify-center py-12 px-4 bg-muted/30">
+        <Card className="w-full max-w-md shadow-lg">
+          <CardHeader className="text-center">
+            <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Lock className="w-6 h-6 text-primary" />
+            </div>
+            <CardTitle>Espace Administrateur</CardTitle>
             <CardDescription>
-              {isLogin
-                ? "Connectez-vous à votre compte"
-                : "Créez un nouveau compte"}
+              Connectez-vous pour accéder au tableau de bord
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -75,7 +69,9 @@ const Auth = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="contact@fondationalphaperla.com"
                   required
+                  autoComplete="email"
                 />
               </div>
               <div className="space-y-2">
@@ -86,21 +82,11 @@ const Auth = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  minLength={6}
+                  autoComplete="current-password"
                 />
               </div>
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Chargement..." : isLogin ? "Se connecter" : "S'inscrire"}
-              </Button>
-              <Button
-                type="button"
-                variant="ghost"
-                className="w-full"
-                onClick={() => setIsLogin(!isLogin)}
-              >
-                {isLogin
-                  ? "Pas de compte? Inscrivez-vous"
-                  : "Déjà un compte? Connectez-vous"}
+                {loading ? "Connexion..." : "Se connecter"}
               </Button>
             </form>
           </CardContent>
