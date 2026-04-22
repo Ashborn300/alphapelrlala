@@ -1,0 +1,42 @@
+# ============================================================================
+# Configuration Netlify
+# ============================================================================
+# Ce projet est une SPA (Vite + React) déployée sur Netlify.
+# Les fonctions backend sont dans le dossier `netlify/functions/`.
+# ============================================================================
+
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+  functions = "netlify/functions"
+
+# ----------------------------------------------------------------------------
+# Rewrites — URL propres pour les Netlify Functions
+# ----------------------------------------------------------------------------
+# IMPORTANT : les redirections vers des fonctions DOIVENT être déclarées
+# AVANT le fallback SPA (sinon la SPA intercepte tout).
+# ----------------------------------------------------------------------------
+
+# Callback SerdiPay (POST)
+#   URL publique : https://<votre-domaine>/api/serdipay/callback
+[[redirects]]
+  from   = "/api/serdipay/callback"
+  to     = "/.netlify/functions/serdipay-callback"
+  status = 200
+  force  = true
+
+# Route de test (GET) — pratique pour vérifier que l'endpoint répond
+#   URL publique : https://<votre-domaine>/api/serdipay/callback/test
+[[redirects]]
+  from   = "/api/serdipay/callback/test"
+  to     = "/.netlify/functions/serdipay-callback"
+  status = 200
+  force  = true
+
+# ----------------------------------------------------------------------------
+# Fallback SPA (doit rester en DERNIER)
+# ----------------------------------------------------------------------------
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
