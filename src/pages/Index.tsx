@@ -348,7 +348,7 @@ const Index = () => {
             {/* Call to Action */}
             <div className="text-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                <Link to="/blog/excellencia-2024-edition-3-afrique-centrale" className="flex items-center gap-2">
+                <Link to="/4edition" className="flex items-center gap-2">
                   Découvrir l'événement
                   <ChevronRight className="h-5 w-5" />
                 </Link>
