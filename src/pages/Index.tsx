@@ -59,6 +59,7 @@ import reunion3 from "@/assets/reunion-3.jpg";
 import projetCentreFormation from "@/assets/projet-centre-formation.jpg";
 import formationDubaiHero from "@/assets/formation-dubai-hero.jpg";
 import bisharaWorldConnect from "@/assets/biashara-world-connect.png";
+import excellentia2026Candidatez from "@/assets/excellentia-2026-candidatez.png.asset.json";
 const Index = () => {
   const [isDonationOpen, setIsDonationOpen] = useState(false);
   const [isHeritageMereOpen, setIsHeritageMereOpen] = useState(false);
@@ -247,6 +248,59 @@ const Index = () => {
         </div>
       </section>
 
+      {/* 4ème Édition Excellentia Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4">
+          <FadeInOnScroll className="text-center mb-12">
+            <img 
+              src={excellentia2026Candidatez.url} 
+              alt="4ᵉ édition du Trophée Congolese Woman Excellentia - Candidature ouverte" 
+              className="w-full max-w-2xl mx-auto mb-8 rounded-2xl shadow-2xl"
+            />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary flex items-center justify-center gap-3">
+              <Award className="h-10 w-10 text-secondary" />
+              4ᵉ édition du TROPHÉE CONGOLESE WOMAN EXCELLENTIA
+            </h2>
+            <p className="text-xl text-secondary font-semibold mb-4">AFRIQUE</p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Une distinction qui célèbre l'excellence, l'impact et l'engagement en faveur de la femme africaine.
+              Le Trophée honore les femmes d'impact qui se distinguent par leur parcours, leurs réalisations et
+              leur engagement, ainsi que les hommes engagés dans la promotion et le soutien à la femme africaine.
+              Pour cette 4ᵉ édition, les candidatures sont ouvertes aux femmes et aux hommes d'impact de tous les pays d'Afrique.
+            </p>
+          </FadeInOnScroll>
+
+          
+          <FadeInOnScroll className="max-w-6xl mx-auto">
+            {/* Image Gallery */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaAward1} alt="Remise de prix Excellentia" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaGroup} alt="Photo de groupe des lauréates" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaSpeaker} alt="Discours lors de la cérémonie" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <img src={excellentiaStaff} alt="Équipe organisatrice" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Link to="/4edition" className="flex items-center gap-2">
+                  Découvrir l'événement
+                  <ChevronRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </section>
+
       {/* Formations Dubaï 2026 Section */}
       <section className="py-20 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
         <div className="container mx-auto px-4">
@@ -305,54 +359,6 @@ const Index = () => {
                   </Button>
                 </div>
               </div>
-            </div>
-          </FadeInOnScroll>
-        </div>
-      </section>
-
-      {/* 4ème Édition Excellentia Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
-          <FadeInOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary flex items-center justify-center gap-3">
-              <Award className="h-10 w-10 text-secondary" />
-              4ᵉ édition du TROPHÉE CONGOLESE WOMAN EXCELLENTIA
-            </h2>
-            <p className="text-xl text-secondary font-semibold mb-4">AFRIQUE</p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Une distinction qui célèbre l'excellence, l'impact et l'engagement en faveur de la femme africaine.
-              Le Trophée honore les femmes d'impact qui se distinguent par leur parcours, leurs réalisations et
-              leur engagement, ainsi que les hommes engagés dans la promotion et le soutien à la femme africaine.
-              Pour cette 4ᵉ édition, les candidatures sont ouvertes aux femmes et aux hommes d'impact de tous les pays d'Afrique.
-            </p>
-          </FadeInOnScroll>
-
-          
-          <FadeInOnScroll className="max-w-6xl mx-auto">
-            {/* Image Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaAward1} alt="Remise de prix Excellentia" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaGroup} alt="Photo de groupe des lauréates" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaSpeaker} alt="Discours lors de la cérémonie" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaStaff} alt="Équipe organisatrice" className="w-full h-full object-cover" />
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="text-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                <Link to="/4edition" className="flex items-center gap-2">
-                  Découvrir l'événement
-                  <ChevronRight className="h-5 w-5" />
-                </Link>
-              </Button>
             </div>
           </FadeInOnScroll>
         </div>
