@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Award, ArrowLeft, Sparkles, Users, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,20 +20,6 @@ const images = [
 const QuatriemeEdition = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>4ᵉ édition Trophée Congolese Woman Excellentia – Afrique</title>
-        <meta
-          name="description"
-          content="4ᵉ édition du Trophée Congolese Woman Excellentia – Afrique : une distinction qui célèbre l'excellence, l'impact et l'engagement en faveur de la femme africaine."
-        />
-        <meta property="og:title" content="4ᵉ édition Trophée Congolese Woman Excellentia – Afrique" />
-        <meta
-          property="og:description"
-          content="Candidatures ouvertes aux femmes et hommes d'impact de tous les pays d'Afrique."
-        />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
 
       <Header />
 
