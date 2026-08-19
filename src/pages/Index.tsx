@@ -301,49 +301,64 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 4ème Édition Excellentia Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      {/* Formations Dubaï 2026 Section */}
+      <section className="py-20 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <FadeInOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary flex items-center justify-center gap-3">
-              <Award className="h-10 w-10 text-secondary" />
-              4ᵉ édition du TROPHÉE CONGOLESE WOMAN EXCELLENTIA
-            </h2>
-            <p className="text-xl text-secondary font-semibold mb-4">AFRIQUE</p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Une distinction qui célèbre l'excellence, l'impact et l'engagement en faveur de la femme africaine.
-              Le Trophée honore les femmes d'impact qui se distinguent par leur parcours, leurs réalisations et
-              leur engagement, ainsi que les hommes engagés dans la promotion et le soutien à la femme africaine.
-              Pour cette 4ᵉ édition, les candidatures sont ouvertes aux femmes et aux hommes d'impact de tous les pays d'Afrique.
-            </p>
-          </FadeInOnScroll>
-
-          
-          <FadeInOnScroll className="max-w-6xl mx-auto">
-            {/* Image Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaAward1} alt="Remise de prix Excellentia" className="w-full h-full object-cover" />
+          <FadeInOnScroll className="max-w-5xl mx-auto">
+            <div className="bg-card rounded-2xl shadow-2xl overflow-hidden">
+              <img 
+                src={formationDubaiHero} 
+                alt="Formation Dubaï - Programme international" 
+                className="w-full object-contain"
+              />
+              <div className="bg-gradient-to-r from-primary to-secondary p-6 md:p-8 text-white">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <Plane className="h-10 w-10" />
+                  <h2 className="text-2xl md:text-4xl font-bold text-center">
+                    Programme International de Formation 2026
+                  </h2>
+                </div>
+                <p className="text-xl md:text-2xl text-center font-semibold opacity-90">
+                  Dubaï - Émirats Arabes Unis
+                </p>
               </div>
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaGroup} alt="Photo de groupe des lauréates" className="w-full h-full object-cover" />
+              <div className="p-6 md:p-10">
+                <p className="text-lg text-muted-foreground mb-6 text-center leading-relaxed">
+                  La <strong className="text-primary">Fondation Alpha Perla</strong> organise son programme international 
+                  de formations professionnelles à Dubaï, capitale mondiale de l'innovation et de la performance.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4 mb-8">
+                  <div className="flex items-center gap-3 justify-center p-4 bg-muted rounded-lg">
+                    <Calendar className="h-6 w-6 text-secondary" />
+                    <span className="font-medium">Février - Novembre 2026</span>
+                  </div>
+                  <div className="flex items-center gap-3 justify-center p-4 bg-muted rounded-lg">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                    <span className="font-medium">Dubaï, EAU</span>
+                  </div>
+                  <div className="flex items-center gap-3 justify-center p-4 bg-muted rounded-lg">
+                    <GraduationCap className="h-6 w-6 text-secondary" />
+                    <span className="font-medium">+50 Formations</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 mb-8">
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Finance & Audit</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Marchés Publics</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Management</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Leadership</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Informatique</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Communication</span>
+                </div>
+                <div className="text-center">
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Link to="/formations-dubai" className="flex items-center gap-2">
+                      <Plane className="h-5 w-5" />
+                      Découvrir le Programme Complet
+                      <ChevronRight className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaSpeaker} alt="Discours lors de la cérémonie" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img src={excellentiaStaff} alt="Équipe organisatrice" className="w-full h-full object-cover" />
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="text-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                <Link to="/4edition" className="flex items-center gap-2">
-                  Découvrir l'événement
-                  <ChevronRight className="h-5 w-5" />
-                </Link>
-              </Button>
             </div>
           </FadeInOnScroll>
         </div>
