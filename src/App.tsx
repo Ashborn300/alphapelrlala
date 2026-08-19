@@ -28,6 +28,8 @@ import ProjectDetail from "./pages/ProjectDetail";
 import FormationsDubai from "./pages/FormationsDubai";
 import Formulaire from "./pages/Formulaire";
 import Concour from "./pages/Concour";
+import QuatriemeEdition from "./pages/QuatriemeEdition";
+
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -63,6 +65,8 @@ const App = () => (
           <Route path="/formations-dubai" element={<FormationsDubai />} />
           <Route path="/formulaire" element={<Formulaire />} />
           <Route path="/concour" element={<Concour />} />
+          <Route path="/4edition" element={<QuatriemeEdition />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
