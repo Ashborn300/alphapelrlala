@@ -310,22 +310,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 3ème Édition Excellentia Section */}
+      {/* 4ème Édition Excellentia Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4">
           <FadeInOnScroll className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary flex items-center justify-center gap-3">
               <Award className="h-10 w-10 text-secondary" />
-              3ᵉ édition du TROPHÉE CONGOLESE WOMAN EXCELLENTIA
+              4ᵉ édition du TROPHÉE CONGOLESE WOMAN EXCELLENTIA
             </h2>
-            <p className="text-xl text-secondary font-semibold mb-4">AFRIQUE-CENTRALE</p>
+            <p className="text-xl text-secondary font-semibold mb-4">AFRIQUE</p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Un événement d'exception célébrant l'excellence féminine congolaise et africaine. 
-              La 3ᵉ édition a réuni des femmes inspirantes, leaders dans leurs domaines, 
-              pour honorer celles qui bâtissent l'avenir de notre continent par leur engagement, 
-              leur courage et leur vision.
+              Une distinction qui célèbre l'excellence, l'impact et l'engagement en faveur de la femme africaine.
+              Le Trophée honore les femmes d'impact qui se distinguent par leur parcours, leurs réalisations et
+              leur engagement, ainsi que les hommes engagés dans la promotion et le soutien à la femme africaine.
+              Pour cette 4ᵉ édition, les candidatures sont ouvertes aux femmes et aux hommes d'impact de tous les pays d'Afrique.
             </p>
           </FadeInOnScroll>
+
           
           <FadeInOnScroll className="max-w-6xl mx-auto">
             {/* Image Gallery */}
