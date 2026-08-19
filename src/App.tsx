@@ -28,6 +28,8 @@ import ProjectDetail from "./pages/ProjectDetail";
 import FormationsDubai from "./pages/FormationsDubai";
 import Formulaire from "./pages/Formulaire";
 import Concour from "./pages/Concour";
+import QuatriemeEdition from "./pages/QuatriemeEdition";
+
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 const queryClient = new QueryClient();
