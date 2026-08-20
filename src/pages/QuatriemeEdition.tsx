@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
+import excellentia2026Candidatez from "@/assets/excellentia-2026-candidatez.png.asset.json";
 import excellentiaAward1 from "@/assets/excellentia-award-1.jpg";
 import excellentiaGroup from "@/assets/excellentia-group.jpg";
 import excellentiaSpeaker from "@/assets/excellentia-speaker.jpg";
@@ -34,6 +35,11 @@ const QuatriemeEdition = () => {
             </Button>
 
             <FadeInOnScroll className="max-w-4xl mx-auto text-center">
+              <img
+                src={excellentia2026Candidatez.url}
+                alt="4ᵉ édition du Trophée Congolese Woman Excellentia - Candidature ouverte"
+                className="w-full max-w-2xl mx-auto mb-8 rounded-2xl shadow-2xl"
+              />
               <div className="flex justify-center mb-4">
                 <Award className="h-14 w-14 text-secondary" />
               </div>
